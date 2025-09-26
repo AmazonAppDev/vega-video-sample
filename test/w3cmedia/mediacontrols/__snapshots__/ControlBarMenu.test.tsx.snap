@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlBarMenu renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "bottom": 90,
+      "position": "absolute",
+      "right": 0,
+    }
+  }
+/>
+`;

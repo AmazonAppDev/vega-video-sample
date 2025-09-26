@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPlayerHeader tests component renders correctly with title 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "opacity": 0.8,
+      "paddingLeft": 20,
+      "paddingRight": 40,
+      "paddingVertical": 10,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    hasTVPreferredFocus={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "opacity": 1,
+        "padding": 25,
+        "width": 125,
+      }
+    }
+  >
+    <Text
+      testID="header_back_icon"
+    />
+  </View>
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 70,
+        "fontWeight": "500",
+        "textAlign": "right",
+        "width": "90%",
+      }
+    }
+    testID="video-player-header"
+  >
+    Movie Title
+  </Text>
+</View>
+`;
+
+exports[`VideoPlayerHeader tests component renders correctly without title 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "opacity": 0.8,
+      "paddingLeft": 20,
+      "paddingRight": 40,
+      "paddingVertical": 10,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    hasTVPreferredFocus={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "opacity": 1,
+        "padding": 25,
+        "width": 125,
+      }
+    }
+  >
+    <Text
+      testID="header_back_icon"
+    />
+  </View>
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 70,
+        "fontWeight": "500",
+        "textAlign": "right",
+        "width": "90%",
+      }
+    }
+    testID="video-player-header"
+  />
+</View>
+`;

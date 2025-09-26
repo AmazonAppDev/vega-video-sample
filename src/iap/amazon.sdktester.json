@@ -1,0 +1,19 @@
+{
+  "com.amazondeveloper.keplervideoapp.subscription.media.month": {
+    "description": "Monthly Subscription",
+    "title": "Media",
+    "itemType": "SUBSCRIPTION",
+    "price": 12.0,
+    "subscriptionParent": "com.amazondeveloper.keplervideoapp.subscription.media",
+    "subscriptionBase": "com.amazondeveloper.keplervideoapp.subscription.media",
+    "term": "Monthly",
+    "smallIconUrl": "https://com-amazon-mas-catalog.s3.amazonaws.com/amzn1.devportal.fileupload.6bf1b4d9a7d943c6a3211c33395f1b5b_da13be89-8818-48e9-bef0-fee91eba7cff_689479e1c39ba67b80fc9a1e3632409d"
+  },
+  "com.amazon.sample.iap.entitlement.level2": {
+    "itemType": "ENTITLED",
+    "price": 35.0,
+    "title": "Level 2",
+    "description": "A level 2 bundle",
+    "smallIconUrl": "https://com-amazon-mas-catalog.s3.amazonaws.com/amzn1.devportal.fileupload.74d932afd4d3421ba2565f41cae88a02_d96bdb3d-fdf0-4403-9c1a-7b06c786da82_0e1116ccefe4617e18709e5192715f94"
+  }
+}

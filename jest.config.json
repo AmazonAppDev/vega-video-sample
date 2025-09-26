@@ -1,0 +1,47 @@
+{
+  "preset": "react-native",
+  "globals": {
+    "ts-jest": {
+      "babelConfig": true,
+      "diagnostics": true
+    }
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(react-native|@react-native|react-native-gesture-handler|@amazon-devices/kepler-ui-components|@amazon-devices/react-linear-gradient|@amazon-devices/react-native-kepler|@amazon-devices/lottie-react-native|iso-639-3|@reduxjs/toolkit|immer)/)"
+  ],
+  "modulePathIgnorePatterns": ["src/w3cmedia/shakaplayer/dist/"],
+  "moduleNameMapper": {
+    "^react-native$": "<rootDir>/node_modules/react-native"
+  },
+
+  "coverageDirectory": "<rootDir>/coverage",
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.jsx"
+  ],
+  "collectCoverage": true,
+  "coverageReporters": [
+    "json",
+    "json-summary",
+    "cobertura",
+    "clover",
+    "lcov",
+    "text"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 30,
+      "functions": 36,
+      "lines": 41,
+      "statements": 41
+    }
+  },
+
+  "setupFiles": [
+    "./node_modules/@amazon-devices/react-native-kepler/jest/setup.js",
+    "./node_modules/react-native/jest/setup.js"
+  ],
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"]
+}

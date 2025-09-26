@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton renders correctly renders correctly without styles 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "paddingHorizontal": 15,
+    }
+  }
+  testID="radio-button-1"
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#D3D3D3",
+        "borderColor": "#D3D3D3",
+        "borderRadius": 15,
+        "borderWidth": 4,
+        "height": 30,
+        "opacity": 1,
+        "width": 30,
+      }
+    }
+    testID="radio-btn--selected"
+  />
+  <Text
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 27,
+        "marginLeft": 10,
+      }
+    }
+    testID="radio-text-"
+  />
+</View>
+`;

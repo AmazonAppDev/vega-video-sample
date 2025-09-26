@@ -1,0 +1,46 @@
+[
+  {
+    "id": "169319",
+    "title": "Diving Costa Rica 2017",
+    "description": "Diving Costa Rica 2017",
+    "duration": "446",
+    "thumbnailUrl": "http://le2.cdn01.net/videos/0000169/0169319/thumbs/0169319__010f.jpg",
+    "posterUrl": "http://le2.cdn01.net/videos/0000169/0169319/thumbs/0169319__010f.jpg",
+    "videoUrl": "http://edge-vod-media.cdn01.net/encoded/0000169/0169319/video_1880k/A57CCB0FI.mp4?source=firetv&channelID=13455",
+    "categories": ["Costa Rica Underwater"],
+    "channelID": "13455"
+  },
+  {
+    "id": "169310",
+    "title": "Samara, Costa Rica",
+    "description": "Samara, Costa Rica",
+    "duration": "594",
+    "thumbnailUrl": "http://le1.cdn01.net/videos/0000169/0169310/thumbs/0169310__015f.jpg",
+    "posterUrl": "http://le1.cdn01.net/videos/0000169/0169310/thumbs/0169310__015f.jpg",
+    "videoUrl": "http://edge-vod-media.cdn01.net/encoded/0000169/0169310/video_1880k/Q4GLL816I.mp4?source=firetv&channelID=13454",
+    "categories": ["Costa Rica Islands"],
+    "channelID": "13454"
+  },
+  {
+    "id": "169306",
+    "title": "Costa Rica Tourism 2016",
+    "description": "Costa Rica Tourism 2016",
+    "duration": "3548",
+    "thumbnailUrl": "http://le1.cdn01.net/videos/0000169/0169306/thumbs/0169306__005f.jpg",
+    "posterUrl": "http://le1.cdn01.net/videos/0000169/0169306/thumbs/0169306__005f.jpg",
+    "videoUrl": "http://edge-vod-media.cdn01.net/encoded/0000169/0169306/video_1880k/A57CBB0FF.mp4?source=firetv&channelID=13453",
+    "categories": ["Costa Rica Attractions"],
+    "channelID": "13453"
+  },
+  {
+    "id": "169317",
+    "title": "Diving Costa Rica - Catalina Islands",
+    "description": "Diving Costa Rica - Catalina Islands",
+    "duration": "227",
+    "thumbnailUrl": "http://le2.cdn01.net/videos/0000169/0169317/thumbs/0169317__015f.jpg",
+    "posterUrl": "http://le2.cdn01.net/videos/0000169/0169317/thumbs/0169317__015f.jpg",
+    "videoUrl": "http://edge-vod-media.cdn01.net/encoded/0000169/0169317/video_1880k/L9BGGF0J8.mp4?source=firetv&channelID=13455",
+    "categories": ["Costa Rica Underwater"],
+    "channelID": "13455"
+  }
+]

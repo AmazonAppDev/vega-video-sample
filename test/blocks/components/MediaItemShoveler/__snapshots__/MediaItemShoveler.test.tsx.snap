@@ -1,0 +1,863 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaItemShoveler /> renders default featured MediaItemShoveler with no playlistName 1`] = `
+<KeplerScrollable
+  data={
+    Array [
+      Object {
+        "description": "DESCRIPTION1",
+        "id": "id1",
+        "mediaSourceType": "url",
+        "mediaType": "video",
+        "title": "TITLE1",
+      },
+      Object {
+        "description": "DESCRIPTION2",
+        "id": "id2",
+        "mediaSourceType": "url",
+        "mediaType": "video",
+        "title": "TITLE2",
+      },
+    ]
+  }
+  dataStartIndex={0}
+  findItemIndexForKey={[Function]}
+  fixedFocusOffset={0}
+  focusPlacementLocked={true}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  getItemKey={[Function]}
+  getItemLayout={[Function]}
+  getItemLayoutId={[Function]}
+  hasTVPreferredFocus={false}
+  hideItemsBeforeSelection={false}
+  horizontal={true}
+  id={0}
+  itemSpacing={0}
+  maxRenderedItems={8}
+  naturalScrolling={false}
+  numFrames={2}
+  numItems={2}
+  numOffsetItems={2}
+  renderItem={[Function]}
+  rowIndex={0}
+  scrollDuration={0.2}
+  scrollPinProportion={0}
+  selectionBorderStyle={Object {}}
+  shiftItemsOnSelection={true}
+  showSelectionBorder={false}
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+  testID="playlist_native_shoveler"
+  trapFocusOnAxis={false}
+>
+  <KeplerScrollableItemFrame
+    heightFocused={517}
+    heightNormal={470}
+    index={0}
+    onBind={[Function]}
+    onRefresh={[Function]}
+    selectionBorderColor={4294967295}
+    selectionBorderRadius={8}
+    selectionBorderStrokeColor={4278190080}
+    selectionBorderStrokeRadius={4}
+    selectionBorderStrokeWidth={3}
+    selectionBorderWidth={8}
+    showSelectionBorder={false}
+    style={
+      Object {
+        "height": 470,
+        "width": NaN,
+      }
+    }
+    widthFocused={NaN}
+    widthNormal={NaN}
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "justifyContent": "center",
+          "overflow": "hidden",
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          Object {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          Object {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#202225",
+              "borderColor": "transparent",
+              "borderRadius": 16,
+              "borderWidth": 5,
+              "height": 314,
+              "margin": undefined,
+              "overflow": "hidden",
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 1,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 2,
+              "width": 214,
+            },
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "column",
+              "overflow": "hidden",
+            },
+            Object {
+              "alignSelf": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "height": NaN,
+              "minWidth": NaN,
+              "shadowColor": "transparent",
+              "shadowOffset": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowRadius": 0,
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "aspectRatio": 1,
+              "height": 206,
+              "marginBottom": 0,
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 16,
+              "width": 206,
+            }
+          }
+        >
+          <Image
+            height={NaN}
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "borderRadius": 16,
+                },
+                Object {
+                  "height": "100%",
+                  "resizeMode": "cover",
+                  "width": "100%",
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+                false,
+              ]
+            }
+            width={NaN}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 16,
+              },
+              Object {
+                "width": "100%",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            accessibilityRole="text"
+            numberOfLines={2}
+            onTextLayout={[Function]}
+            style={
+              Object {
+                "color": "#c2c2c2",
+                "fontFamily": "Amazon Ember",
+                "fontSize": 24,
+                "fontStyle": undefined,
+                "fontWeight": "400",
+                "letterSpacing": undefined,
+                "lineHeight": 26,
+                "marginBottom": 8,
+                "marginTop": 190,
+              }
+            }
+          >
+            TITLE1
+          </Text>
+        </View>
+      </View>
+    </View>
+  </KeplerScrollableItemFrame>
+  <KeplerScrollableItemFrame
+    heightFocused={517}
+    heightNormal={470}
+    index={1}
+    onBind={[Function]}
+    onRefresh={[Function]}
+    selectionBorderColor={4294967295}
+    selectionBorderRadius={8}
+    selectionBorderStrokeColor={4278190080}
+    selectionBorderStrokeRadius={4}
+    selectionBorderStrokeWidth={3}
+    selectionBorderWidth={8}
+    showSelectionBorder={false}
+    style={
+      Object {
+        "height": 470,
+        "width": NaN,
+      }
+    }
+    widthFocused={NaN}
+    widthNormal={NaN}
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "justifyContent": "center",
+          "overflow": "hidden",
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          Object {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          Object {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#202225",
+              "borderColor": "transparent",
+              "borderRadius": 16,
+              "borderWidth": 5,
+              "height": 314,
+              "margin": undefined,
+              "overflow": "hidden",
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 1,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 2,
+              "width": 214,
+            },
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "column",
+              "overflow": "hidden",
+            },
+            Object {
+              "alignSelf": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "height": NaN,
+              "minWidth": NaN,
+              "shadowColor": "transparent",
+              "shadowOffset": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowRadius": 0,
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "aspectRatio": 1,
+              "height": 206,
+              "marginBottom": 0,
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 16,
+              "width": 206,
+            }
+          }
+        >
+          <Image
+            height={NaN}
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "borderRadius": 16,
+                },
+                Object {
+                  "height": "100%",
+                  "resizeMode": "cover",
+                  "width": "100%",
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+                false,
+              ]
+            }
+            width={NaN}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 16,
+              },
+              Object {
+                "width": "100%",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            accessibilityRole="text"
+            numberOfLines={2}
+            onTextLayout={[Function]}
+            style={
+              Object {
+                "color": "#c2c2c2",
+                "fontFamily": "Amazon Ember",
+                "fontSize": 24,
+                "fontStyle": undefined,
+                "fontWeight": "400",
+                "letterSpacing": undefined,
+                "lineHeight": 26,
+                "marginBottom": 8,
+                "marginTop": 190,
+              }
+            }
+          >
+            TITLE2
+          </Text>
+        </View>
+      </View>
+    </View>
+  </KeplerScrollableItemFrame>
+</KeplerScrollable>
+`;
+
+exports[`<MediaItemShoveler /> renders default nonFeatured MediaItemShoveler with playlistName 1`] = `
+Array [
+  <Text
+    style={
+      Object {
+        "alignSelf": "flex-start",
+        "color": "#FFFFFF",
+        "fontSize": 28,
+        "marginBottom": 7.4074074074074066,
+        "paddingLeft": 22.22222222222222,
+        "paddingTop": 18.51851851851852,
+      }
+    }
+  >
+    PLAYLIST_NAME
+  </Text>,
+  <KeplerScrollable
+    data={
+      Array [
+        Object {
+          "description": "DESCRIPTION1",
+          "id": "id1",
+          "mediaSourceType": "url",
+          "mediaType": "video",
+          "title": "TITLE1",
+        },
+        Object {
+          "description": "DESCRIPTION2",
+          "id": "id2",
+          "mediaSourceType": "url",
+          "mediaType": "video",
+          "title": "TITLE2",
+        },
+      ]
+    }
+    dataStartIndex={0}
+    findItemIndexForKey={[Function]}
+    fixedFocusOffset={0}
+    focusPlacementLocked={true}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    getItemKey={[Function]}
+    getItemLayout={[Function]}
+    getItemLayoutId={[Function]}
+    hasTVPreferredFocus={false}
+    hideItemsBeforeSelection={false}
+    horizontal={true}
+    id={0}
+    itemSpacing={0}
+    maxRenderedItems={8}
+    naturalScrolling={false}
+    numFrames={2}
+    numItems={2}
+    numOffsetItems={2}
+    renderItem={[Function]}
+    rowIndex={0}
+    scrollDuration={0.2}
+    scrollPinProportion={0}
+    selectionBorderStyle={Object {}}
+    shiftItemsOnSelection={true}
+    showSelectionBorder={false}
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+    testID="playlist_native_shoveler"
+    trapFocusOnAxis={false}
+  >
+    <KeplerScrollableItemFrame
+      heightFocused={517}
+      heightNormal={470}
+      index={0}
+      onBind={[Function]}
+      onRefresh={[Function]}
+      selectionBorderColor={4294967295}
+      selectionBorderRadius={8}
+      selectionBorderStrokeColor={4278190080}
+      selectionBorderStrokeRadius={4}
+      selectionBorderStrokeWidth={3}
+      selectionBorderWidth={8}
+      showSelectionBorder={false}
+      style={
+        Object {
+          "height": 470,
+          "width": NaN,
+        }
+      }
+      widthFocused={NaN}
+      widthNormal={NaN}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "justifyContent": "center",
+            "overflow": "hidden",
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          accessibilityState={
+            Object {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            Object {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#202225",
+                "borderColor": "transparent",
+                "borderRadius": 16,
+                "borderWidth": 5,
+                "height": 314,
+                "margin": undefined,
+                "overflow": "hidden",
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 1,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.3,
+                "shadowRadius": 2,
+                "width": 214,
+              },
+              Object {
+                "alignItems": "flex-start",
+                "flexDirection": "column",
+                "overflow": "hidden",
+              },
+              Object {
+                "alignSelf": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "height": NaN,
+                "minWidth": NaN,
+                "shadowColor": "transparent",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowRadius": 0,
+              },
+              false,
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "aspectRatio": 1,
+                "height": 206,
+                "marginBottom": 0,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 16,
+                "width": 206,
+              }
+            }
+          >
+            <Image
+              height={NaN}
+              source={
+                Object {
+                  "uri": undefined,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 16,
+                  },
+                  Object {
+                    "height": "100%",
+                    "resizeMode": "cover",
+                    "width": "100%",
+                  },
+                  Object {
+                    "borderRadius": 0,
+                  },
+                  false,
+                ]
+              }
+              width={NaN}
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              accessibilityRole="text"
+              numberOfLines={2}
+              onTextLayout={[Function]}
+              style={
+                Object {
+                  "color": "#c2c2c2",
+                  "fontFamily": "Amazon Ember",
+                  "fontSize": 24,
+                  "fontStyle": undefined,
+                  "fontWeight": "400",
+                  "letterSpacing": undefined,
+                  "lineHeight": 26,
+                  "marginBottom": 8,
+                  "marginTop": 80,
+                }
+              }
+            >
+              TITLE1
+            </Text>
+          </View>
+        </View>
+      </View>
+    </KeplerScrollableItemFrame>
+    <KeplerScrollableItemFrame
+      heightFocused={517}
+      heightNormal={470}
+      index={1}
+      onBind={[Function]}
+      onRefresh={[Function]}
+      selectionBorderColor={4294967295}
+      selectionBorderRadius={8}
+      selectionBorderStrokeColor={4278190080}
+      selectionBorderStrokeRadius={4}
+      selectionBorderStrokeWidth={3}
+      selectionBorderWidth={8}
+      showSelectionBorder={false}
+      style={
+        Object {
+          "height": 470,
+          "width": NaN,
+        }
+      }
+      widthFocused={NaN}
+      widthNormal={NaN}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "justifyContent": "center",
+            "overflow": "hidden",
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          accessibilityState={
+            Object {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            Object {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#202225",
+                "borderColor": "transparent",
+                "borderRadius": 16,
+                "borderWidth": 5,
+                "height": 314,
+                "margin": undefined,
+                "overflow": "hidden",
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 1,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.3,
+                "shadowRadius": 2,
+                "width": 214,
+              },
+              Object {
+                "alignItems": "flex-start",
+                "flexDirection": "column",
+                "overflow": "hidden",
+              },
+              Object {
+                "alignSelf": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "height": NaN,
+                "minWidth": NaN,
+                "shadowColor": "transparent",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowRadius": 0,
+              },
+              false,
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "aspectRatio": 1,
+                "height": 206,
+                "marginBottom": 0,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 16,
+                "width": 206,
+              }
+            }
+          >
+            <Image
+              height={NaN}
+              source={
+                Object {
+                  "uri": undefined,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 16,
+                  },
+                  Object {
+                    "height": "100%",
+                    "resizeMode": "cover",
+                    "width": "100%",
+                  },
+                  Object {
+                    "borderRadius": 0,
+                  },
+                  false,
+                ]
+              }
+              width={NaN}
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              accessibilityRole="text"
+              numberOfLines={2}
+              onTextLayout={[Function]}
+              style={
+                Object {
+                  "color": "#c2c2c2",
+                  "fontFamily": "Amazon Ember",
+                  "fontSize": 24,
+                  "fontStyle": undefined,
+                  "fontWeight": "400",
+                  "letterSpacing": undefined,
+                  "lineHeight": 26,
+                  "marginBottom": 8,
+                  "marginTop": 80,
+                }
+              }
+            >
+              TITLE2
+            </Text>
+          </View>
+        </View>
+      </View>
+    </KeplerScrollableItemFrame>
+  </KeplerScrollable>,
+]
+`;

@@ -1,0 +1,681 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen renders correctly and matches snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#000000",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 0.8,
+        "marginBottom": 20,
+        "paddingLeft": 29,
+      }
+    }
+  >
+    <AutoRotator
+      data={
+        Array [
+          Object {
+            "categories": Array [
+              "Hits",
+            ],
+            "channelID": "13455",
+            "description": "In the ultimate clash between steel and flesh, warriors fight for honor in a brutal medieval conflict.",
+            "descriptionType": "Standard MP4 stream for mobile devices",
+            "duration": "156",
+            "id": "169331",
+            "posterUrl": undefined,
+            "rating": "4",
+            "releaseDate": "09/20",
+            "thumbnailUrl": undefined,
+            "title": "Battle of Iron and Blood",
+            "videoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/boat-sailing.mp4",
+          },
+          Object {
+            "categories": Array [
+              "Hits",
+            ],
+            "channelID": "13453",
+            "description": "Hope emerges from darkness as unlikely heroes fight to secure a better future for humanity.",
+            "descriptionType": "Standard MP4 stream for mobile devices",
+            "duration": "185",
+            "id": "169330",
+            "posterUrl": undefined,
+            "rating": "4",
+            "releaseDate": "09/20",
+            "thumbnailUrl": undefined,
+            "title": "Promises of tomorrow",
+            "videoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/boat-sailing.mp4",
+          },
+          Object {
+            "categories": Array [
+              "Hits",
+            ],
+            "channelID": "13454",
+            "description": "A heartwarming story of innocence and wonder as a father discovers the world through his daughter's eyes.",
+            "descriptionType": "Standard MP4 stream for mobile devices",
+            "duration": "48",
+            "id": "169329",
+            "posterUrl": undefined,
+            "rating": "4",
+            "releaseDate": "09/20",
+            "thumbnailUrl": undefined,
+            "title": "My little girl",
+            "videoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/boat-sailing.mp4",
+          },
+          Object {
+            "categories": Array [
+              "Hits",
+            ],
+            "channelID": "13453111",
+            "description": "Haunting melodies from another dimension threaten to unravel the fabric of reality itself.",
+            "descriptionType": "Standard MP4 stream for mobile devices",
+            "duration": "156",
+            "id": "169326111",
+            "posterUrl": undefined,
+            "rating": "5",
+            "releaseDate": "09/20",
+            "thumbnailUrl": undefined,
+            "title": "Ethereal Echoes",
+            "videoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/boat-sailing.mp4",
+          },
+        ]
+      }
+      onFocus={[Function]}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#000000",
+        "flex": 1,
+        "height": "100%",
+        "marginBottom": 30,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <RCTScrollView
+          applyWindowCorrection={[Function]}
+          canChangeSize={true}
+          contentContainerStyle={
+            Object {
+              "backgroundColor": undefined,
+              "minHeight": 1,
+              "minWidth": 1,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+            }
+          }
+          contentHeight={0}
+          contentWidth={0}
+          data={
+            Array [
+              Object {
+                "data": [Function],
+                "heading": "Latest Hits",
+                "testID": "costa_rica_top_rated",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Classics",
+                "testID": "costa_rica_attractions",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Recommendation",
+                "testID": "costa_rica_underwater",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Premium Collection",
+                "testID": "premium_collection",
+              },
+              Object {
+                "data": [Function],
+                "heading": "New hits",
+                "testID": "new_hits",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Trends",
+                "testID": "trends",
+              },
+            ]
+          }
+          dataProvider={
+            DataProvider {
+              "_data": Array [
+                Object {
+                  "data": [Function],
+                  "heading": "Latest Hits",
+                  "testID": "costa_rica_top_rated",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Classics",
+                  "testID": "costa_rica_attractions",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Recommendation",
+                  "testID": "costa_rica_underwater",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Premium Collection",
+                  "testID": "premium_collection",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "New hits",
+                  "testID": "new_hits",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Trends",
+                  "testID": "trends",
+                },
+              ],
+              "_firstIndexToProcess": 0,
+              "_hasStableIds": true,
+              "_requiresDataChangeHandling": false,
+              "_size": 6,
+              "getStableId": [Function],
+              "rowHasChanged": [Function],
+            }
+          }
+          disableRecycling={false}
+          estimatedItemSize={304}
+          extendedState={Object {}}
+          externalScrollView={[Function]}
+          finalRenderAheadOffset={250}
+          forceNonDeterministicRendering={true}
+          horizontal={false}
+          initialOffset={0}
+          initialRenderIndex={0}
+          isHorizontal={false}
+          keyExtractor={[Function]}
+          layoutProvider={
+            GridLayoutProviderWithProps {
+              "_acceptableRelayoutDelta": 1,
+              "_getHeightOrWidth": [Function],
+              "_getLayoutTypeForIndex": [Function],
+              "_getSpan": [Function],
+              "_hasExpired": false,
+              "_maxSpan": 1,
+              "_setLayoutForType": [Function],
+              "_tempDim": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "averageWindow": AverageWindow {
+                "currentAverage": 304,
+                "currentCount": 1,
+                "inputValues": Array [
+                  304,
+                ],
+                "nextIndex": 1,
+              },
+              "defaultEstimatedItemSize": 100,
+              "layoutObject": Object {
+                "size": undefined,
+                "span": undefined,
+              },
+              "props": Object {
+                "data": Array [
+                  Object {
+                    "data": [Function],
+                    "heading": "Latest Hits",
+                    "testID": "costa_rica_top_rated",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Classics",
+                    "testID": "costa_rica_attractions",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Recommendation",
+                    "testID": "costa_rica_underwater",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Premium Collection",
+                    "testID": "premium_collection",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "New hits",
+                    "testID": "new_hits",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Trends",
+                    "testID": "trends",
+                  },
+                ],
+                "estimatedItemSize": 304,
+                "keyExtractor": [Function],
+                "numColumns": 1,
+                "renderItem": [Function],
+                "testID": "movieGrid",
+              },
+              "renderWindowInsets": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shouldRefreshWithAnchoring": true,
+            }
+          }
+          maxRenderAhead={750}
+          numColumns={1}
+          onEndReached={[Function]}
+          onEndReachedThreshold={0}
+          onEndReachedThresholdRelative={0}
+          onItemLayout={[Function]}
+          onLayout={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onSizeChanged={[Function]}
+          onVisibleIndicesChanged={[Function]}
+          removeClippedSubviews={false}
+          renderAheadOffset={0}
+          renderAheadStep={250}
+          renderContentContainer={[Function]}
+          renderItem={[Function]}
+          renderItemContainer={[Function]}
+          rowRenderer={[Function]}
+          scrollEventThrottle={16}
+          scrollThrottle={16}
+          scrollViewProps={
+            Object {
+              "contentContainerStyle": Object {
+                "backgroundColor": undefined,
+                "minHeight": 1,
+                "minWidth": 1,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+              },
+              "onLayout": [Function],
+              "onScrollBeginDrag": [Function],
+              "refreshControl": undefined,
+              "style": Object {
+                "minHeight": 1,
+                "minWidth": 1,
+              },
+            }
+          }
+          style={
+            Object {
+              "minHeight": 1,
+              "minWidth": 1,
+            }
+          }
+          suppressBoundedSizeException={true}
+          testID="movieGrid"
+          windowCorrectionConfig={
+            Object {
+              "applyToInitialOffset": true,
+              "applyToItemScroll": true,
+              "value": Object {
+                "endCorrection": 0,
+                "startCorrection": 0,
+                "windowShift": -0,
+              },
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <AutoLayoutView
+                enableInstrumentation={false}
+                horizontal={false}
+                onBlankAreaEvent={[Function]}
+                onLayout={[Function]}
+                renderAheadOffset={0}
+                scrollOffset={0}
+                style={
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  }
+                }
+                windowSize={0}
+              />
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`HomeScreen with touch optimized UX renders correctly and matches snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#000000",
+      "flex": 1,
+      "height": "100%",
+      "marginBottom": 30,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginBottom": 22,
+        "marginLeft": 28,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <RCTScrollView
+          applyWindowCorrection={[Function]}
+          canChangeSize={true}
+          contentContainerStyle={
+            Object {
+              "backgroundColor": undefined,
+              "minHeight": 1,
+              "minWidth": 1,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+            }
+          }
+          contentHeight={0}
+          contentWidth={0}
+          data={
+            Array [
+              Object {
+                "data": [Function],
+                "heading": "Latest Hits",
+                "testID": "costa_rica_top_rated",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Classics",
+                "testID": "costa_rica_attractions",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Recommendation",
+                "testID": "costa_rica_underwater",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Premium Collection",
+                "testID": "premium_collection",
+              },
+              Object {
+                "data": [Function],
+                "heading": "New hits",
+                "testID": "new_hits",
+              },
+              Object {
+                "data": [Function],
+                "heading": "Trends",
+                "testID": "trends",
+              },
+            ]
+          }
+          dataProvider={
+            DataProvider {
+              "_data": Array [
+                Object {
+                  "data": [Function],
+                  "heading": "Latest Hits",
+                  "testID": "costa_rica_top_rated",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Classics",
+                  "testID": "costa_rica_attractions",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Recommendation",
+                  "testID": "costa_rica_underwater",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Premium Collection",
+                  "testID": "premium_collection",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "New hits",
+                  "testID": "new_hits",
+                },
+                Object {
+                  "data": [Function],
+                  "heading": "Trends",
+                  "testID": "trends",
+                },
+              ],
+              "_firstIndexToProcess": 0,
+              "_hasStableIds": true,
+              "_requiresDataChangeHandling": false,
+              "_size": 6,
+              "getStableId": [Function],
+              "rowHasChanged": [Function],
+            }
+          }
+          disableRecycling={false}
+          estimatedItemSize={304}
+          extendedState={Object {}}
+          externalScrollView={[Function]}
+          finalRenderAheadOffset={250}
+          forceNonDeterministicRendering={true}
+          horizontal={false}
+          initialOffset={0}
+          initialRenderIndex={0}
+          isHorizontal={false}
+          keyExtractor={[Function]}
+          layoutProvider={
+            GridLayoutProviderWithProps {
+              "_acceptableRelayoutDelta": 1,
+              "_getHeightOrWidth": [Function],
+              "_getLayoutTypeForIndex": [Function],
+              "_getSpan": [Function],
+              "_hasExpired": false,
+              "_maxSpan": 1,
+              "_setLayoutForType": [Function],
+              "_tempDim": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "averageWindow": AverageWindow {
+                "currentAverage": 304,
+                "currentCount": 1,
+                "inputValues": Array [
+                  304,
+                ],
+                "nextIndex": 1,
+              },
+              "defaultEstimatedItemSize": 100,
+              "layoutObject": Object {
+                "size": undefined,
+                "span": undefined,
+              },
+              "props": Object {
+                "data": Array [
+                  Object {
+                    "data": [Function],
+                    "heading": "Latest Hits",
+                    "testID": "costa_rica_top_rated",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Classics",
+                    "testID": "costa_rica_attractions",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Recommendation",
+                    "testID": "costa_rica_underwater",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Premium Collection",
+                    "testID": "premium_collection",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "New hits",
+                    "testID": "new_hits",
+                  },
+                  Object {
+                    "data": [Function],
+                    "heading": "Trends",
+                    "testID": "trends",
+                  },
+                ],
+                "estimatedItemSize": 304,
+                "keyExtractor": [Function],
+                "numColumns": 1,
+                "renderItem": [Function],
+                "testID": "movie-rotator-grid",
+              },
+              "renderWindowInsets": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shouldRefreshWithAnchoring": true,
+            }
+          }
+          maxRenderAhead={750}
+          numColumns={1}
+          onEndReached={[Function]}
+          onEndReachedThreshold={0}
+          onEndReachedThresholdRelative={0}
+          onItemLayout={[Function]}
+          onLayout={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onSizeChanged={[Function]}
+          onVisibleIndicesChanged={[Function]}
+          removeClippedSubviews={false}
+          renderAheadOffset={0}
+          renderAheadStep={250}
+          renderContentContainer={[Function]}
+          renderItem={[Function]}
+          renderItemContainer={[Function]}
+          rowRenderer={[Function]}
+          scrollEventThrottle={16}
+          scrollThrottle={16}
+          scrollViewProps={
+            Object {
+              "contentContainerStyle": Object {
+                "backgroundColor": undefined,
+                "minHeight": 1,
+                "minWidth": 1,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+              },
+              "onLayout": [Function],
+              "onScrollBeginDrag": [Function],
+              "refreshControl": undefined,
+              "style": Object {
+                "minHeight": 1,
+                "minWidth": 1,
+              },
+            }
+          }
+          style={
+            Object {
+              "minHeight": 1,
+              "minWidth": 1,
+            }
+          }
+          suppressBoundedSizeException={true}
+          testID="movie-rotator-grid"
+          windowCorrectionConfig={
+            Object {
+              "applyToInitialOffset": true,
+              "applyToItemScroll": true,
+              "value": Object {
+                "endCorrection": 0,
+                "startCorrection": 0,
+                "windowShift": -0,
+              },
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <AutoLayoutView
+                enableInstrumentation={false}
+                horizontal={false}
+                onBlankAreaEvent={[Function]}
+                onLayout={[Function]}
+                renderAheadOffset={0}
+                scrollOffset={0}
+                style={
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  }
+                }
+                windowSize={0}
+              />
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preview renders correctly renders correctly with a posterUrl 1`] = `
+<View
+  style={
+    Object {
+      "left": 682,
+      "position": "absolute",
+    }
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={
+      Object {
+        "uri": "http://example.com/poster.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 696,
+        "position": "absolute",
+        "width": 1236,
+      }
+    }
+    testID="poster-image"
+  />
+  <View>
+    <Image
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../src/assets/mini_details_left_gradient.png",
+        }
+      }
+      style={
+        Object {
+          "height": 696,
+          "position": "absolute",
+          "width": 1236,
+        }
+      }
+      testID="left-gradient"
+    />
+    <Image
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../src/assets/mini_details_bottom_gradient.png",
+        }
+      }
+      style={
+        Object {
+          "height": 696,
+          "position": "absolute",
+          "width": 1236,
+        }
+      }
+      testID="bottom-gradient"
+    />
+  </View>
+</View>
+`;

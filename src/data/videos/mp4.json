@@ -1,0 +1,15 @@
+{
+  "title": "mp4 Test Footage",
+  "uri": "https://edge-vod-media.cdn01.net/encoded/0000169/0169313/video_1880k/T7J66Z106.mp4?source=firetv&channelID=13454",
+  "format": "MP4",
+  "secure": false,
+  "uhd": true,
+  "textTrack": [
+    {
+      "label": "Label",
+      "language": "en",
+      "uri": "https://mtoczko.github.io/hls-test-streams/test-vtt-ts-segments/text/1.vtt",
+      "mimeType": "application/x-subtitle-vtt"
+    }
+  ]
+}

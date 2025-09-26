@@ -1,0 +1,65 @@
+[
+    {
+        "identifier": "Channel1",
+        "majorNumber": 0,
+        "minorNumber": 0,
+        "name": "Channe 1",
+        "type": 3,
+        "logoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/live-tv/logos/01.png",
+        "resolution": "VIDEO_RESOLUTION_HD",
+        "genres": ["SPORTS", "COMEDY"],
+        "attributes": [],
+        "externalIds": [
+            {"idType": "gracenote_ontv", "value": "gracenote_ontv_id"},
+            {"idType": "gracenote_gvd", "value": "gracenote_gvd_id"}
+        ],
+        "rank": 1
+    },
+    {
+        "identifier": "Channel2",
+        "majorNumber": 0,
+        "minorNumber": 0,
+        "name": "Channe 2",
+        "type": 3,
+        "logoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/live-tv/logos/02.png",
+        "resolution": "VIDEO_RESOLUTION_UHD",
+        "genres": ["NEWS"],
+        "attributes": [],
+        "externalIds": [
+            {"idType": "gracenote_ontv", "value": "gracenote_ontv_id"}
+        ],
+        "rank": 1
+    },
+    {
+        "identifier": "Channel3",
+        "majorNumber": 0,
+        "minorNumber": 0,
+        "name": "Channe 3",
+        "type": 3,
+        "logoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/live-tv/logos/03.png"
+    },
+    {
+        "identifier": "Channel4",
+        "majorNumber": 0,
+        "minorNumber": 0,
+        "name": "Channel 4",
+        "type": 3,
+        "logoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/live-tv/logos/04.png"
+    },
+    {
+        "identifier": "Channel5",
+        "majorNumber": 0,
+        "minorNumber": 0,
+        "name": "Channel 5",
+        "type": 3,
+        "logoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/live-tv/logos/05.png"
+    },
+    {
+        "identifier": "Channel6",
+        "majorNumber": 0,
+        "minorNumber": 0,
+        "name": "Channel 6",
+        "type": 3,
+        "logoUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/live-tv/logos/06.png"
+    }
+]

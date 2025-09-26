@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaItemGrid /> renders correctly 1`] = `null`;
+
+exports[`<MediaItemGrid /> renders correctly with no playlist name 1`] = `null`;
+
+exports[`<MediaItemGrid /> renders correctly with no video items 1`] = `null`;

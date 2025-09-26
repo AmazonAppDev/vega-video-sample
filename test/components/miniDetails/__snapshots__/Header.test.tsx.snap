@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly renders correctly without styles 1`] = `
+<View
+  style={
+    Object {
+      "paddingStart": 120,
+      "paddingTop": 138,
+      "width": 884,
+    }
+  }
+>
+  <Text
+    numberOfLines={2}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 60,
+        "fontWeight": "bold",
+        "width": 800,
+      }
+    }
+  />
+  <Text
+    numberOfLines={3}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 30,
+        "width": 884,
+      }
+    }
+  />
+</View>
+`;

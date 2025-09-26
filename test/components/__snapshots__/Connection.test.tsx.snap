@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Connection Component Test Cases renders correctly with styles 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "margin": 20,
+      "marginRight": 60,
+      "position": "absolute",
+      "right": 0,
+      "top": 20,
+    }
+  }
+  testID="connection-component"
+>
+  <View
+    style={
+      Object {
+        "alignContent": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessibilityState={
+        Object {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        Object {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 50,
+          "justifyContent": "center",
+          "marginRight": 10,
+          "marginTop": 12,
+          "opacity": 1,
+          "width": 50,
+        }
+      }
+      testID="refresh-icon"
+    />
+    <View />
+  </View>
+</View>
+`;

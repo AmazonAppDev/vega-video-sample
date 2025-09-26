@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaContent /> renders grid layout 1`] = `null`;
+
+exports[`<MediaContent /> renders shoveler layout 1`] = `
+<div
+  data-testid="media-item-shoveler-list"
+>
+  <div>
+    TEST PLAYLIST
+  </div>
+  <div>
+    TEST PLAYLIST 2
+  </div>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppLogo /> renders appLogo correctly 1`] = `
+<Image
+  source={
+    Object {
+      "uri": "app logo",
+    }
+  }
+  style={
+    Array [
+      undefined,
+      Object {
+        "height": 100,
+        "width": 100,
+      },
+    ]
+  }
+/>
+`;

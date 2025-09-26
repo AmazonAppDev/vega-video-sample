@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GradientButton renders correctly 1`] = `
+<GradientButton
+  colors={
+    Array [
+      "#A3A3A399",
+      "#5B5B5B99",
+      "#3D3D3D",
+    ]
+  }
+  label="Press Me"
+  onPress={[MockFunction]}
+  variant="secondary"
+/>
+`;

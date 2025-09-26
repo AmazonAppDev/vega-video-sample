@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerItem renders correctly 1`] = `
+<View
+  onResponderRelease={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "padding": 20,
+        "width": -20,
+      },
+    ]
+  }
+  testID="touchableView"
+>
+  <Text
+    collapsable={false}
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 28,
+        "fontWeight": "400",
+        "marginLeft": 32.5,
+        "textAlignVertical": "center",
+      }
+    }
+  >
+    Test Label
+  </Text>
+</View>
+`;
+
+exports[`DrawerItem renders correctly with \`icon\` and \`isSelected\` disabled 1`] = `
+<View
+  onResponderRelease={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "padding": 20,
+        "width": -20,
+      },
+    ]
+  }
+  testID="touchableView"
+>
+  <Text
+    collapsable={false}
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 28,
+        "fontWeight": "400",
+        "marginLeft": 32.5,
+        "textAlignVertical": "center",
+      }
+    }
+  >
+    Test Label
+  </Text>
+</View>
+`;
+
+exports[`DrawerItem renders correctly with \`icon\` and \`isSelected\` enabled 1`] = `
+<View
+  onResponderRelease={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "padding": 20,
+        "width": -20,
+      },
+      Object {
+        "backgroundColor": "#1C1C1C",
+        "borderBottomWidth": 8,
+        "borderColor": "#FFC166",
+      },
+    ]
+  }
+  testID="touchableView"
+>
+  <Text
+    collapsable={false}
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 28,
+        "fontWeight": "400",
+        "marginLeft": 32.5,
+        "textAlignVertical": "center",
+      }
+    }
+  >
+    Test Label
+  </Text>
+</View>
+`;
+
+exports[`DrawerItem renders correctly with \`isSelected\`, \`isFocused\` enabled and \`isDrawerInFocus\` disabled 1`] = `
+<View
+  onResponderRelease={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "padding": 20,
+        "width": -20,
+      },
+      Object {
+        "backgroundColor": "#1C1C1C",
+        "borderBottomWidth": 8,
+        "borderColor": "#FFC166",
+      },
+    ]
+  }
+  testID="touchableView"
+>
+  <Text
+    collapsable={false}
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 28,
+        "fontWeight": "400",
+        "marginLeft": 32.5,
+        "textAlignVertical": "center",
+      }
+    }
+  >
+    Test Label
+  </Text>
+</View>
+`;
+
+exports[`DrawerItem renders correctly with \`isSelected\`, \`isFocused\`, \`isDrawerInFocus\` enabled 1`] = `
+<View
+  onResponderRelease={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "padding": 20,
+        "width": 280,
+      },
+      Object {
+        "borderColor": "#FFC166",
+        "borderWidth": 4,
+      },
+    ]
+  }
+  testID="touchableView"
+>
+  <Text
+    collapsable={false}
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#F1F1F1",
+        "fontSize": 28,
+        "fontWeight": "400",
+        "marginLeft": 32.5,
+        "textAlignVertical": "center",
+      }
+    }
+  >
+    Test Label
+  </Text>
+</View>
+`;

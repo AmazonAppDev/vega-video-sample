@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaptionOptions renders with props 1`] = `null`;
+
+exports[`CaptionOptions renders without props 1`] = `null`;

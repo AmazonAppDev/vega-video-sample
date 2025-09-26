@@ -1,0 +1,107 @@
+[
+  {
+    "id": "169313",
+    "title": "mp4 Test Footage",
+    "description": "mp4 Test Footage",
+    "duration": 86,
+    "thumbnail": "http://le2.cdn01.net/videos/0000169/0169313/thumbs/0169313__007f.jpg",
+    "posterUrl": "http://le2.cdn01.net/videos/0000169/0169313/thumbs/0169313__007f.jpg",
+    "uri": "https://edge-vod-media.cdn01.net/encoded/0000169/0169313/video_1880k/T7J66Z106.mp4?source=firetv&channelID=13454",
+    "categories": ["Costa Rica Islands"],
+    "channelID": "13454",
+    "rating": "2.5",
+    "mediaType": "video",
+    "mediaSourceType": "url",
+    "format": "MP4",
+    "secure": false,
+    "uhd": true,
+    "textTrack": [
+      {
+        "label": "Label",
+        "language": "en",
+        "uri": "https://mtoczko.github.io/hls-test-streams/test-vtt-ts-segments/text/1.vtt",
+        "mimeType": "application/x-subtitle-vtt"
+      }
+    ]
+  },
+  {
+    "id": "169322",
+    "title": "Big Buck Bunny: The Dark Truths",
+    "description": "HLS format Big Buck Bunny: The Dark Truths",
+    "duration": 205,
+    "thumbnail": "http://le1.cdn01.net/videos/0000169/0169322/thumbs/0169322__002f.jpg",
+    "posterUrl": "http://le1.cdn01.net/videos/0000169/0169322/thumbs/0169322__002f.jpg",
+    "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
+    "categories": ["Costa Rica Underwater"],
+    "channelID": "13455",
+    "rating": "2.5",
+    "mediaType": "video",
+    "mediaSourceType": "url",
+    "format": "HLS",
+    "secure": false,
+    "uhd": false,
+    "textTrack": [
+      {
+        "label": "Sample CC 1",
+        "language": "en",
+        "uri": "https://mtoczko.github.io/hls-test-streams/test-vtt-ts-segments/text/1.vtt",
+        "mimeType": "application/x-subtitle-vtt"
+      },
+      {
+        "label": "Sample CC 2",
+        "language": "es",
+        "uri": "https://brenopolanski.github.io/html5-video-webvtt-example/MIB2-subtitles-pt-BR.vtt",
+        "mimeType": "application/x-subtitle-vtt"
+      }
+    ]
+  },
+  {
+    "id": "169312",
+    "title": "Tears of Steel",
+    "description": "MPD format Tears of Steel",
+    "duration": 192,
+    "thumbnail": "http://le1.cdn01.net/videos/0000169/0169312/thumbs/0169312__003f.jpg",
+    "posterUrl": "http://le1.cdn01.net/videos/0000169/0169312/thumbs/0169312__003f.jpg",
+    "uri": "https://dash.akamaized.net/envivio/dashpr/clear/Manifest.mpd",
+    "categories": ["Costa Rica Islands"],
+    "channelID": "13454",
+    "rating": "2.5",
+    "mediaType": "video",
+    "mediaSourceType": "url",
+    "format": "MPD",
+    "secure": false,
+    "uhd": false,
+    "textTrack": [
+      
+    ]
+  },
+  {
+    "id": "169309",
+    "title": "Tears",
+    "description": "MPD drm format Tears description",
+    "duration": 130,
+    "thumbnail": "http://le2.cdn01.net/videos/0000169/0169309/thumbs/0169309__009f.jpg",
+    "posterUrl": "http://le2.cdn01.net/videos/0000169/0169309/thumbs/0169309__009f.jpg",
+    "uri": "https://storage.googleapis.com/wvmedia/cenc/h264/tears/tears.mpd",
+    "categories": ["Costa Rica Attractions"],
+    "channelID": "13453",
+    "rating": "2.5",
+    "mediaType": "video",
+    "mediaSourceType": "url",
+    "format": "MPD",
+    "drm_scheme": {
+      "name": "com.widevine.alpha",
+      "drm_license_uri": "https://proxy.uat.widevine.com/proxy?provider=widevine_test"
+    },
+    "secure": true,
+    "uhd": false,
+    "textTrack": [
+      {
+        "label": "English",
+        "language": "en",
+        "uri": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-en.srt",
+        "mimeType": "application/x-subtitle-vtt"
+      }
+    ]
+  }
+]

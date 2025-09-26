@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot 1`] = `
+<div
+  autoFocus={true}
+  style={
+    Object {
+      "backgroundColor": "#000000",
+      "flex": 1,
+    }
+  }
+  testID="settings-main-view"
+>
+  <Text
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 70,
+        "marginBottom": 30,
+        "marginTop": 20,
+      }
+    }
+  >
+    Settings
+  </Text>
+  <div
+    trapFocusRight={true}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginVertical": 25,
+        }
+      }
+    >
+      <Text
+        accessibilityRole="text"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontFamily": "Amazon Ember",
+            "fontSize": 32,
+            "fontStyle": undefined,
+            "fontWeight": "600",
+            "letterSpacing": undefined,
+            "lineHeight": 40,
+            "marginRight": 20,
+          }
+        }
+      >
+        Select Country Code:
+      </Text>
+      <RadioPicker
+        defaultValue={false}
+        onSelect={[Function]}
+        options={
+          Array [
+            Object {
+              "code": "en",
+              "label": "US",
+              "value": "en-US",
+            },
+            Object {
+              "code": "fr",
+              "label": "FR",
+              "value": "fr-FR",
+            },
+            Object {
+              "code": "es",
+              "label": "ES",
+              "value": "es-ES",
+            },
+          ]
+        }
+      />
+    </View>
+  </div>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "margin": 20,
+        "marginRight": 60,
+        "position": "absolute",
+        "right": 0,
+        "top": 20,
+      }
+    }
+    testID="connection-component"
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          Object {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          Object {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 50,
+            "justifyContent": "center",
+            "marginRight": 10,
+            "marginTop": 12,
+            "opacity": 1,
+            "width": 50,
+          }
+        }
+        testID="refresh-icon"
+      />
+      <View>
+        <Text
+          accessibilityRole="text"
+          numberOfLines={1}
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "Amazon Ember",
+              "fontSize": 20,
+              "fontStyle": undefined,
+              "fontWeight": "400",
+              "letterSpacing": undefined,
+              "lineHeight": 40,
+              "margin": 10,
+              "marginVertical": 2,
+            }
+          }
+          testID="internet-status"
+        >
+          Internet Status: 
+        </Text>
+      </View>
+    </View>
+  </View>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "#FFFFFF",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingHorizontal": 0,
+        "paddingVertical": 20,
+        "width": "100%",
+      }
+    }
+    testID="LoginInformation-main-view"
+    trapFocusRight={true}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 28,
+            "fontWeight": "bold",
+            "marginLeft": 10,
+          }
+        }
+      >
+        You are not logged in
+      </Text>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        Object {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#2D61FF",
+            "borderColor": "transparent",
+            "borderRadius": 8,
+            "borderWidth": 3,
+            "height": 76,
+            "paddingHorizontal": 18,
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "borderColor": "#808080",
+            "borderRadius": 15,
+            "borderWidth": 3,
+            "color": "#808080",
+            "paddingHorizontal": 20,
+          },
+          false,
+          false,
+          false,
+          false,
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            Object {
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "center",
+            }
+          }
+        >
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontFamily": "Amazon Ember",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                },
+                Object {
+                  "margin": 0,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 22,
+                },
+              ]
+            }
+            testID="undefined_label"
+          >
+            Log in
+          </Text>
+        </View>
+      </View>
+    </View>
+  </div>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-Application Name"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Application Name
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        TestApp
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-Model"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Model
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        TestModel
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-System Name"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        System Name
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        TestOS
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-Version"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Version
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        1.0
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-Device Type"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Device Type
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        TestType
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-Base OS"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Base OS
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        TestBaseOS
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 0,
+          "paddingVertical": 25,
+          "width": "100%",
+        }
+      }
+      testID="item-Manufacturer"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Manufacturer
+        : 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 26,
+          }
+        }
+      >
+        TestManufacturer
+      </Text>
+    </View>
+  </View>
+  <div
+    trapFocusRight={true}
+  >
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        Object {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": undefined,
+            "borderColor": "#727477",
+            "borderRadius": 8,
+            "borderWidth": 3,
+            "height": 76,
+            "paddingHorizontal": 18,
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "borderColor": "#808080",
+            "borderRadius": 15,
+            "borderWidth": 3,
+            "color": "#808080",
+            "marginTop": 10,
+            "paddingHorizontal": 20,
+          },
+          false,
+          false,
+          false,
+          false,
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            Object {
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "center",
+            }
+          }
+        >
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#727477",
+                  "fontFamily": "Amazon Ember",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                },
+                Object {
+                  "margin": 0,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 22,
+                },
+              ]
+            }
+            testID="undefined_label"
+          >
+            Feedback
+          </Text>
+        </View>
+      </View>
+    </View>
+  </div>
+</div>
+`;

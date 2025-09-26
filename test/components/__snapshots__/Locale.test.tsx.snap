@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocaleComponent calls onSelect with the correct option when the button is clicked 1`] = `
+<div
+  trapFocusRight={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginVertical": 25,
+      }
+    }
+  >
+    <Text
+      accessibilityRole="text"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Amazon Ember",
+          "fontSize": 32,
+          "fontStyle": undefined,
+          "fontWeight": "600",
+          "letterSpacing": undefined,
+          "lineHeight": 40,
+          "marginRight": 20,
+        }
+      }
+    >
+      Select Country Code:
+    </Text>
+    <RadioPicker
+      defaultValue="US"
+      onSelect={[Function]}
+      options={
+        Array [
+          Object {
+            "code": "en",
+            "label": "US",
+            "value": "en-US",
+          },
+          Object {
+            "code": "fr",
+            "label": "FR",
+            "value": "fr-FR",
+          },
+          Object {
+            "code": "es",
+            "label": "ES",
+            "value": "es-ES",
+          },
+        ]
+      }
+    />
+  </View>
+</div>
+`;
+
+exports[`LocaleComponent renders correctly with styles 1`] = `
+<div
+  trapFocusRight={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginVertical": 25,
+      }
+    }
+  >
+    <Text
+      accessibilityRole="text"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Amazon Ember",
+          "fontSize": 32,
+          "fontStyle": undefined,
+          "fontWeight": "600",
+          "letterSpacing": undefined,
+          "lineHeight": 40,
+          "marginRight": 20,
+        }
+      }
+    >
+      Select Country Code:
+    </Text>
+    <RadioPicker
+      defaultValue="US"
+      onSelect={[Function]}
+      options={
+        Array [
+          Object {
+            "code": "en",
+            "label": "US",
+            "value": "en-US",
+          },
+          Object {
+            "code": "fr",
+            "label": "FR",
+            "value": "fr-FR",
+          },
+          Object {
+            "code": "es",
+            "label": "ES",
+            "value": "es-ES",
+          },
+        ]
+      }
+    />
+  </View>
+</div>
+`;
+
+exports[`LocaleComponent renders correctly without styles 1`] = `
+<RadioPicker
+  defaultValue={
+    Object {
+      "code": "A",
+      "label": "Option 1",
+      "value": "1",
+    }
+  }
+  onSelect={[MockFunction]}
+  options={Array []}
+/>
+`;

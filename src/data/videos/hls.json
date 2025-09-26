@@ -1,0 +1,21 @@
+{
+  "title": "Big Buck Bunny: The Dark Truths",
+  "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
+  "format": "HLS",
+  "secure": false,
+  "uhd": false,
+  "textTrack": [
+    {
+      "label": "Sample CC 1",
+      "language": "en",
+      "uri": "https://mtoczko.github.io/hls-test-streams/test-vtt-ts-segments/text/1.vtt",
+      "mimeType": "application/x-subtitle-vtt"
+    },
+    {
+      "label": "Sample CC 2",
+      "language": "es",
+      "uri": "https://brenopolanski.github.io/html5-video-webvtt-example/MIB2-subtitles-pt-BR.vtt",
+      "mimeType": "application/x-subtitle-vtt"
+    }
+  ]
+}

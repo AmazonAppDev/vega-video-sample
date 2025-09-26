@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlBar tests component renders correctly 1`] = `null`;
+
+exports[`ControlBar tests component renders correctly with captionMenuVisibility disabled 1`] = `null`;
+
+exports[`ControlBar tests component renders correctly with captionMenuVisibility enabled 1`] = `null`;
+
+exports[`ControlBar tests component renders correctly with textTracks 0 length 1`] = `null`;

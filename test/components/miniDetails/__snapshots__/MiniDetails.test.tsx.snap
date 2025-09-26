@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing MiniDetails component renders correctly and matches snapshot 1`] = `
+<MiniDetails
+  selectedTitle={
+    Object {
+      "categories": Array [],
+      "channelID": "",
+      "description": "Sample Description",
+      "format": "",
+      "id": "1",
+      "mediaSourceType": "url",
+      "mediaType": "video",
+      "posterUrl": "",
+      "rentAmount": "",
+      "secure": false,
+      "thumbnail": "http://example.com/thumbnail.jpg",
+      "title": "Sample Title",
+      "uhd": false,
+      "uri": "",
+    }
+  }
+/>
+`;

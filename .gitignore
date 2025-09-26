@@ -1,0 +1,13 @@
+# Build files
+node_modules
+package-lock.json
+
+# Other files
+*.iml
+*.swp
+.idea
+.DS_Store
+.vscode
+.tmp
+npm-debug.log
+prepareRelease.sh
