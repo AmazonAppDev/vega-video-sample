@@ -115,17 +115,17 @@ const AutoRotatorData = getRotator();
 const data: MovieGridData[] = [
   {
     heading: 'Latest Hits',
-    testID: 'costa_rica_top_rated',
+    testID: 'latest_hits',
     data: getLatestHits,
   },
   {
     heading: 'Classics',
-    testID: 'costa_rica_attractions',
+    testID: 'classics',
     data: getClassics,
   },
   {
     heading: 'Recommendation',
-    testID: 'costa_rica_underwater',
+    testID: 'recommendations',
     data: getRecommendations,
   },
   {
@@ -172,7 +172,7 @@ const HomeScreen = ({
   );
 
   // Reference to the first tile for focus management
-  const firstTileRef = React.useRef<View>(null);
+  const firstTileRef = React.useRef<any>(null);
 
   // Event listener reference for cleanup
   let listener: string | boolean;
@@ -286,7 +286,6 @@ const HomeScreen = ({
         // Prepare navigation parameters
         const params = {
           data: videoData,
-          sendDataOnBack: () => {}, // Callback for when user returns from player
           onChannelTuneSuccess: payload?.onChannelTuneSuccess,
           onChannelTuneFailed: payload?.onChannelTuneFailed,
         };
@@ -321,7 +320,7 @@ const HomeScreen = ({
    * Used in D-pad navigation to move focus from banner to content grid
    */
   const setFocusDestinationFromRotator = () => {
-    firstTileRef?.current?.focus();
+    firstTileRef?.current?.requestTVFocus();
   };
   const keplerAppStateManager: IKeplerAppStateManager =
     useKeplerAppStateManager();

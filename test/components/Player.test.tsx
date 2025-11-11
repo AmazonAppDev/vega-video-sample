@@ -255,7 +255,6 @@ const playerRef: React.MutableRefObject<ShakaPlayer | null> = {
 };
 
 const mockedNavigate = jest.fn();
-const sendDataOnBack = jest.fn();
 const mockedNavigation = {
   navigate: mockedNavigate,
   goBack: mockedNavigate,
@@ -268,7 +267,6 @@ const mockRoute = {
   key: '',
   params: {
     data: tileData,
-    sendDataOnBack: sendDataOnBack,
   },
   name: Screens.PLAYER_SCREEN,
 } as unknown as RouteProp<AppStackParamList, Screens.PLAYER_SCREEN>;

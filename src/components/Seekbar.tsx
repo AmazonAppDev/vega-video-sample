@@ -41,12 +41,14 @@ const Seekbar = ({
   videoRef,
   videoData,
   bifFrameImagesRef,
+  seekBarRef,
   testID,
   handleShowControlsOnKeyEvent,
 }: {
   videoRef: React.MutableRefObject<VideoPlayer | null>;
   videoData: TitleData;
   bifFrameImagesRef: React.MutableRefObject<FrameImageSource | null>;
+  seekBarRef: React.MutableRefObject<null>;
   testID?: string;
   handleShowControlsOnKeyEvent;
 }) => {
@@ -351,6 +353,7 @@ const Seekbar = ({
           autoFocus
           style={styles.seekbar}>
           <KUICSeekbar
+            ref={seekBarRef}
             currentValue={progress}
             totalValue={totalValue}
             disabledWhenNotFocused={true}
@@ -405,7 +408,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '90%',
     padding: scaleUxToDp(25),
-    marginBottom: scaleUxToDp(50),
+    marginBottom: scaleUxToDp(80),
     zIndex: 2,
   },
   seekbar: {
@@ -442,6 +445,7 @@ export default React.memo(Seekbar, (prevProps, nextProps) => {
   return (
     prevProps.videoRef === nextProps.videoRef &&
     prevProps.videoData === nextProps.videoData &&
-    prevProps.bifFrameImagesRef === nextProps.bifFrameImagesRef
+    prevProps.bifFrameImagesRef === nextProps.bifFrameImagesRef &&
+    prevProps.seekBarRef === nextProps.seekBarRef
   );
 });

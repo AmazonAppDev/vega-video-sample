@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   NativeSyntheticEvent,
   TextInputSubmitEditingEventData,
@@ -20,6 +20,7 @@ export const SearchInput = ({
 }: SearchInputProps) => {
   const [isFocused, setFocused] = useState<boolean>(false);
   const [searchInputText, setSearchInputText] = useState<string>('');
+  const textInputRef = useRef<any>(null);
   const styles = searchInputStyles();
   return (
     <View
@@ -51,8 +52,10 @@ export const SearchInput = ({
         onSubmitEditing={(
           event: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
         ) => {
+          textInputRef.current?.blur();
           onSubmit(event.nativeEvent.text.trim());
         }}
+        ref={textInputRef}
         testID="search_input_text_input"
       />
     </View>

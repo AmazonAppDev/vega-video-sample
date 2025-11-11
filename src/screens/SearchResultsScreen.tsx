@@ -7,6 +7,7 @@ import { AppStackScreenProps, Screens } from '../components/navigation/types';
 import { createDataProvider } from '../services/dataProviderFactory';
 import { searchSelectors } from '../store/search/searchSlice';
 import { TitleData } from '../types/TitleData';
+import { focusManager } from '../utils/FocusManager';
 
 interface customMediaItemEventData extends MediaItemEventData {
   mediaItem: TitleData;
@@ -27,13 +28,15 @@ const SearchResultsScreen = ({
     (data: customMediaItemEventData, viewRef?: any) => {
       lastSelectedViewRef.current = viewRef;
 
+      // Register focus restoration callback
+      const focusKey = `player_return_${data.mediaItem.id}`;
+      focusManager.registerFocusCallback(focusKey, () => {
+        lastSelectedViewRef?.current?.requestTVFocus();
+      });
+
       navigation.navigate(Screens.PLAYER_SCREEN, {
         data: data.mediaItem,
-        sendDataOnBack: () => {
-          if (lastSelectedViewRef.current?.requestTVFocus) {
-            lastSelectedViewRef.current.requestTVFocus();
-          }
-        },
+        focusId: data.mediaItem.id,
       });
     },
     [navigation],

@@ -1,11 +1,12 @@
 {
   "name": "@amazon-devices/Keplervideoapp",
-  "version": "2.21.0",
+  "version": "2.22.0",
   "files": [
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf build bundle kepler-build node_modules package-lock.json generated coverage",
+    "clean": "rm -rf build bundle kepler-build node_modules package-lock.json generated coverage shaka-setup/shaka-player",
+    "postinstall": "cd shaka-setup && ./build.sh && ./copyOutputs.sh",
     "build": "npm-run-all compile lint:fix test",
     "compile": "tsc -p tsconfig.json",
     "test:snapshot": "jest --colors --updateSnapshot",

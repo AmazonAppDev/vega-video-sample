@@ -25,6 +25,7 @@ import {
 import isEqual from 'lodash/isEqual';
 import React, { useCallback, useEffect, useRef } from 'react';
 import ErrorView from '../components/ErrorView';
+import { focusManager } from '../utils/FocusManager';
 
 import { SafeAreaView } from '@amazon-devices/react-native-safe-area-context';
 import { RouteProp } from '@amazon-devices/react-navigation__core';
@@ -63,8 +64,7 @@ const PlayerScreen = ({
   navigation,
   route,
 }: AppStackScreenProps<Screens.PLAYER_SCREEN>) => {
-  const { data, sendDataOnBack, onChannelTuneSuccess, onChannelTuneFailed } =
-    route.params;
+  const { data, onChannelTuneSuccess, onChannelTuneFailed } = route.params;
   const { width: deviceWidth, height: deviceHeight } = useWindowDimensions();
   const addKeplerAppStateListenerCallback = (
     eventType: KeplerAppStateEvent,
@@ -158,7 +158,11 @@ const PlayerScreen = ({
       changeSubscription.remove();
       clearTimeout(Number(timer.current));
       removeEventListeners();
-      sendDataOnBack();
+      // Restore focus when leaving player screen
+      if (route.params.focusId) {
+        const focusKey = `player_return_${route.params.focusId}`;
+        focusManager.restoreFocus(focusKey);
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -468,8 +472,8 @@ export const styles = StyleSheet.create({
   captions: {
     width: '100%',
     height: '100%',
-    top: 0,
     left: 0,
+    bottom: 120,
     position: 'absolute',
     backgroundColor: 'transparent',
     flexDirection: 'column',

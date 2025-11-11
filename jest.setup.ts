@@ -272,13 +272,6 @@ jest.mock('./src/config/AppConfig', () => ({
   isDpadControllerSupported: jest.fn(() => true),
   isChannelTuningV2Enabled: jest.fn(() => true),
 }));
-jest.mock('./src/data', () => ({
-  CostaRicaTopRatedData: jest.fn(() => []),
-  AutoRotatorData: jest.fn(() => []),
-  CostaRicaAttractionsData: jest.fn(() => []),
-  CostaRicaIslandsData: jest.fn(() => []),
-  CostaRicaUnderwaterData: jest.fn(() => []),
-}));
 jest.mock('./src/w3cmedia/shakaplayer/ShakaPlayer', () => ({
   ShakaPlayer: jest.fn(),
 }));

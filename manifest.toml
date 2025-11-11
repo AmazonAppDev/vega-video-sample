@@ -10,7 +10,7 @@ id = "com.amazondeveloper.keplervideoapp"   # [required] Package identifier, use
                                             #            must reuse their existing application id to ensure existing
                                             #            Amazon integrations, viz. IAP, continue to work. 
 title = "Vega Video Sample App"           # [required] string name for the app, used to display on FireTV launcher and Appstore.
-version = "2.21.0"                          # [required] Version string of the app, recommended to use semver, but any other string may be used. 
+version = "2.22.0"                          # [required] Version string of the app, recommended to use semver, but any other string may be used. 
 icon = "@image/VideoApp.png"        # [required] Image file to be used as the icon for the app. 
 
 ## ------------------------------------------------------------------------------

@@ -1,0 +1,5 @@
+# Shaka Player files
+src/w3cmedia/App*
+src/w3cmedia/shakaplayer/dist
+src/w3cmedia/polyfills
+

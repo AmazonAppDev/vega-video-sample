@@ -48,7 +48,6 @@ const mockRoute: any = {
       posterUrl: 'https://example.com/poster.jpg',
       rating: 4.5,
     },
-    sendDataOnBack: jest.fn(),
   },
 } as unknown as RouteProp<AppStackParamList, Screens.PLAYER_SCREEN>;
 
@@ -116,7 +115,7 @@ describe('Details Component', () => {
     });
     expect(mockNavigation.navigate).toHaveBeenCalledWith('Player', {
       data: mockRoute.params.data,
-      sendDataOnBack: expect.any(Function),
+      focusId: mockRoute.params.data.id,
     });
   });
 

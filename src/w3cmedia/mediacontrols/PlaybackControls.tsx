@@ -60,7 +60,7 @@ export const throttleSeek = (func: () => void, delay: number) => {
 };
 
 const PlaybackControls = ({ videoRef }: PlaybackControlsProps) => {
-  const playPauseRef = useRef<TouchableOpacity>(null);
+  const playPauseRef = useRef<any>(null);
   const skipBackwardRef = useRef<TouchableOpacity>(null);
   const skipForwardRef = useRef<TouchableOpacity>(null);
 
@@ -75,7 +75,7 @@ const PlaybackControls = ({ videoRef }: PlaybackControlsProps) => {
     skipForwardRef?.current?.blur();
   };
   useEffect(() => {
-    playPauseRef?.current?.focus();
+    playPauseRef?.current?.requestTVFocus();
   }, []);
 
   const handleSeekBackward = useCallback(() => {

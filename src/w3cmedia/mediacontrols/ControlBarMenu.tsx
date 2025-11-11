@@ -9,11 +9,13 @@ interface ControlBarMenuProps {
   captionMenuVisibility: boolean;
   videoRef: React.MutableRefObject<VideoPlayer | null>;
   setSelectedCaptionInMenuBar: (id: string) => void;
+  setCaptionMenuVisibility: (visible: boolean) => void;
 }
 const ControlBarMenu = ({
   captionMenuVisibility,
   videoRef,
   setSelectedCaptionInMenuBar,
+  setCaptionMenuVisibility,
 }: ControlBarMenuProps) => {
   const setSelectedCaption = (id: string) => {
     setSelectedCaptionInMenuBar(id);
@@ -25,6 +27,7 @@ const ControlBarMenu = ({
         captionMenuVisibility={captionMenuVisibility}
         video={videoRef.current as VideoPlayer}
         setSelectedCaption={setSelectedCaption}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />
     </View>
   );
@@ -34,7 +37,10 @@ export const areControlBarMenuPropsEqual = (
   prevProps: ControlBarMenuProps,
   nextProps: ControlBarMenuProps,
 ) => {
-  const excludedProps = ['setSelectedCaptionInMenuBar'];
+  const excludedProps = [
+    'setSelectedCaptionInMenuBar',
+    'setCaptionMenuVisibility',
+  ];
   return areComponentPropsEqual(prevProps, nextProps, excludedProps);
 };
 export default React.memo(ControlBarMenu, areControlBarMenuPropsEqual);

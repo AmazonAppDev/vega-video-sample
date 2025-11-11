@@ -36,13 +36,10 @@ jest.mock('@amazon-devices/kepler-media-account-login', () => {
   };
 });
 
-jest.mock('../src/store', () => ({
-  store: {
-    getState: jest.fn().mockReturnValue({
-      settings: {
-        loginStatus: false,
-      },
-    }),
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  AsyncStorage: {
+    getItem: jest.fn().mockReturnValue(Promise.resolve('false')),
+    setItem: jest.fn(),
   },
 }));
 
@@ -52,14 +49,12 @@ jest.mock('../src/AccountLoginWrapper', () => {
 
   // Mock the class implementation
   class MockAccountLoginWrapper {
-    m_accountLoginServer?: any;
-    isSignedIn: boolean = false;
+    accountLoginServer?: any;
 
-    async updateStatus(loginStatus: boolean) {
-      this.isSignedIn = loginStatus;
+    async updateStatus(_loginStatus: boolean) {
       try {
         const status = this.getAccountLoginStatus();
-        await this.m_accountLoginServer?.updateStatus(status);
+        await this.accountLoginServer?.updateStatus(status);
       } catch (err) {
         console.error('updateStatus Failed updating login status: ', err);
       }
@@ -81,12 +76,12 @@ jest.mock('../src/AccountLoginWrapper', () => {
     setupAccountLoginServer(componentInstance: IComponentInstance) {
       console.log('setupAccountLoginServer invoked.');
       try {
-        this.m_accountLoginServer = {
+        this.accountLoginServer = {
           updateStatus: jest.fn().mockResolvedValue(undefined),
           setHandlerForComponent: jest.fn(),
         };
       } catch (err) {
-        this.m_accountLoginServer = undefined;
+        this.accountLoginServer = undefined;
         console.error(
           'setupAccountLoginServer failed creating account login server: ',
           err,
@@ -95,7 +90,7 @@ jest.mock('../src/AccountLoginWrapper', () => {
       }
 
       try {
-        this.m_accountLoginServer?.setHandlerForComponent(
+        this.accountLoginServer?.setHandlerForComponent(
           this.createAccountLoginHandler(),
           componentInstance,
         );
@@ -142,29 +137,16 @@ describe('AccountLoginWrapper', () => {
   });
 
   describe('updateStatus', () => {
-    it('should update isSignedIn state', async () => {
-      // Setup
-      accountLoginWrapper.m_accountLoginServer = {
-        updateStatus: jest.fn().mockResolvedValue(undefined),
-      } as unknown as IAccountLoginServerAsync;
-
-      // Execute
-      await accountLoginWrapper.updateStatus(true);
-
-      // Verify
-      expect(accountLoginWrapper.isSignedIn).toBe(true);
-    });
-
     it('should call updateStatus on the server with the correct status', async () => {
       // Setup
       const mockUpdateStatus = jest.fn().mockResolvedValue(undefined);
-      accountLoginWrapper.m_accountLoginServer = {
+      accountLoginWrapper.accountLoginServer = {
         updateStatus: mockUpdateStatus,
       } as unknown as IAccountLoginServerAsync;
-      const mockStatus: IStatus = {
+      const mockStatus: Promise<IStatus> = Promise.resolve({
         getStatus: () => StatusType.SIGNED_OUT,
         getAdditionalData: () => '',
-      };
+      });
       jest
         .spyOn(accountLoginWrapper, 'getAccountLoginStatus')
         .mockReturnValue(mockStatus);
@@ -179,7 +161,7 @@ describe('AccountLoginWrapper', () => {
     it('should handle errors when updating status', async () => {
       // Setup
       console.error = jest.fn(); // Mock console.error
-      accountLoginWrapper.m_accountLoginServer = {
+      accountLoginWrapper.accountLoginServer = {
         updateStatus: jest.fn().mockRejectedValue(new Error('Update error')),
       } as unknown as IAccountLoginServerAsync;
 
@@ -197,10 +179,10 @@ describe('AccountLoginWrapper', () => {
   describe('createAccountLoginHandler', () => {
     it('should create a handler with handleReadStatus function', async () => {
       // Setup
-      const mockStatus: IStatus = {
+      const mockStatus: Promise<IStatus> = Promise.resolve({
         getStatus: () => StatusType.SIGNED_OUT,
         getAdditionalData: () => '',
-      };
+      });
       jest
         .spyOn(accountLoginWrapper, 'getAccountLoginStatus')
         .mockReturnValue(mockStatus);
@@ -213,7 +195,7 @@ describe('AccountLoginWrapper', () => {
       // Verify
       expect(handler).toHaveProperty('handleReadStatus');
       expect(console.log).toHaveBeenCalledWith('handleReadStatus invoked.');
-      expect(status).toEqual(mockStatus);
+      expect(status).toEqual(await mockStatus);
     });
   });
 
@@ -232,7 +214,7 @@ describe('AccountLoginWrapper', () => {
       expect(console.log).toHaveBeenCalledWith(
         'setupAccountLoginServer completed.',
       );
-      expect(accountLoginWrapper.m_accountLoginServer).toBeDefined();
+      expect(accountLoginWrapper.accountLoginServer).toBeDefined();
     });
 
     it('should handle errors when creating server', () => {
@@ -247,7 +229,7 @@ describe('AccountLoginWrapper', () => {
             'setupAccountLoginServer failed creating account login server: ',
             new Error('Server creation error'),
           );
-          accountLoginWrapper.m_accountLoginServer = undefined;
+          accountLoginWrapper.accountLoginServer = undefined;
         });
 
       // Execute
@@ -255,7 +237,7 @@ describe('AccountLoginWrapper', () => {
 
       // Verify
       expect(console.error).toHaveBeenCalled();
-      expect(accountLoginWrapper.m_accountLoginServer).toBeUndefined();
+      expect(accountLoginWrapper.accountLoginServer).toBeUndefined();
     });
 
     it('should handle errors when setting handler', () => {
@@ -266,7 +248,7 @@ describe('AccountLoginWrapper', () => {
       jest
         .spyOn(accountLoginWrapper, 'setupAccountLoginServer')
         .mockImplementation(() => {
-          accountLoginWrapper.m_accountLoginServer = {
+          accountLoginWrapper.accountLoginServer = {
             setHandlerForComponent: () => {
               throw new Error('Handler setting error');
             },

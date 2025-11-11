@@ -22,11 +22,13 @@ const videoRef: React.MutableRefObject<VideoPlayer | null> = {
 };
 const renderCaptionButton = (props?: Partial<CaptionMenuProps>) => {
   const setSelectedCaptionMock = jest.fn();
+  const setCaptionMenuVisibility = jest.fn();
 
   return (
     <CaptionMenu
       captionMenuVisibility={true}
       setSelectedCaption={setSelectedCaptionMock}
+      setCaptionMenuVisibility={setCaptionMenuVisibility}
       video={videoRef.current as VideoPlayer}
       {...props}
     />
@@ -78,9 +80,11 @@ describe('Functions gets call properly', () => {
 
 describe('React.memo behavior for Captions', () => {
   const setSelectedCaptionMock = jest.fn();
+  const setCaptionMenuVisibility = jest.fn();
+
   const showCaptionMenu = true;
   const hideCaptionMenu = false;
-  const excludedProps = ['setSelectedCaption'];
+  const excludedProps = ['setSelectedCaption', 'setCaptionMenuVisibility'];
 
   it('does not re-render when captionMenuVisibility is unchanged', () => {
     const { rerender } = render(
@@ -88,6 +92,7 @@ describe('React.memo behavior for Captions', () => {
         captionMenuVisibility={showCaptionMenu}
         setSelectedCaption={setSelectedCaptionMock}
         video={videoRef.current as VideoPlayer}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
     rerender(
@@ -95,6 +100,7 @@ describe('React.memo behavior for Captions', () => {
         captionMenuVisibility={showCaptionMenu}
         setSelectedCaption={setSelectedCaptionMock}
         video={videoRef.current as VideoPlayer}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
 
@@ -103,11 +109,13 @@ describe('React.memo behavior for Captions', () => {
         captionMenuVisibility: showCaptionMenu,
         video: videoRef.current,
         setSelectedCaption: setSelectedCaptionMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       {
         captionMenuVisibility: showCaptionMenu,
         video: videoRef.current,
         setSelectedCaption: setSelectedCaptionMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       excludedProps,
     );
@@ -120,6 +128,7 @@ describe('React.memo behavior for Captions', () => {
         captionMenuVisibility={showCaptionMenu}
         setSelectedCaption={setSelectedCaptionMock}
         video={videoRef.current as VideoPlayer}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
     rerender(
@@ -127,6 +136,7 @@ describe('React.memo behavior for Captions', () => {
         captionMenuVisibility={hideCaptionMenu}
         setSelectedCaption={setSelectedCaptionMock}
         video={videoRef.current as VideoPlayer}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
 
@@ -135,11 +145,13 @@ describe('React.memo behavior for Captions', () => {
         captionMenuVisibility: showCaptionMenu,
         video: videoRef.current,
         setSelectedCaption: setSelectedCaptionMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       {
         captionMenuVisibility: hideCaptionMenu,
         video: videoRef.current,
         setSelectedCaption: setSelectedCaptionMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       excludedProps,
     );

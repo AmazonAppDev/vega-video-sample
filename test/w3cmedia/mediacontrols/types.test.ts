@@ -171,9 +171,11 @@ describe('MediaControls Types', () => {
         captionMenuVisibility: true,
         video: mockVideo,
         setSelectedCaption: jest.fn(),
+        setCaptionMenuVisibility: jest.fn(),
       };
 
       expect(captionMenuProps.captionMenuVisibility).toBe(true);
+      expect(captionMenuProps.setCaptionMenuVisibility).toBeDefined();
       expect(captionMenuProps.video).toBe(mockVideo);
       expect(captionMenuProps.setSelectedCaption).toBeDefined();
     });

@@ -14,6 +14,7 @@ jest.mock('../../../src/w3cmedia/mediacontrols/Captions', () => {
 
 const videoRef = { current: {} as VideoPlayer };
 const setSelectedCaptionInMenuBarMock = jest.fn();
+const setCaptionMenuVisibility = jest.fn();
 
 describe('ControlBarMenu', () => {
   it('renders without crashing', () => {
@@ -22,6 +23,7 @@ describe('ControlBarMenu', () => {
         captionMenuVisibility={true}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
     expect(toJSON()).toMatchSnapshot();
@@ -33,6 +35,7 @@ describe('ControlBarMenu', () => {
         captionMenuVisibility={true}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
     expect(CaptionMenu).toHaveBeenCalledTimes(2);
@@ -44,6 +47,7 @@ describe('ControlBarMenu', () => {
         captionMenuVisibility={true}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
 
@@ -59,13 +63,17 @@ describe('ControlBarMenu', () => {
 describe('React.memo behavior for CaptionBarMenu', () => {
   const showCaptionMenuVisibility = true;
   const hideCaptionMenuVisibility = false;
-  const excludedProps = ['setSelectedCaptionInMenuBar'];
+  const excludedProps = [
+    'setSelectedCaptionInMenuBar',
+    'setCaptionMenuVisibility',
+  ];
   it('does not re-render when CaptionBarMenu props are unchanged', () => {
     const { rerender } = render(
       <ControlBarMenu
         captionMenuVisibility={showCaptionMenuVisibility}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
     rerender(
@@ -73,6 +81,7 @@ describe('React.memo behavior for CaptionBarMenu', () => {
         captionMenuVisibility={showCaptionMenuVisibility}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
 
@@ -81,11 +90,13 @@ describe('React.memo behavior for CaptionBarMenu', () => {
         captionMenuVisibility: showCaptionMenuVisibility,
         videoRef: videoRef,
         setSelectedCaptionInMenuBar: setSelectedCaptionInMenuBarMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       {
         captionMenuVisibility: showCaptionMenuVisibility,
         videoRef: videoRef,
         setSelectedCaptionInMenuBar: setSelectedCaptionInMenuBarMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       excludedProps,
     );
@@ -98,6 +109,7 @@ describe('React.memo behavior for CaptionBarMenu', () => {
         captionMenuVisibility={showCaptionMenuVisibility}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
     rerender(
@@ -105,6 +117,7 @@ describe('React.memo behavior for CaptionBarMenu', () => {
         captionMenuVisibility={hideCaptionMenuVisibility}
         videoRef={videoRef}
         setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBarMock}
+        setCaptionMenuVisibility={setCaptionMenuVisibility}
       />,
     );
 
@@ -113,11 +126,13 @@ describe('React.memo behavior for CaptionBarMenu', () => {
         captionMenuVisibility: showCaptionMenuVisibility,
         videoRef: videoRef,
         setSelectedCaptionInMenuBar: setSelectedCaptionInMenuBarMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       {
         captionMenuVisibility: hideCaptionMenuVisibility,
         videoRef: videoRef,
         setSelectedCaptionInMenuBar: setSelectedCaptionInMenuBarMock,
+        setCaptionMenuVisibility: setCaptionMenuVisibility,
       },
       excludedProps,
     );

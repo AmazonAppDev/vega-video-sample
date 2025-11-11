@@ -105,7 +105,7 @@ const DrawerItemList = ({
   }, [isDrawerInFocus]);
 
   const onItemPress = (routeName: string) => {
-    const index: number = state.routes.findIndex(r => r.name === routeName);
+    const index: number = state.routes.findIndex((r) => r.name === routeName);
     setFocusedItem(index);
     setSelectedItem(index);
     navigation.navigate(routeName);
@@ -125,7 +125,7 @@ const DrawerItemList = ({
     <TVFocusGuideView style={styles.listContainer} trapFocusDown>
       <TouchableOpacity
         activeOpacity={1}
-        ref={component => {
+        ref={(component) => {
           const nodeHandle = findNodeHandle(component);
           setRootNodeHandle(nodeHandle ? nodeHandle : undefined);
         }}

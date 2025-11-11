@@ -6,13 +6,7 @@ import {
 } from '@amazon-devices/kepler-content-personalization';
 import { useTheme } from '@amazon-devices/kepler-ui-components';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import {
-  BackHandler,
-  Platform,
-  Systrace,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { BackHandler, Platform, Systrace } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ButtonConfig, Screens } from '../../components/navigation/types';
@@ -42,6 +36,7 @@ import {
 } from '../../store/videoDetail/videoDetailSlice';
 import { getVerticalCardDimensionsMd } from '../../styles/ThemeAccessors';
 import { TitleData } from '../../types/TitleData';
+import { focusManager } from '../../utils/FocusManager';
 import { translate } from '../../utils/translationHelper';
 
 const AddIcon = require('../../assets/add_solid.png');
@@ -77,8 +72,8 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
   const dispatch = useDispatch();
 
   const currentTitle = useRef<string>(route.params.data.title);
-  const focusableElementRef = useRef<TouchableOpacity>(null);
-  const playMovieButtonRef = useRef<View>(null);
+  const focusableElementRef = useRef<any>(null);
+  const playMovieButtonRef = useRef<any>(null);
 
   const rating = route.params.data.rating ?? '';
   const rentAmount = `${translate('currency', countryCode?.code)}${
@@ -132,8 +127,17 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
   }, [navigateBack]);
 
   useEffect(() => {
-    playMovieButtonRef?.current?.focus();
-    return () => route.params.sendDataOnBack(videoID);
+    if (playMovieButtonRef?.current?.requestTVFocus) {
+      playMovieButtonRef.current.requestTVFocus();
+    }
+
+    return () => {
+      // Restore focus when leaving this screen
+      if (route.params.focusId) {
+        const focusKey = `tile_${route.params.focusId}`;
+        focusManager.restoreFocus(focusKey);
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -292,12 +296,20 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
       }
     }
 
+    // Register focus restoration callback
+    const focusKey = `player_return_${route.params.data.id}`;
+    focusManager.registerFocusCallback(focusKey, () => {
+      if (focusableElementRef.current?.requestTVFocus) {
+        focusableElementRef.current.requestTVFocus();
+      }
+      if (playMovieButtonRef.current?.requestTVFocus) {
+        playMovieButtonRef.current.requestTVFocus();
+      }
+    });
+
     const data = {
       data: route.params.data,
-      sendDataOnBack: () => {
-        focusableElementRef.current?.focus();
-        playMovieButtonRef.current?.focus();
-      },
+      focusId: route.params.data.id,
     };
 
     navigation.navigate(Screens.PLAYER_SCREEN, data);
@@ -366,7 +378,9 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
   }, [videoID, watchList, purchasedList, rentList]);
 
   const onBlurPlayMovie = () => {
-    playMovieButtonRef?.current?.blur();
+    if (playMovieButtonRef?.current?.blur) {
+      playMovieButtonRef.current.blur();
+    }
   };
 
   return {

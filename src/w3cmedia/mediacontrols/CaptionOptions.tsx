@@ -14,13 +14,14 @@ export const CaptionOptions = React.memo(
   ({ enableCaption, selectedCaptionId, video }: CaptionOptionProps) => {
     const Options: React.JSX.Element[] = [];
     const textTrackList = video?.textTracks || [];
+
     for (
       let captionIndex = 0;
       captionIndex < textTrackList.length;
       captionIndex++
     ) {
       const textTrack = textTrackList[captionIndex];
-      if (textTrack) {
+      if (textTrack && !textTrack.label?.includes('Shaka Player')) {
         const { label, id } = textTrack;
         Options.push(
           <CaptionMenuItem

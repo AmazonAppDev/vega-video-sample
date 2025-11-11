@@ -29,7 +29,7 @@ beforeEach(() => {
 });
 
 describe('<MediaItemShoveler />', () => {
-  it('renders default nonFeatured MediaItemShoveler with playlistName', () => {
+  it('renders playlist name when showPlaylistName is true', () => {
     render(
       <MediaItemShoveler
         items={VIDEO_ITEMS}
@@ -38,18 +38,31 @@ describe('<MediaItemShoveler />', () => {
         playlistName={PLAYLIST_NAME}
       />,
     );
-    expect(screen).toMatchSnapshot();
+    expect(screen.getByText(PLAYLIST_NAME)).toBeTruthy();
   });
 
-  it('renders default featured MediaItemShoveler with no playlistName', () => {
+  it('does not render playlist name when showPlaylistName is false', () => {
     render(
       <MediaItemShoveler
         items={VIDEO_ITEMS}
-        featured={true}
+        featured={false}
         showPlaylistName={false}
         playlistName={PLAYLIST_NAME}
       />,
     );
-    expect(screen).toMatchSnapshot();
+    expect(screen.queryByText(PLAYLIST_NAME)).toBeNull();
+  });
+
+  it('renders all media items', () => {
+    render(
+      <MediaItemShoveler
+        items={VIDEO_ITEMS}
+        featured={false}
+        showPlaylistName={false}
+        playlistName={PLAYLIST_NAME}
+      />,
+    );
+    expect(screen.getByText('TITLE1')).toBeTruthy();
+    expect(screen.getByText('TITLE2')).toBeTruthy();
   });
 });

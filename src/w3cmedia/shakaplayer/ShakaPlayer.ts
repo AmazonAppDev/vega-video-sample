@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 - 2023 Amazon.com, Inc. or its affiliates. All rights reserved.
+ * Copyright 2022 - 2025 Amazon.com, Inc. or its affiliates. All rights reserved.
  *
  * AMAZON PROPRIETARY/CONFIDENTIAL
  *
@@ -13,22 +13,29 @@
  */
 
 // @ts-nocheck
-import { HTMLMediaElement } from '@amazon-devices/react-native-w3cmedia';
+import { HTMLMediaElement } from '@amazon-devices/react-native-w3cmedia/dist/headless';
 import { Platform } from 'react-native';
 import { PlayerInterface } from '../PlayerInterface';
 import shaka from './dist/shaka-player.compiled';
 
 // import polyfills
 import Document from '../polyfills/DocumentPolyfill';
+import DOMParserPolyfill from '../polyfills/DOMParserPolyfill';
 import Element from '../polyfills/ElementPolyfill';
 import MiscPolyfill from '../polyfills/MiscPolyfill';
+import TextDecoderPolyfill from '../polyfills/TextDecoderPolyfill';
 import W3CMediaPolyfill from '../polyfills/W3CMediaPolyfill';
 
 // install polyfills
 Document.install();
 Element.install();
+TextDecoderPolyfill.install();
 W3CMediaPolyfill.install();
 MiscPolyfill.install();
+DOMParserPolyfill.install();
+
+const playerName: string = 'shaka';
+const playerVersion: string = '4.8.5';
 
 export interface ShakaPlayerSettings {
   secure: boolean;
@@ -41,6 +48,10 @@ export class ShakaPlayer implements PlayerInterface {
   player: shaka.Player;
   private setting_: ShakaPlayerSettings;
   private mediaElement: HTMLMediaElement | null;
+
+  static readonly enableNativeParsing = false;
+  static readonly enableNativeXmlParsing = false;
+
   constructor(
     mediaElement: HTMLMediaElement | null,
     setting: ShakaPlayerSettings,
@@ -157,9 +168,116 @@ export class ShakaPlayer implements PlayerInterface {
       });
     }
   }
+
+  async nativeParsePlaylist(
+    manifest: ArrayBuffer,
+    absoluteuri: string,
+  ): Promise<Array<shaka.hls.Playlist>> {
+    console.log('shaka: nativeParsePlaylist+');
+    const playlist = await global.parseHlsManifest(
+      playerName,
+      playerVersion,
+      absoluteuri,
+      manifest,
+      shaka,
+    );
+    console.log('shaka: nativeParsePlaylist-');
+    return playlist;
+  }
+
+  nativeParseFromString(
+    manifest: ArrayBuffer,
+    expectedRoot: string,
+  ): Array<shaka.hls.Playlist> {
+    console.log('shaka: nativeParseFromString+');
+    console.log('shaka: nativeParseFromString: expectedRoot ', expectedRoot);
+    const playlist = global.nativeParseFromString(manifest, expectedRoot);
+    console.log('shaka: nativeParseFromString-');
+    return playlist;
+  }
   // End custom callbacks }}}
 
   load(content: any, _autoplay: boolean): void {
+    // Native HLS parsing setup
+    if (ShakaPlayer.enableNativeParsing) {
+      if (
+        global.registerNativePlayerUtils &&
+        shaka.hls.HlsParser.setNativeFunctions
+      ) {
+        console.log('shakaplayer: registerNativePlayerUtils found');
+        if (!global.isNativeHlsParserSupported) {
+          const ret = global.registerNativePlayerUtils();
+          console.log('shaka: native functions registered: ' + ret);
+        }
+        if (
+          global.isNativeHlsParserSupported &&
+          global.parseHlsManifest &&
+          global.nativeShakaHlsCreateSegments
+        ) {
+          const nativeHlsParserSupported = global.isNativeHlsParserSupported(
+            playerName,
+            playerVersion,
+          );
+          if (nativeHlsParserSupported) {
+            console.log('shaka: setting native functions');
+            shaka.hls.HlsParser.setNativeFunctions(this.nativeParsePlaylist);
+          } else {
+            console.log(
+              'shaka: nativeHlsParser not supported for player version',
+            );
+          }
+        } else {
+          console.log(
+            'shaka: native func not set even after register, skipping it',
+          );
+        }
+      } else {
+        console.log(
+          `shakaplayer: native offload not enabled!registerNativePlayerUtils: ${!!global.registerNativePlayerUtils},setNativeFunctions: ${!!shaka
+            .hls.HlsParser.setNativeFunctions}`,
+        );
+      }
+    } else {
+      console.log('shaka: native playlist parsing is disabled');
+    }
+
+    // Native XML parsing setup for DASH content
+    if (ShakaPlayer.enableNativeXmlParsing) {
+      if (
+        global.registerNativePlayerUtils &&
+        shaka.util.XmlUtils.setNativeFunctions
+      ) {
+        if (!global.isNativeXmlParserSupported) {
+          console.log('shaka: isNativeXmlParserSupported not registered.');
+        }
+        if (global.isNativeXmlParserSupported && global.nativeParseFromString) {
+          const isNativeXmlParserSupported = global.isNativeXmlParserSupported(
+            playerName,
+            playerVersion,
+          );
+          if (isNativeXmlParserSupported) {
+            console.log('shaka: setting DASH native functions');
+            shaka.util.XmlUtils.setNativeFunctions(this.nativeParseFromString);
+          } else {
+            console.log(
+              'shaka: nativeXMLParser not supported for player version',
+            );
+          }
+        } else {
+          console.log(
+            'shaka: native func not set even after register, skipping it',
+          );
+        }
+      } else {
+        console.log(
+          `shakaplayer: DASH native offload not enabled!registerNativePlayerUtils: ${!!global.registerNativePlayerUtils},DASH::setNativeFunctions: ${!!shaka
+            .util.XmlUtils.setNativeFunctions}`,
+        );
+      }
+    } else {
+      console.log('shaka: native Xml playlist parsing is disabled');
+    }
+
     shaka.polyfill.installAll();
     console.log('shakaplayer: unregistering scheme http and https');
     shaka.net.NetworkingEngine.unregisterScheme('http');
@@ -363,6 +481,25 @@ export class ShakaPlayer implements PlayerInterface {
 
   unload(): void {
     console.log('shakaplayer:unload');
+
+    // Clean up native XML parser if enabled
+    if (
+      ShakaPlayer.enableNativeXmlParsing &&
+      global.isNativeXmlParserSupported &&
+      global.nativeParseFromString &&
+      global.unloadNativeXmlParser
+    ) {
+      const isNativeXmlParserSupported = global.isNativeXmlParserSupported(
+        playerName,
+        playerVersion,
+      );
+      if (isNativeXmlParserSupported) {
+        console.log('shakaplayer: unloading native Xml parser');
+        global.unloadNativeXmlParser();
+        console.log('shakaplayer: unloaded native Xml parser');
+      }
+    }
+
     this.player.detach();
     this.player.destroy();
     this.player = null;

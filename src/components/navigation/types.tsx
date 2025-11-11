@@ -1,7 +1,10 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import { IChangeChannelResponse, OperationError } from '@amazon-devices/kepler-channel';
+import {
+  IChangeChannelResponse,
+  OperationError,
+} from '@amazon-devices/kepler-channel';
 import { DrawerScreenProps } from '@amazon-devices/react-navigation__drawer/lib/typescript/src/types';
 import { StackNavigationProp } from '@amazon-devices/react-navigation__stack';
 import { StackScreenProps } from '@amazon-devices/react-navigation__stack/lib/typescript/src/types';
@@ -38,11 +41,11 @@ export type AppStackParamList = {
   };
   [Screens.DETAILS_SCREEN]: {
     data: TitleData;
-    sendDataOnBack: (id: number | string) => void;
+    focusId?: number | string;
   };
   [Screens.PLAYER_SCREEN]: {
     data: TitleData;
-    sendDataOnBack: () => void;
+    focusId?: number | string;
     onChannelTuneSuccess?: (response: IChangeChannelResponse) => void;
     onChannelTuneFailed?: (error: OperationError) => void;
   };

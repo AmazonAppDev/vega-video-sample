@@ -19,7 +19,9 @@
     "src/**/*.js",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.jsx"
+    "src/**/*.jsx",
+    "!src/w3cmedia/polyfills/**",
+    "!src/w3cmedia/shakaplayer/**"
   ],
   "collectCoverage": true,
   "coverageReporters": [

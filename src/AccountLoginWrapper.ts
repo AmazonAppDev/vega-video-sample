@@ -6,52 +6,65 @@ import {
   StatusType,
 } from '@amazon-devices/kepler-media-account-login';
 import { IComponentInstance } from '@amazon-devices/react-native-kepler';
-import { store } from './store';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const accountLoginServerComponent = new AccountLoginServerComponent();
+const ACCOUNT_LOGIN_STORAGE_KEY = 'LOGIN_STATUS_KEY';
 
 export class AccountLoginWrapper {
-  m_accountLoginServer?: IAccountLoginServerAsync;
-  isSignedIn: boolean = false;
+  accountLoginServer?: IAccountLoginServerAsync;
 
   async updateStatus(loginStatus: boolean) {
-    this.isSignedIn = loginStatus;
+    try {
+      await AsyncStorage.setItem(
+        ACCOUNT_LOGIN_STORAGE_KEY,
+        JSON.stringify(loginStatus),
+      );
+    } catch (err) {
+      console.error('Failed to write to AsyncStorage', err);
+    }
+
+    const status = accountLoginServerComponent
+      .makeStatusBuilder()
+      .status(loginStatus ? StatusType.SIGNED_IN : StatusType.SIGNED_OUT)
+      .build();
 
     try {
-      const status = this.getAccountLoginStatus();
-      await this.m_accountLoginServer?.updateStatus(status);
+      await this.accountLoginServer?.updateStatus(status);
     } catch (err) {
       console.error('updateStatus Failed updating login status: ', err);
     }
   }
 
-  getAccountLoginStatus(): IStatus {
+  async getAccountLoginStatus(): Promise<IStatus> {
     const statusBuilder = accountLoginServerComponent.makeStatusBuilder();
-    const appLoginStatus = store.getState().settings.loginStatus;
-
-    statusBuilder.status(
-      appLoginStatus ? StatusType.SIGNED_IN : StatusType.SIGNED_OUT,
+    const loginStatusString: any = await AsyncStorage.getItem(
+      ACCOUNT_LOGIN_STORAGE_KEY,
     );
 
-    return statusBuilder.build();
+    if (loginStatusString === null) {
+      return statusBuilder.status(StatusType.SIGNED_OUT).build();
+    }
+
+    const loginStatus = JSON.parse(loginStatusString);
+    return statusBuilder
+      .status(loginStatus ? StatusType.SIGNED_IN : StatusType.SIGNED_OUT)
+      .build();
   }
 
   createAccountLoginHandler(): IAccountLoginHandlerAsync {
     return {
-      handleReadStatus: async (): Promise<IStatus> => {
-        console.log('handleReadStatus invoked.');
-
-        return this.getAccountLoginStatus();
-      },
+      handleReadStatus: async (): Promise<IStatus> =>
+        this.getAccountLoginStatus(),
     };
   }
 
   setupAccountLoginServer(componentInstance: IComponentInstance) {
     console.log('setupAccountLoginServer invoked.');
     try {
-      this.m_accountLoginServer = accountLoginServerComponent.getOrMakeServer();
+      this.accountLoginServer = accountLoginServerComponent.getOrMakeServer();
     } catch (err) {
-      this.m_accountLoginServer = undefined;
+      this.accountLoginServer = undefined;
       console.error(
         'setupAccountLoginServer failed creating account login server: ',
         err,
@@ -60,7 +73,7 @@ export class AccountLoginWrapper {
     }
 
     try {
-      this.m_accountLoginServer?.setHandlerForComponent(
+      this.accountLoginServer?.setHandlerForComponent(
         this.createAccountLoginHandler(),
         componentInstance,
       );
@@ -77,7 +90,6 @@ export class AccountLoginWrapper {
   }
 
   onStop(): Promise<void> {
-    // add stop service code here.
     console.info('AccountLoginWrapper onStop()');
     return Promise.resolve();
   }

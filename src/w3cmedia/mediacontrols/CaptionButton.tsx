@@ -1,6 +1,6 @@
 import { TVFocusGuideView } from '@amazon-devices/react-native-kepler';
 import React, { useEffect, useRef } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { DPADEventType } from '../../constants';
 import { COLORS } from '../../styles/Colors';
 import { areComponentPropsEqual } from '../../utils/lodashHelper';
@@ -21,7 +21,7 @@ const CaptionButton = ({
   isCaptionButtonFocused,
 }: CaptionButtonProps) => {
   const captionsExist = video?.textTracks?.length > 0 ? true : false;
-  const captionButtonRef = useRef<TouchableOpacity>(null);
+  const captionButtonRef = useRef<any>(null);
   const onBlurCaptionButton = () => {
     captionButtonRef?.current?.blur();
   };
@@ -37,12 +37,14 @@ const CaptionButton = ({
       !captionMenuVisibility &&
       isCaptionButtonFocused
     ) {
-      captionButtonRef.current?.focus();
+      captionButtonRef.current?.requestTVFocus();
     }
   }, [playerControlType, captionMenuVisibility, isCaptionButtonFocused]);
 
   return (
-    <TVFocusGuideView trapFocusLeft={captionMenuVisibility}>
+    <TVFocusGuideView
+      trapFocusLeft={captionMenuVisibility}
+      style={styles.captionsButtonContainer}>
       <PlayerButton
         ref={captionButtonRef}
         onBlur={onBlurCaptionButton}
@@ -71,5 +73,8 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: COLORS.DARK_GRAY + 'D9',
     borderRadius: scaleUxToDp(40),
+  },
+  captionsButtonContainer: {
+    margin: 10,
   },
 });

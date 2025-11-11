@@ -136,17 +136,17 @@ exports[`HomeScreen renders correctly and matches snapshot 1`] = `
               Object {
                 "data": [Function],
                 "heading": "Latest Hits",
-                "testID": "costa_rica_top_rated",
+                "testID": "latest_hits",
               },
               Object {
                 "data": [Function],
                 "heading": "Classics",
-                "testID": "costa_rica_attractions",
+                "testID": "classics",
               },
               Object {
                 "data": [Function],
                 "heading": "Recommendation",
-                "testID": "costa_rica_underwater",
+                "testID": "recommendations",
               },
               Object {
                 "data": [Function],
@@ -171,17 +171,17 @@ exports[`HomeScreen renders correctly and matches snapshot 1`] = `
                 Object {
                   "data": [Function],
                   "heading": "Latest Hits",
-                  "testID": "costa_rica_top_rated",
+                  "testID": "latest_hits",
                 },
                 Object {
                   "data": [Function],
                   "heading": "Classics",
-                  "testID": "costa_rica_attractions",
+                  "testID": "classics",
                 },
                 Object {
                   "data": [Function],
                   "heading": "Recommendation",
-                  "testID": "costa_rica_underwater",
+                  "testID": "recommendations",
                 },
                 Object {
                   "data": [Function],
@@ -249,17 +249,17 @@ exports[`HomeScreen renders correctly and matches snapshot 1`] = `
                   Object {
                     "data": [Function],
                     "heading": "Latest Hits",
-                    "testID": "costa_rica_top_rated",
+                    "testID": "latest_hits",
                   },
                   Object {
                     "data": [Function],
                     "heading": "Classics",
-                    "testID": "costa_rica_attractions",
+                    "testID": "classics",
                   },
                   Object {
                     "data": [Function],
                     "heading": "Recommendation",
-                    "testID": "costa_rica_underwater",
+                    "testID": "recommendations",
                   },
                   Object {
                     "data": [Function],
@@ -436,17 +436,17 @@ exports[`HomeScreen with touch optimized UX renders correctly and matches snapsh
               Object {
                 "data": [Function],
                 "heading": "Latest Hits",
-                "testID": "costa_rica_top_rated",
+                "testID": "latest_hits",
               },
               Object {
                 "data": [Function],
                 "heading": "Classics",
-                "testID": "costa_rica_attractions",
+                "testID": "classics",
               },
               Object {
                 "data": [Function],
                 "heading": "Recommendation",
-                "testID": "costa_rica_underwater",
+                "testID": "recommendations",
               },
               Object {
                 "data": [Function],
@@ -471,17 +471,17 @@ exports[`HomeScreen with touch optimized UX renders correctly and matches snapsh
                 Object {
                   "data": [Function],
                   "heading": "Latest Hits",
-                  "testID": "costa_rica_top_rated",
+                  "testID": "latest_hits",
                 },
                 Object {
                   "data": [Function],
                   "heading": "Classics",
-                  "testID": "costa_rica_attractions",
+                  "testID": "classics",
                 },
                 Object {
                   "data": [Function],
                   "heading": "Recommendation",
-                  "testID": "costa_rica_underwater",
+                  "testID": "recommendations",
                 },
                 Object {
                   "data": [Function],
@@ -549,17 +549,17 @@ exports[`HomeScreen with touch optimized UX renders correctly and matches snapsh
                   Object {
                     "data": [Function],
                     "heading": "Latest Hits",
-                    "testID": "costa_rica_top_rated",
+                    "testID": "latest_hits",
                   },
                   Object {
                     "data": [Function],
                     "heading": "Classics",
-                    "testID": "costa_rica_attractions",
+                    "testID": "classics",
                   },
                   Object {
                     "data": [Function],
                     "heading": "Recommendation",
-                    "testID": "costa_rica_underwater",
+                    "testID": "recommendations",
                   },
                   Object {
                     "data": [Function],

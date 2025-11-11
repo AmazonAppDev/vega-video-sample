@@ -27,7 +27,14 @@ Build and run the app
 
 ### Prerequisites
 
-Before you launch the sample app, make sure that you have [installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/0.21/install-vega-sdk.html)).
+Before you launch the sample app, make sure that you have:
+
+1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/0.21/install-vega-sdk.html)
+2. **Java Runtime Environment (JRE) or Java Development Kit (JDK)** - Required by Shaka Player's build system for JavaScript compilation and optimization
+3. **Python** - Required by Shaka Player's build scripts
+
+**Note**: The Shaka Player integration runs automatically during `npm install` and requires these dependencies. If you encounter build errors related to Java or Python, install the missing prerequisites and run `npm install` again. For any other prerequisite Shaka issue please visit: https://shaka-project.github.io/shaka-player/docs/api/tutorial-welcome.html.
+
 
 
 ### Step 1: Build the app
@@ -1157,10 +1164,59 @@ When you encounter any disruptive issues with IAP, Amazon recommends that you re
 Release notes
 -------------
 
+
+---
+### v0.22
+
+
+
+#### Video Asset Infrastructure Migration
+
+* **Infrastructure Migration** - Migrated video assets from external demo URLs to unified CloudFront (`d1v0fxmwkpxbrg.cloudfront.net`) for consistent video infrastructure and reduced dependency on external hosted content.
+
+* **Format Standardization** - Standardized video source formats across the application:
+  - HLS Streams: Consistent `.m3u8` master playlist format with proper HLS labeling.
+  - DASH Streams: Unified `.mpd` manifest format with DASH type identification.
+  - MP4 Videos: Direct `.mp4` file access for progressive download content.
+
+* **Thumbnail Support** - Added trickplay URLs to all video sources.
+  - Integrated trickplay thumbnail support for video scrubbing and preview functionality.
+
+* **Subtitles Support** - Added subtitle SRT files.
+  - Added subtitle support for DASH and HLS videos including English subtitle tracks with SRT file integration.
+
+#### Shaka Player Integration Updates
+
+* **Automated Shaka Player Integration** - Updated Shaka Player setup and build process:
+  - Shaka Player integration now occurs during post-install process, downloading source from Shaka GitHub repository to reduce source code base size.
+  - Shaka patches for Vega are applied automatically after the download process.
+
+#### Navigation and User Experience
+
+* **React Navigation Optimization** - Resolved serialization warnings and improved navigation performance
+  - Removed function parameters from navigation routes to fix React Navigation serialization warnings
+  - Replaced the sendDataOnBack callback pattern with React Navigation's built-in useFocusEffect hook to handle focus restoration when returning to previous screens
+
+
+#### TV Focus Management Improvements
+
+* **Updated TV Focus System** - Migrated from deprecated `focus()` to TV-optimized `requestTVFocus()` API across all interactive components.
+  - Updated VideoTile, SearchInput, and media control components for better TV navigation.
+  - Added proper null checks and fallback handling for focus operations.
+  - Improved focus restoration when navigating back from video player and detail screens.
+
+#### Account Login
+
+* **Improved Account Login Integration** - Fixed Account Login integration that was pulling non-headless entities into headless runtime
+  - Resolved runtime conflicts between headless and UI components
+
+---
+
 ### v0.21
 
 * Initial release.
 
+---
 
 Credits and attribution
 -----------------------

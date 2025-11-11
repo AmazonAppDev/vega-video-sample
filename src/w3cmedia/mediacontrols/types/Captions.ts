@@ -27,4 +27,5 @@ export interface CaptionMenuProps {
   captionMenuVisibility: boolean;
   video: VideoPlayer;
   setSelectedCaption: (id: string) => void;
+  setCaptionMenuVisibility: (visible: boolean) => void;
 }

@@ -87,7 +87,7 @@ describe('SearchResultsScreen', () => {
         Screens.PLAYER_SCREEN,
         {
           data: mockVideoData.mediaItem,
-          sendDataOnBack: expect.any(Function),
+          focusId: mockVideoData.mediaItem.id,
         },
       );
     });

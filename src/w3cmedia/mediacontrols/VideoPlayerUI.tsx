@@ -4,9 +4,12 @@ import {
   PlaybackState,
 } from '@amazon-devices/kepler-content-personalization';
 import LinearGradient from '@amazon-devices/react-linear-gradient';
-import { HWEvent, useTVEventHandler } from '@amazon-devices/react-native-kepler';
+import {
+  HWEvent,
+  useTVEventHandler,
+} from '@amazon-devices/react-native-kepler';
 import { VideoPlayer } from '@amazon-devices/react-native-w3cmedia';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import Seekbar from '../../components/Seekbar';
 import {
@@ -178,6 +181,13 @@ export const VideoPlayerUI = React.memo(
       setCaptionMenuVisibility(!captionMenuVisibility);
     }, [captionMenuVisibility]);
 
+    const seekBarRef = useRef<any>(null);
+
+    const setCaptionVisibility = (captionVisibility: boolean) => {
+      setCaptionMenuVisibility(captionVisibility);
+      seekBarRef?.current?.requestTVFocus();
+    };
+
     return (
       <View style={styles.uiContainer} testID="video-player-ui-view">
         {showMediaControls && (
@@ -195,6 +205,7 @@ export const VideoPlayerUI = React.memo(
             )}
 
             <Seekbar
+              seekBarRef={seekBarRef}
               videoRef={videoRef}
               bifFrameImagesRef={bifFrameImagesRef}
               videoData={videoData}
@@ -211,6 +222,7 @@ export const VideoPlayerUI = React.memo(
               captionMenuVisibility={captionMenuVisibility}
               videoRef={videoRef}
               setSelectedCaptionInMenuBar={setSelectedCaptionInMenuBar}
+              setCaptionMenuVisibility={setCaptionVisibility}
             />
           </LinearGradient>
         )}

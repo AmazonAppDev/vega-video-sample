@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: MIT-0
 
 import React, { memo, RefObject, useCallback, useRef } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
+import { focusManager } from '../utils/FocusManager';
 import { areComponentPropsEqual } from '../utils/lodashHelper';
 
 import {
@@ -101,7 +102,7 @@ export interface VideoTileProps {
    * Only provide this for the first tile (index=0, row=0).
    * Required for proper focus restoration when returning from detail screens.
    */
-  firstElementRef?: RefObject<View> | null;
+  firstElementRef?: RefObject<any> | null;
 }
 
 const VideoTile = ({
@@ -113,7 +114,7 @@ const VideoTile = ({
   firstElementRef,
 }: VideoTileProps) => {
   const navigation = useNavigation<HomeScreenNavigationProps>();
-  const focusableElementRef = useRef<View>(null);
+  const focusableElementRef = useRef<any>(null);
 
   /**
    * Reports content interaction to the personalization service when enabled.
@@ -138,23 +139,6 @@ const VideoTile = ({
   }, [data.title]);
 
   /**
-   * Navigates to the video details screen and reports the interaction.
-   * Also sets up focus restoration callback for when user returns.
-   */
-  const navigateToDetailsScreen = useCallback(async () => {
-    // Track user interaction for personalization
-    reportContentNavigation();
-
-    // Navigate to details screen with focus restoration callback
-    navigation.push(Screens.DETAILS_SCREEN, {
-      data: data,
-      sendDataOnBack: handleFocusOnBack,
-    });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, navigation]);
-
-  /**
    * Handles focus restoration when returning from the details screen.
    * Ensures the correct tile regains focus based on its position in the grid.
    */
@@ -163,15 +147,38 @@ const VideoTile = ({
       if (id === data.id) {
         // Special handling for the first tile (top-left) in the grid
         if (index === 0 && row === 0) {
-          firstElementRef?.current?.focus();
+          firstElementRef?.current?.requestTVFocus();
         } else {
           // Regular tiles use their own focus reference
-          focusableElementRef.current?.focus();
+          focusableElementRef.current?.requestTVFocus();
         }
       }
     },
     [data.id, firstElementRef, index, row],
   );
+
+  /**
+   * Navigates to the video details screen and reports the interaction.
+   * Also sets up focus restoration callback for when user returns.
+   */
+  const navigateToDetailsScreen = useCallback(async () => {
+    // Track user interaction for personalization
+    reportContentNavigation();
+
+    // Register focus restoration callback
+    const focusKey = `tile_${data.id}`;
+    focusManager.registerFocusCallback(focusKey, () => {
+      handleFocusOnBack(data.id);
+    });
+
+    // Navigate to details screen
+    navigation.push(Screens.DETAILS_SCREEN, {
+      data: data,
+      focusId: data.id, // Pass the ID for focus restoration instead of function
+    });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, navigation, index, row, handleFocusOnBack]);
 
   /**
    * Handles focus events and calls the optional onFocus callback.

@@ -13,12 +13,17 @@ export const areCaptionMenuPropsEqual = (
   prevProps: CaptionMenuProps,
   nextProps: CaptionMenuProps,
 ) => {
-  const excludedProps = ['setSelectedCaption'];
+  const excludedProps = ['setSelectedCaption', 'setCaptionMenuVisibility'];
   return areComponentPropsEqual(prevProps, nextProps, excludedProps);
 };
 
 export const CaptionMenu = React.memo(
-  ({ captionMenuVisibility, video, setSelectedCaption }: CaptionMenuProps) => {
+  ({
+    captionMenuVisibility,
+    video,
+    setSelectedCaption,
+    setCaptionMenuVisibility,
+  }: CaptionMenuProps) => {
     const [captionID, setCaptionID] = useState<string>(CAPTION_DISABLE_ID);
 
     const removeCurrentCaption = useCallback(() => {
@@ -44,13 +49,21 @@ export const CaptionMenu = React.memo(
         }
         setCaptionID(id);
         setSelectedCaption(id);
+        setCaptionMenuVisibility(false);
       },
-      [captionID, removeCurrentCaption, video, setSelectedCaption],
+      [
+        captionID,
+        removeCurrentCaption,
+        video,
+        setSelectedCaption,
+        setCaptionMenuVisibility,
+      ],
     );
 
     const turnOffCaptions = useCallback(() => {
       setSelectedCaption(CAPTION_DISABLE_ID);
       removeCurrentCaption();
+      setCaptionMenuVisibility(false);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
