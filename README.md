@@ -29,7 +29,7 @@ Build and run the app
 
 Before you launch the sample app, make sure that you have:
 
-1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/0.21/install-vega-sdk.html)
+1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
 2. **Java Runtime Environment (JRE) or Java Development Kit (JDK)** - Required by Shaka Player's build system for JavaScript compilation and optimization
 3. **Python** - Required by Shaka Player's build scripts
 
@@ -41,7 +41,7 @@ Before you launch the sample app, make sure that you have:
 
 After you download the source code from GitHub, you can build the Vega Video Sample App from the command line to generate VPKG files. The VPKG files run on the Vega Virtual Device and Vega OS Fire TV Stick.
 
-You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup-extension.html) with Visual Studio Code to build the app.
+You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/setup-extension.html) with Visual Studio Code to build the app.
 
 1. At the command prompt, navigate to the Vega Video Sample App source code directory. 
 
@@ -70,7 +70,7 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup
 1. To start the Vega Virtual Device, at the command prompt, run the following command.
 
    ```
-   kepler virtual-device start
+   vega virtual-device start
    ```
 
 2. Go to the directory where you placed the VPKG files. 
@@ -80,13 +80,13 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup
    - On Mac M-series based devices. 
       
       ```
-      kepler run-kepler build/aarch64-release/keplervideoapp_aarch64.vpkg
+      vega run-app build/aarch64-release/keplervideoapp_aarch64.vpkg
       ```
 
    - On x86_64 based devices.
       
      ```
-     kepler run-kepler build/x86_64-release/keplervideoapp_x86_64.vpkg
+     vega run-app build/x86_64-release/keplervideoapp_x86_64.vpkg
      ```  
 
 #### Vega OS Fire TV Stick
@@ -96,7 +96,7 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup
 2. To install and launch the app on your Vega OS Fire TV Stick, run the following command.
 
    ```
-   kepler run-kepler build/armv7-release/keplervideoapp_armv7.vpkg
+   vega run-app build/armv7-release/keplervideoapp_armv7.vpkg
    ```
 
 
@@ -174,7 +174,7 @@ You can upload a sample JSON file to a specified location and search the data fr
 2. Push the JSON search file to the device using the following command.  
 
    ```
-   kepler exec vda push KVATestData.json /home/app_user/packages/com.amazondeveloper.keplervideoapp/data
+   vega exec vda push KVATestData.json /home/app_user/packages/com.amazondeveloper.keplervideoapp/data
    ```
 
  
@@ -211,8 +211,8 @@ The Vega Video Sample App uses Vega's W3C Media API (`@amazon-devices/react-nati
 
 **Comprehensive W3C Media API documentation**
 
-- [W3C Media API in React Native for Vega](https://developer.amazon.com/docs/vega/0.21/media-player.html) - Complete API reference and concepts.
-- [Media Player Setup](https://developer.amazon.com/docs/vega/0.21/media-player-setup.html) - Step-by-step implementation instructions.
+- [W3C Media API in React Native for Vega](https://developer.amazon.com/docs/vega/latest/media-player.html) - Complete API reference and concepts.
+- [Media Player Setup](https://developer.amazon.com/docs/vega/latest/media-player-setup.html) - Step-by-step implementation instructions.
 
 #### Adaptive streaming playback
 
@@ -226,8 +226,8 @@ To use the W3C Media API for adaptive streaming, you need a separate Media Sourc
 
 **Detailed implementation guides**
 
-- [Play adaptive content using Dash.js Player](https://developer.amazon.com/docs/vega/0.21/media-player-dash-player.html) - Complete guide for MPEG DASH streaming.
-- [Play adaptive content using Hls.js Player](https://developer.amazon.com/docs/vega/0.21/media-player-hls-player.html) - Complete guide for HTTP Live Streaming.
+- [Play adaptive content using Dash.js Player](https://developer.amazon.com/docs/vega/latest/media-player-dash-player.html) - Complete guide for MPEG DASH streaming.
+- [Play adaptive content using Hls.js Player](https://developer.amazon.com/docs/vega/latest/media-player-hls-player.html) - Complete guide for HTTP Live Streaming.
 
 #### Pre-buffering
 
@@ -241,30 +241,28 @@ The W3C Media API allows you to hide the standard UI and display your own UI on 
 
 Shaka Player is a JavaScript (JS) player created for adaptive streaming on the web. The architecture of the W3C Media API allows this web player to also be used in Vega apps. A port of the Shaka player's code is included in [`src/w3cmedia/shakaplayer`](src/w3cmedia/shakaplayer). A helper function [ShakaPlayer.ts](src/w3cmedia/shakaplayer/ShakaPlayer.ts) was created to instantiate the Shaka player class and link it to the W3C Media API.
 
-**For implementing the Shaka Player in your own projects**, we recommend following the comprehensive [Play adaptive content (HLS/DASH) with Shaka Player](https://developer.amazon.com/docs/vega/0.21/media-player-shaka-player.html) document. This document provides detailed implementation instructions, best practices, and troubleshooting tips specific to the Vega platform.
+**For implementing the Shaka Player in your own projects**, we recommend following the comprehensive [Play adaptive content (HLS/DASH) with Shaka Player](https://developer.amazon.com/docs/vega/latest/media-player-shaka-player.html) document. This document provides detailed implementation instructions, best practices, and troubleshooting tips specific to the Vega platform.
 
 ### In-App Purchasing
 
 The In-App Purchasing (IAP) API allows apps to present, process, and fulfill purchases of digital content and subscriptions within the app. The Video Sample App demonstrates a simple use-case of the IAP APIs through the "Purchase Subscription" button on the Details Screen.
 
-The IAP implementation for the Video Sample App references the [IAP Sample App](https://developer.amazon.com/docs/vega/0.21/use-iap-vega-sample.html) to showcase a simple purchasing transaction for monthly subscriptions. For other in-depth IAP features, you can explore the IAP Sample App.
-
 #### Set up IAP
 
-Prior set up is needed to utilize the IAP APIs and handle transactions properly. This set up is required every time the VVD or device is launched. Please follow the [IAP documentation](https://developer.amazon.com/docs/vega/0.21/vega-iap-overview.html) to onboard and set up the [IAP Tester App](https://developer.amazon.com/docs/vega/0.21/configure-app-tester.html). You can reference the IAP documentation and follow the formats to properly configure the IAP environment.
+Prior set up is needed to utilize the IAP APIs and handle transactions properly. This set up is required every time the VVD or device is launched. Please follow the [IAP documentation](https://developer.amazon.com/docs/vega/latest/vega-iap-overview.html) to onboard and set up the [IAP Tester App](https://developer.amazon.com/docs/vega/latest/configure-app-tester.html). You can reference the IAP documentation and follow the formats to properly configure the IAP environment.
 
 ### Content Launcher integration
 
-To implement Content launcher, see the [Content Launcher Overview](https://developer.amazon.com/docs/vega/0.21/content-launcher-overview.html) documentation.
+To implement Content launcher, see the [Content Launcher Overview](https://developer.amazon.com/docs/vega/latest/content-launcher-overview.html) documentation.
 
 ### Content Personalization
 
-To learn more, see [Get Started with Vega Content Personalization](https://developer.amazon.com/docs/vega/0.21/get-started-with-vega-content-personalization.html).
+To learn more, see [Get Started with Vega Content Personalization](https://developer.amazon.com/docs/vega/latest/get-started-with-vega-content-personalization.html).
 
 
 ### Linear TV
 
-To learn more, see [Get Started with Linear TV](https://developer.amazon.com/docs/vega/0.21/get-started-with-linear-tv.html).
+To learn more, see [Get Started with Linear TV](https://developer.amazon.com/docs/vega/latest/get-started-with-linear-tv.html).
 
 
 ### Focus management
@@ -510,7 +508,7 @@ This section provides the minimum integration steps necessary to integrate the t
 
    
 
-For more details about this Vega supported library, see [react-native-svg](https://developer.amazon.com/docs/vega-api/0.21/react-native-svg.html).
+For more details about this Vega supported library, see [react-native-svg](https://developer.amazon.com/docs/vega-api/latest/react-native-svg.html).
 
 
 ### react-native-vector-icons
@@ -543,7 +541,7 @@ For more details about this Vega supported library, see [react-native-svg](https
    ```
        
 
-For more details about this Vega supported library, see [react-native-vector-icons](https://developer.amazon.com/docs/vega-api/0.21/react-native-vector-icons.html) in the Vega documentation.
+For more details about this Vega supported library, see [react-native-vector-icons](https://developer.amazon.com/docs/vega-api/latest/react-native-vector-icons.html) in the Vega documentation.
 
 
 ### lottie-react-native
@@ -580,7 +578,7 @@ For more details about this Vega supported library, see [react-native-vector-ico
    ```
     
 
-For more details about this Vega supported library, see [lottie-react-native](https://developer.amazon.com/docs/vega-api/0.21/lottie-react-native.html).
+For more details about this Vega supported library, see [lottie-react-native](https://developer.amazon.com/docs/vega-api/latest/lottie-react-native.html).
 
 
 ### react-native-navigation
@@ -601,7 +599,7 @@ For more details about this Vega supported library, see [lottie-react-native](ht
       "@amazon-devices/react-navigation__native": "~7.0.0",
       "@amazon-devices/react-navigation__stack": "~7.0.0",
       "@amazon-devices/react-navigation__drawer": "~7.0.0",
-      "@amazon-devices/react-native-screens": "~7.0.0",
+      "@amazon-devices/react-native-screens": "~2.0.0",
    }
    ```
 
@@ -675,7 +673,7 @@ For more details about this Vega supported library, see [react-native-navigation
    ```
      
 
-For more details about this Vega supported library, see [react-linear-gradient](https://developer.amazon.com/docs/vega-api/0.21/react-linear-gradient.html).
+For more details about this Vega supported library, see [react-linear-gradient](https://developer.amazon.com/docs/vega-api/latest/react-linear-gradient.html).
 
 ### react-native-netinfo
 
@@ -724,7 +722,7 @@ For more details about this Vega supported library, see [react-linear-gradient](
    });
    ```
 
-For more details about this Vega supported library, see [react-native-netinfo](https://developer.amazon.com/docs/vega-api/0.21/react-native-net-info.html).
+For more details about this Vega supported library, see [react-native-netinfo](https://developer.amazon.com/docs/vega-api/latest/react-native-net-info.html).
 
 
 
@@ -770,7 +768,7 @@ DeviceInfo.getBaseOs().then((baseOs) => {
 });
 ```
 
-For more details about this Vega supported library, see [react-native-device-info](https://developer.amazon.com/docs/vega-api/0.21/react-native-device-info.html).
+For more details about this Vega supported library, see [react-native-device-info](https://developer.amazon.com/docs/vega-api/latest/react-native-device-info.html).
 
 ### reduxjs toolkit
 
@@ -953,7 +951,7 @@ For more details about this Vega supported library, see [lodash](https://lodash.
    };
    ```
 
-For more details about this Vega supported library, see [react-native-localize](https://developer.amazon.com/docs/vega-api/0.21/react-native-localize.html).
+For more details about this Vega supported library, see [react-native-localize](https://developer.amazon.com/docs/vega-api/latest/react-native-localize.html).
 
 
 
@@ -1006,7 +1004,7 @@ For more details about this Vega supported library, see [react-native-localize](
    ```
    
    
-For more details about this Vega supported library, see [react-native-async-storage](https://developer.amazon.com/docs/vega-api/0.21/react-native-async-storage.html).
+For more details about this Vega supported library, see [react-native-async-storage](https://developer.amazon.com/docs/vega-api/latest/react-native-async-storage.html).
 
 ### Formik
 
@@ -1223,7 +1221,7 @@ Credits and attribution
 
 ### Third-Party Libraries
 
-For information about available third-party libraries that can be integrated with Vega apps, see the [Vega Module Resolver Preset](https://developer.amazon.com/docs/vega-api/0.21/vega-module-resolver-preset.html) documentation.
+For information about available third-party libraries that can be integrated with Vega apps, see the [Vega Module Resolver Preset](https://developer.amazon.com/docs/vega-api/latest/vega-module-resolver-preset.html) documentation.
 
 ### Third-Party Assets
 
