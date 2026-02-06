@@ -122,6 +122,19 @@ jest.mock('@amazon-devices/react-native-device-info', () => ({
   getBaseOs: jest.fn().mockResolvedValue('Test Base OS'),
   getManufacturer: jest.fn().mockResolvedValue('Test Manufacturer'),
 }));
+jest.mock('@amazon-devices/react-native-gesture-handler', () => ({
+  GestureHandlerRootView: 'GestureHandlerRootView',
+  TapGestureHandler: 'TapGestureHandler',
+  PanGestureHandler: 'PanGestureHandler',
+  State: {
+    UNDETERMINED: 0,
+    FAILED: 1,
+    BEGAN: 2,
+    CANCELLED: 3,
+    ACTIVE: 4,
+    END: 5,
+  },
+}));
 jest.mock('@amazon-devices/kepler-media-account-login', () => ({
   AccountLoginServerComponent: jest.fn(),
   IAccountLoginHandlerAsync: jest.fn(),
