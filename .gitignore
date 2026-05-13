@@ -1,6 +1,9 @@
 # Build files
 node_modules
 package-lock.json
+build
+buildinfo.json
+coverage
 
 # Other files
 *.iml
