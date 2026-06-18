@@ -393,8 +393,6 @@ override_attribute_component = { Status = "com.amazondeveloper.keplervideoapp.in
 [[extras.value.application.interface]]
 interface_name = "com.amazon.kepler.media.IMediaPlaybackServer"
 command_options = [
-    "Play",
-    "Pause",
     "StartOver",
     "Previous",
     "Next",

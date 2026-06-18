@@ -29,9 +29,12 @@ Build and run the app
 
 Before you launch the sample app, make sure that you have:
 
-1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
-2. **Java Runtime Environment (JRE) or Java Development Kit (JDK)** - Required by Shaka Player's build system for JavaScript compilation and optimization
-3. **Python** - Required by Shaka Player's build scripts
+* [Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
+* [Git v1.9 or later](https://git-scm.com/install/)
+* [Python v3.x](https://www.python.org/downloads/)
+* [Java Runtime Environment v21 or later](https://learn.microsoft.com/en-us/java/openjdk/download)
+* [NodeJS v18-v20](https://nodejs.org/en/download/)
+* A local web server, such as Apache. A local web server is required because browsers place restrictions on applications from file:/// URLs.
 
 **Note**: The Shaka Player integration runs automatically during `npm install` and requires these dependencies. If you encounter build errors related to Java or Python, install the missing prerequisites and run `npm install` again. For any other prerequisite Shaka issue please visit: https://shaka-project.github.io/shaka-player/docs/api/tutorial-welcome.html.
 
@@ -45,19 +48,19 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
 
 1. At the command prompt, navigate to the Vega Video Sample App source code directory. 
 
-2. To install the app dependencies, run the following command. 
+2. To install the app dependencies, run the following command. The installation can take several minutes to complete. 
+
 
    ```
    npm install
    ```
 
-3. To build the app to generate .vpkg files, run the following command.
-
+3. To build the app to generate .vpkg files, run the following command. 
    ```
    npm run build:app
    ```
 
-4. At the command prompt, in the **build** folder, verify that you generated the VPKG files for your device's architecture.
+4. At the command prompt, in the **build** folder, verify that the build generated the VPKG files for your device's architecture.
 
    * **armv7-release/keplervideoapp_armv7.vpkg**&mdash;generated on x86_64 and Mac-M series devices to run on the Vega OS Fire TV Stick.
    * **x86_64-release/keplervideoapp_x86_64.vpkg**&mdash;generated on x86_64 device to run on the VVD.
@@ -67,23 +70,21 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
 
 #### Vega Virtual Device
 
-1. To start the Vega Virtual Device, at the command prompt, run the following command.
+1. To start the Vega Virtual Device at the command prompt, run the following command.
 
    ```
    vega virtual-device start
    ```
 
-2. Go to the directory where you placed the VPKG files. 
+2. To install and launch the app on the Vega Virtual Device, run the following command, depending on your device architecture.
 
-3. To install and launch the app on the Vega Virtual Device, run the following command, depending on your device architecture.
-
-   - On Mac M-series based devices. 
+   - On Mac M-series-based devices. 
       
       ```
       vega run-app build/aarch64-release/keplervideoapp_aarch64.vpkg
       ```
 
-   - On x86_64 based devices.
+   - On x86_64-based devices.
       
      ```
      vega run-app build/x86_64-release/keplervideoapp_x86_64.vpkg
@@ -218,11 +219,7 @@ The Vega Video Sample App uses Vega's W3C Media API (`@amazon-devices/react-nati
 
 Adaptive streaming playback is a core feature of the W3C Media API. You can try out these different file types by using [VideoFileType.tsx](src/components/VideoFileType.tsx) found on the [Details screen](src/screens/DetailsScreen.tsx).
 
-To use the W3C Media API for adaptive streaming, you need a separate Media Source Extension (MSE) player. In the Video Sample app, the [Shaka Player](#shaka-player) is used.
-
-**Detailed implementation guides**
-
-To use the W3C Media API for adaptive streaming, you need a separate Media Source Extension (MSE) player. In the Video Sample app, the [Shaka Player](#shaka-player) is used.
+To use the W3C Media API for adaptive streaming, you need a separate Media Source Extension (MSE) player. In the Video Sample app, the [Shaka Player](#shaka-player) handles this role.
 
 **Detailed implementation guides**
 
@@ -231,21 +228,21 @@ To use the W3C Media API for adaptive streaming, you need a separate Media Sourc
 
 #### Pre-buffering
 
-Pre-buffering allows video content to be loaded outside of the player component. In the Video Sample App, pre-buffering begins on the [Details screen](src/screens/DetailsScreen.tsx#L45). This allows the video to start loading before the user reaches the [Player screen](src/screens/PlayerScreen.tsx). This greatly decreases how long the user has to wait for the video to start. The utility class [VideoHandler.ts](src/utils/VideoHandler.ts) handles pre-buffering and its clean-up functions.
+Pre-buffering allows video content to load outside of the player component. In the Video Sample App, pre-buffering begins on the [Details screen](src/screens/DetailsScreen.tsx#L45). This allows the video to start loading before the user reaches the [Player screen](src/screens/PlayerScreen.tsx). This approach greatly decreases how long the user has to wait for the video to start. The utility class [VideoHandler.ts](src/utils/VideoHandler.ts) handles pre-buffering and its clean-up functions.
 
 #### Custom UI
 
-The W3C Media API allows you to hide the standard UI and display your own UI on top of the video player. In the Video Sample App, a [custom UI](src/w3cmedia/mediacontrols/VideoPlayerUI.tsx) was created to demonstrate this. The buttons of this custom UI connect to the `VideoPlayer` object and trigger the appropriate actions.
+The W3C Media API allows you to hide the standard UI and display your own UI on top of the video player. The Video Sample App includes a [custom UI](src/w3cmedia/mediacontrols/VideoPlayerUI.tsx) to demonstrate this capability. The buttons of this custom UI connect to the `VideoPlayer` object and trigger the appropriate actions.
 
 #### Shaka Player
 
-Shaka Player is a JavaScript (JS) player created for adaptive streaming on the web. The architecture of the W3C Media API allows this web player to also be used in Vega apps. A port of the Shaka player's code is included in [`src/w3cmedia/shakaplayer`](src/w3cmedia/shakaplayer). A helper function [ShakaPlayer.ts](src/w3cmedia/shakaplayer/ShakaPlayer.ts) was created to instantiate the Shaka player class and link it to the W3C Media API.
+Shaka Player is a JavaScript (JS) player created for adaptive streaming on the web. The architecture of the W3C Media API allows this web player to also run in Vega apps. A port of the Shaka player's code is included in [`src/w3cmedia/shakaplayer`](src/w3cmedia/shakaplayer). A helper function [ShakaPlayer.ts](src/w3cmedia/shakaplayer/ShakaPlayer.ts) instantiates the Shaka player class and links it to the W3C Media API.
 
 **For implementing the Shaka Player in your own projects**, we recommend following the comprehensive [Play adaptive content (HLS/DASH) with Shaka Player](https://developer.amazon.com/docs/vega/latest/media-player-shaka-player.html) document. This document provides detailed implementation instructions, best practices, and troubleshooting tips specific to the Vega platform.
 
 ### In-App Purchasing
 
-The In-App Purchasing (IAP) API allows apps to present, process, and fulfill purchases of digital content and subscriptions within the app. The Video Sample App demonstrates a simple use-case of the IAP APIs through the "Purchase Subscription" button on the Details Screen.
+The In-App Purchasing (IAP) API allows apps to present, process, and fulfill purchases of digital content and subscriptions within the app. The Video Sample App demonstrates a simple use-case of the IAP APIs through the "Purchase Subscription" button on the Details screen.
 
 #### Set up IAP
 
@@ -463,7 +460,7 @@ const ErrorView = ({navigateBack}) => {
 
 
 
-Integrate 3P libraries into the app
+Integrate third-party libraries into the app
 -----------------------------------
 
 This section provides the minimum integration steps necessary to integrate the third-party libraries with the sample app.
@@ -508,7 +505,7 @@ This section provides the minimum integration steps necessary to integrate the t
 
    
 
-For more details about this Vega supported library, see [react-native-svg](https://developer.amazon.com/docs/vega-api/latest/react-native-svg.html).
+For more details about this Vega-supported library, see [react-native-svg](https://developer.amazon.com/docs/vega-api/latest/react-native-svg.html).
 
 
 ### react-native-vector-icons
@@ -541,7 +538,7 @@ For more details about this Vega supported library, see [react-native-svg](https
    ```
        
 
-For more details about this Vega supported library, see [react-native-vector-icons](https://developer.amazon.com/docs/vega-api/latest/react-native-vector-icons.html) in the Vega documentation.
+For more details about this Vega-supported library, see [react-native-vector-icons](https://developer.amazon.com/docs/vega-api/latest/react-native-vector-icons.html) in the Vega documentation.
 
 
 ### lottie-react-native
@@ -563,7 +560,7 @@ For more details about this Vega supported library, see [react-native-vector-ico
 
 4. In `<app_package_root>/assets/image/`, add your Lottie animation.
 
-    **Note**: On Vega, you can place alternatively place Lottie animations (not its image assets) in `<app_package_root>/assets/raw/`. Other than a small difference in path, this is similar to the behavior on Android.
+    **Note**: On Vega, you can alternatively place Lottie animations (not its image assets) in `<app_package_root>/assets/raw/`. Other than a small difference in path, this behavior is similar to the behavior on Android.
 
 5. To import the corresponding `LottieView` component, run the following command.
     
@@ -578,17 +575,17 @@ For more details about this Vega supported library, see [react-native-vector-ico
    ```
     
 
-For more details about this Vega supported library, see [lottie-react-native](https://developer.amazon.com/docs/vega-api/latest/lottie-react-native.html).
+For more details about this Vega-supported library, see [lottie-react-native](https://developer.amazon.com/docs/vega-api/latest/lottie-react-native.html).
 
 
 ### react-native-navigation
 
- **WARNING**: Due to a recent dependency update in React Navigation, you are now required to add `"@amazon-devices/react-native-screens": "~2.0.0"` as a dependency for any package that uses React Navigation. If you don’t add the dependency, the app crashes.
+ **WARNING**: Due to a recent dependency update in React Navigation, you must add `"@amazon-devices/react-native-screens": "~2.0.0"` as a dependency for any package that uses React Navigation. If you don’t add the dependency, the app crashes.
 
 
 **To integrate this library**
 
-1. In your **package.json** file, add the subset of VegaUIReact-Navigation dependencies that are needed to support your app.
+1. In your **package.json** file, add the subset of VegaUIReact-Navigation dependencies that your app needs.
     
    ```json
    "dependencies": {
@@ -604,9 +601,9 @@ For more details about this Vega supported library, see [lottie-react-native](ht
    ```
 
 
-   **Note**: The subpackage `react-navigation/native-stack` is not supported on the Vega platform.
+   **Note**: The Vega platform does not support the subpackage `react-navigation/native-stack`.
 
-   While the Vega platform does have a fork of React Native Reanimated, React Native Safe Area Context, and React Native Screens, they are not officially supported on the Vega platform. @amazon-devices/keplerscript-react-native-reanimated, @amazon-devices/keplerscript-react-native-safe-area-context and @amazon-devices/react-native-screens were created to rectify build issues found when supporting @amazon-devices/keplerscript-react-navigation-* packages.
+   The Vega platform does have a fork of React Native Reanimated, React Native Safe Area Context, and React Native Screens, but they are not officially supported. The @amazon-devices/keplerscript-react-native-reanimated, @amazon-devices/keplerscript-react-native-safe-area-context, and @amazon-devices/react-native-screens packages rectify build issues found when supporting @amazon-devices/keplerscript-react-navigation-* packages.
 
 2. In your project's **package.json** file, install the required peer dependencies. 
 
@@ -617,7 +614,7 @@ For more details about this Vega supported library, see [lottie-react-native](ht
    }
    ```
    
-3. Within the `NavigationContainer` component, wrap your returned app code. Typically, you do this in your entry file, such as **index.js** or **App.js**.
+3. Within the `NavigationContainer` component, wrap your returned app code. Typically, you do this wrapping in your entry file, such as **index.js** or **App.js**.
 
    1. Import the following libraries.      
 
@@ -639,7 +636,7 @@ For more details about this Vega supported library, see [lottie-react-native](ht
       };
       ```
    
-For more details about this Vega supported library, see [react-native-navigation](https://developer.amazon.com/docs/react-native-vega/0.72/keplerscript_nav.html).
+For more details about this Vega-supported library, see [react-native-navigation](https://developer.amazon.com/docs/react-native-vega/0.72/keplerscript_nav.html).
 
 ### react-linear-gradient
 
@@ -673,7 +670,7 @@ For more details about this Vega supported library, see [react-native-navigation
    ```
      
 
-For more details about this Vega supported library, see [react-linear-gradient](https://developer.amazon.com/docs/vega-api/latest/react-linear-gradient.html).
+For more details about this Vega-supported library, see [react-linear-gradient](https://developer.amazon.com/docs/vega-api/latest/react-linear-gradient.html).
 
 ### react-native-netinfo
 
@@ -722,7 +719,7 @@ For more details about this Vega supported library, see [react-linear-gradient](
    });
    ```
 
-For more details about this Vega supported library, see [react-native-netinfo](https://developer.amazon.com/docs/vega-api/latest/react-native-net-info.html).
+For more details about this Vega-supported library, see [react-native-netinfo](https://developer.amazon.com/docs/vega-api/latest/react-native-net-info.html).
 
 
 
@@ -768,7 +765,7 @@ DeviceInfo.getBaseOs().then((baseOs) => {
 });
 ```
 
-For more details about this Vega supported library, see [react-native-device-info](https://developer.amazon.com/docs/vega-api/latest/react-native-device-info.html).
+For more details about this Vega-supported library, see [react-native-device-info](https://developer.amazon.com/docs/vega-api/latest/react-native-device-info.html).
 
 ### reduxjs toolkit
 
@@ -898,7 +895,7 @@ For more details about this library, see the [Redux Toolkit overview](https://re
    ```
      
 
-For more details about this Vega supported library, see [lodash](https://lodash.com/docs/4.17.15).
+For more details about this Vega-supported library, see [lodash](https://lodash.com/docs/4.17.15).
 
 ### react-native-localize
 
@@ -951,7 +948,7 @@ For more details about this Vega supported library, see [lodash](https://lodash.
    };
    ```
 
-For more details about this Vega supported library, see [react-native-localize](https://developer.amazon.com/docs/vega-api/latest/react-native-localize.html).
+For more details about this Vega-supported library, see [react-native-localize](https://developer.amazon.com/docs/vega-api/latest/react-native-localize.html).
 
 
 
@@ -1004,7 +1001,7 @@ For more details about this Vega supported library, see [react-native-localize](
    ```
    
    
-For more details about this Vega supported library, see [react-native-async-storage](https://developer.amazon.com/docs/vega-api/latest/react-native-async-storage.html).
+For more details about this Vega-supported library, see [react-native-async-storage](https://developer.amazon.com/docs/vega-api/latest/react-native-async-storage.html).
 
 ### Formik
 
@@ -1104,11 +1101,11 @@ The following sections list known issues with the Vega Video Sample App.
 
 ### Feature Rotator
 
-The Feature Rotator is intended to be auto-rotating only, and is not meant to be interacted with by the user. D-Pad commands have no effect on the feature rotator, and any Touch interactions might cause unintended behaviors for the component.
+The Feature Rotator is intended to be auto-rotating only, and users should not interact with it. D-Pad commands have no effect on the Feature Rotator, and any Touch interactions might cause unintended behaviors for the component.
 
 ### Nonfunctional buttons on the Details screen
 
-Some of the buttons on the Details screen are nonfunctional, and are added as visual examples. They are for your Sample only.
+Some of the buttons on the Details screen are nonfunctional visual examples. They are for your Sample only.
 
 The following list shows some of the nonfunctional buttons on the Details screen:
 
@@ -1119,11 +1116,11 @@ The following list shows some of the nonfunctional buttons on the Details screen
 
 **Caption menu resets when you close it**
 
-By default, the Caption menu has the first option selected when it opens. This can lead to a mismatch between the actual caption that is displayed and the one that appears to be selected on the Caption menu.
+By default, the Caption menu has the first option selected when it opens. This behavior can lead to a mismatch between the actual caption that the app displays and the one that appears selected on the Caption menu.
 
 For example, let’s say that you turn off captions by selecting the Off option, and then you close the Caption menu. When you reopen the Caption menu, the first caption appears selected even though the captions are actually off. You can’t re-enable the first caption option because it appears to already be selected on the Caption menu.
 
-In this scenario—when you switch to a new caption after you close the Caption menu—Amazon recommends that you first set the caption to the Off option. Then, switch to the option you want.
+In this scenario, when you switch to a new caption after you close the Caption menu, Amazon recommends that you first set the caption to the Off option. Then, switch to the option you want.
 
 
 **Player control buttons have inconsistent behavior**
@@ -1132,31 +1129,31 @@ Buttons such as the Fast Forward, Rewind, Play, and Pause button might behave di
 
 The following list shows more examples of inconsistent Player screen UI behavior:
 
-- Fast Forward and Rewind buttons start video playback even when video is paused, for certain non-MP4 file types.
-- Fast Forward and Rewind buttons don’t have any effect when the video is paused, for MP4 file types.
+- Fast Forward and Rewind buttons start video playback even when the video is paused, for certain non-MP4 file types.
+- Fast Forward and Rewind buttons don’t affect playback when the video is paused, for MP4 file types.
 
-When these buttons become out of sync with the video playback (for example, UI shows Paused button but the video continues to play), Amazon recommends that you press the Play/Pause button a few times until the buttons are accurate and in-sync with the playback.
+When these buttons become out of sync with the video playback (for example, the UI shows the Paused button but the video continues to play), Amazon recommends that you press the Play/Pause button a few times. Continue pressing until the buttons are accurate and in-sync with the playback.
 
 **Video not loading or app crashing during playback**
 
 Occasionally when you try to navigate to the video player, the video content never fully loads. In this case, you see a never-ending loading indicator. In rare cases, the app might crash. In either of these cases, Amazon recommends that you relaunch the app. If the issue persists, there might be a problem with the video content source.
 
-**App shows black screen with only audio playback**
+**The app shows a black screen with only audio playback**
 
 When you play a video from the detail page after performing back navigation from the player, occasionally a black screen appears with only audio playback.
 
-The recommended workaround is to click the back button on the remote control or the screen navigation. The home page is displayed, and you can start or select another video.
+The recommended workaround is to click the back button on the remote control or the screen navigation. The app displays the home page, and you can start or select another video.
 
 ### In-App Purchasing API stability
 
 The In-App Purchasing APIs can be unstable. The following list shows common issues you might encounter:
 
-* **Unresponsive IAP APIs**&mdash;For example, when you press the Purchase Subscription button on the Details Screen, nothing happens.
+* **Unresponsive IAP APIs**&mdash;For example, when you press the Purchase Subscription button on the Details screen, nothing happens.
 * **Unresponsive IAP UI**&mdash;When you navigate to the IAP UI, you might be unable to interact with the UI to continue the IAP transaction. The unresponsiveness might resolve itself after some time. Restart the app if the issue persists.
 * **General intermittent error responses from the IAP client**&mdash;When you initiate an IAP transaction and navigate to the IAP UI, issues can occur that involve the communication between the Vega Video Sample App and the IAP Tester App that result in error messages.
 
 
-When you encounter any disruptive issues with IAP, Amazon recommends that you restart the Vega Video Sample App and the IAP Tester App. In some cases, you might also need to restart the Vega Virtual Device or Vega OS Fire TV Stick, and repeat the IAP setup.
+When you encounter any disruptive issues with IAP, Amazon recommends that you restart the Vega Video Sample App and the IAP Tester App. In some cases, you might also need to restart the Vega Virtual Device or Vega OS Fire TV Stick and repeat the IAP setup.
 
 
 Release notes
