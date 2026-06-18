@@ -636,7 +636,7 @@ For more details about this Vega-supported library, see [lottie-react-native](ht
       };
       ```
    
-For more details about this Vega-supported library, see [react-native-navigation](https://developer.amazon.com/docs/react-native-vega/0.72/keplerscript_nav.html).
+For more details about this Vega-supported library, see [react-native-navigation](https://developer.amazon.com/docs/react-native-vega/0.72/navigation.html).
 
 ### react-linear-gradient
 
