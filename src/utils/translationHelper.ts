@@ -18,7 +18,12 @@ export const localeOptions = appLocales.map((locale) => {
 });
 
 export const getCurrentCountry = () => {
-  return getCountry();
+  try {
+    return getCountry();
+  } catch (e) {
+    console.warn('getCurrentCountry: getCountry() failed', e);
+    return undefined;
+  }
 };
 
 //filters locales used in app from complete locale data

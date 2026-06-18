@@ -190,7 +190,7 @@ describe('AccountLoginWrapper', () => {
 
       // Execute
       const handler = accountLoginWrapper.createAccountLoginHandler();
-      const status = await handler.handleReadStatus();
+      const status = await handler.handleReadStatus!();
 
       // Verify
       expect(handler).toHaveProperty('handleReadStatus');
