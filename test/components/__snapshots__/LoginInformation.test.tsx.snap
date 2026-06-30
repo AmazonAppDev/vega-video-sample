@@ -3,7 +3,7 @@
 exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 1`] = `
 <div
   style={
-    Object {
+    {
       "alignItems": "center",
       "borderBottomColor": "#FFFFFF",
       "borderBottomWidth": 1,
@@ -19,7 +19,7 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "row",
       }
@@ -27,7 +27,7 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
   >
     <Text
       style={
-        Object {
+        {
           "color": "#FFFFFF",
           "fontSize": 28,
           "fontWeight": "bold",
@@ -41,7 +41,7 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
   <View
     accessibilityRole="button"
     accessibilityState={
-      Object {
+      {
         "busy": undefined,
         "checked": undefined,
         "disabled": false,
@@ -50,7 +50,7 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
       }
     }
     accessibilityValue={
-      Object {
+      {
         "max": undefined,
         "min": undefined,
         "now": undefined,
@@ -70,8 +70,8 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "#2D61FF",
           "borderColor": "transparent",
           "borderRadius": 8,
@@ -79,7 +79,7 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
           "height": 76,
           "paddingHorizontal": 18,
         },
-        Object {
+        {
           "backgroundColor": "transparent",
           "borderColor": "#808080",
           "borderRadius": 15,
@@ -96,12 +96,12 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
   >
     <View
       style={
-        Array [
-          Object {
+        [
+          {
             "flex": 1,
             "justifyContent": "center",
           },
-          Object {
+          {
             "flexDirection": "row",
           },
         ]
@@ -109,7 +109,7 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
     >
       <View
         style={
-          Object {
+          {
             "alignSelf": "center",
           }
         }
@@ -118,17 +118,17 @@ exports[`LoginInformation renders SettingsScreen correctly and matches snapshot 
           ellipsizeMode="tail"
           numberOfLines={1}
           style={
-            Array [
-              Object {
+            [
+              {
                 "color": "#FFFFFF",
                 "fontFamily": "Amazon Ember",
                 "fontSize": 22,
                 "fontWeight": "700",
               },
-              Object {
+              {
                 "margin": 0,
               },
-              Object {
+              {
                 "color": "#FFFFFF",
                 "fontSize": 22,
               },

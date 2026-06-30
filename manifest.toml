@@ -10,7 +10,7 @@ id = "com.amazondeveloper.keplervideoapp"   # [required] Package identifier, use
                                             #            must reuse their existing application id to ensure existing
                                             #            Amazon integrations, viz. IAP, continue to work. 
 title = "Vega Video Sample App"           # [required] string name for the app, used to display on FireTV launcher and Appstore.
-version = "2.23.0"                          # [required] Version string of the app, recommended to use semver, but any other string may be used. 
+version = "2.22.1"                          # [required] Version string of the app, recommended to use semver, but any other string may be used. 
 icon = "@image/VideoApp.png"        # [required] Image file to be used as the icon for the app. 
 
 ## ------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ icon = "@image/VideoApp.png"        # [required] Image file to be used as the ic
 [components]
 [[components.interactive]]
 id = "com.amazondeveloper.keplervideoapp.main"  # [required] Unique component identifier
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 categories = [
     "com.amazon.category.main",                 # [required] Category declaration to annotate 
                                                 #            this component as the main launchable component for the app.
@@ -42,7 +42,7 @@ launch-type = "singleton"                       # [optional] Declares that only 
 id = "com.amazondeveloper.keplervideoapp.sync_source"                                   # [required] Id of the component
 launch-type = "singleton"                                                               # [optional] Declares that only one running instance of this app component is created,
                                                                                         #            new invocations always reference the existing instance. 
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0" 
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0" 
 
 # ------------------------------------------------------------------------------
 # Account Login
@@ -51,7 +51,7 @@ runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript
 id = "com.amazondeveloper.keplervideoapp.interface.provider"                            # [required] Id of the service component
 launch-type = "singleton"                                                               # [required] Declares that only one running instance of this app component is created,
                                                                                         #            services have to be singleton. 
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 
 # ------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0
 # -------------------------------------------------------------------------------
 [[components.service]]
 id = "com.amazondeveloper.keplervideoapp.content.dataRefresh.provider"                  # [required] Id of the service component
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 launch-type = "singleton"                                                               # [optional] Declares that only one running instance of this app component is created,
                                                                                         #            new invocations always reference the existing instance. 
@@ -69,7 +69,7 @@ launch-type = "singleton"                                                       
 # -------------------------------------------------------------------------------
 [[components.task]]
 id = "com.amazondeveloper.keplervideoapp.onInstallOrUpdateTask"                         # [required] Id of the task component
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 
 # ------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0
 # -------------------------------------------------------------------------------
 [[components.task]]
 id = "com.amazondeveloper.keplervideoapp.epgSyncTask"                                   # [required] Id of the task component
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 
 ## ------------------------------------------------------------------------------

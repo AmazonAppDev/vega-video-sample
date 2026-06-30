@@ -13,6 +13,7 @@ export enum VideoFileTypes {
 
 export const DEFAULT_FILE_TYPE: VideoFileTypes = VideoFileTypes.HLS;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const VideoSources: { [key in VideoFileTypes]: VideoSource } = {
   [VideoFileTypes.MPD]: TearsOfSteel as VideoSource,
   [VideoFileTypes.HLS]: BigBuckBunny as VideoSource,

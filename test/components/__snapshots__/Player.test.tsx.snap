@@ -3,12 +3,12 @@
 exports[`PlayerScreen rendering Test Cases renders correctly screenshot match 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "alignItems": "stretch",
         "backgroundColor": "#000000",
       },
-      Object {
+      {
         "height": undefined,
         "width": undefined,
       },

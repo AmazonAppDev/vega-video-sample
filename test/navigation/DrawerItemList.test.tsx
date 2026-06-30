@@ -1,7 +1,4 @@
-import {
-  DrawerDescriptorMap,
-  DrawerNavigationHelpers,
-} from '@amazon-devices/react-navigation__drawer/lib/typescript/src/types';
+import { DrawerContentComponentProps } from '@amazon-devices/react-navigation__drawer';
 import {
   DrawerNavigationState,
   ParamListBase,
@@ -37,11 +34,11 @@ const mockDescriptors = {
       title: 'Settings',
     },
   },
-} as unknown as DrawerDescriptorMap;
+} as unknown as DrawerContentComponentProps['descriptors'];
 const mockNavigation = {
   navigate: jest.fn(),
   dispatch: jest.fn(),
-} as unknown as DrawerNavigationHelpers;
+} as unknown as DrawerContentComponentProps['navigation'];
 
 const onDrawerListFocusMock = jest.fn();
 const onDrawerListBlurMock = jest.fn();

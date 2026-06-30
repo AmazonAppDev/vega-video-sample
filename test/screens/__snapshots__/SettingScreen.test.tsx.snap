@@ -4,7 +4,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
 <div
   autoFocus={true}
   style={
-    Object {
+    {
       "backgroundColor": "#000000",
       "flex": 1,
     }
@@ -13,7 +13,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
 >
   <Text
     style={
-      Object {
+      {
         "color": "#FFFFFF",
         "fontSize": 70,
         "marginBottom": 30,
@@ -28,7 +28,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   >
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "flexDirection": "row",
           "marginVertical": 25,
@@ -38,7 +38,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       <Text
         accessibilityRole="text"
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontFamily": "Amazon Ember",
             "fontSize": 32,
@@ -56,18 +56,18 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
         defaultValue={false}
         onSelect={[Function]}
         options={
-          Array [
-            Object {
+          [
+            {
               "code": "en",
               "label": "US",
               "value": "en-US",
             },
-            Object {
+            {
               "code": "fr",
               "label": "FR",
               "value": "fr-FR",
             },
-            Object {
+            {
               "code": "es",
               "label": "ES",
               "value": "es-ES",
@@ -79,7 +79,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   </div>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "margin": 20,
         "marginRight": 60,
@@ -92,7 +92,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   >
     <View
       style={
-        Object {
+        {
           "alignContent": "center",
           "flexDirection": "row",
         }
@@ -100,7 +100,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <View
         accessibilityState={
-          Object {
+          {
             "busy": undefined,
             "checked": undefined,
             "disabled": undefined,
@@ -109,7 +109,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
           }
         }
         accessibilityValue={
-          Object {
+          {
             "max": undefined,
             "min": undefined,
             "now": undefined,
@@ -127,7 +127,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 50,
             "justifyContent": "center",
@@ -144,7 +144,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
           accessibilityRole="text"
           numberOfLines={1}
           style={
-            Object {
+            {
               "color": "#FFFFFF",
               "fontFamily": "Amazon Ember",
               "fontSize": 20,
@@ -165,7 +165,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   </View>
   <div
     style={
-      Object {
+      {
         "alignItems": "center",
         "borderBottomColor": "#FFFFFF",
         "borderBottomWidth": 1,
@@ -181,7 +181,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   >
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "flexDirection": "row",
         }
@@ -189,7 +189,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 28,
             "fontWeight": "bold",
@@ -203,7 +203,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     <View
       accessibilityRole="button"
       accessibilityState={
-        Object {
+        {
           "busy": undefined,
           "checked": undefined,
           "disabled": false,
@@ -212,7 +212,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
         }
       }
       accessibilityValue={
-        Object {
+        {
           "max": undefined,
           "min": undefined,
           "now": undefined,
@@ -232,8 +232,8 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
+        [
+          {
             "backgroundColor": "#2D61FF",
             "borderColor": "transparent",
             "borderRadius": 8,
@@ -241,7 +241,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
             "height": 76,
             "paddingHorizontal": 18,
           },
-          Object {
+          {
             "backgroundColor": "transparent",
             "borderColor": "#808080",
             "borderRadius": 15,
@@ -258,12 +258,12 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "flex": 1,
               "justifyContent": "center",
             },
-            Object {
+            {
               "flexDirection": "row",
             },
           ]
@@ -271,7 +271,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       >
         <View
           style={
-            Object {
+            {
               "alignSelf": "center",
             }
           }
@@ -280,17 +280,17 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
             ellipsizeMode="tail"
             numberOfLines={1}
             style={
-              Array [
-                Object {
+              [
+                {
                   "color": "#FFFFFF",
                   "fontFamily": "Amazon Ember",
                   "fontSize": 22,
                   "fontWeight": "700",
                 },
-                Object {
+                {
                   "margin": 0,
                 },
-                Object {
+                {
                   "color": "#FFFFFF",
                   "fontSize": 22,
                 },
@@ -306,7 +306,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   </div>
   <View
     style={
-      Object {
+      {
         "flexDirection": "column",
         "width": "100%",
       }
@@ -314,7 +314,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
   >
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -329,7 +329,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -341,7 +341,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -352,7 +352,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -367,7 +367,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -379,7 +379,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -390,7 +390,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -405,7 +405,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -417,7 +417,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -428,7 +428,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -443,7 +443,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -455,7 +455,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -466,7 +466,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -481,7 +481,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -493,7 +493,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -504,7 +504,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -519,7 +519,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -531,7 +531,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -542,7 +542,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderBottomColor": "#FFFFFF",
           "borderBottomWidth": 1,
@@ -557,7 +557,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
             "fontWeight": "bold",
@@ -569,7 +569,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       </Text>
       <Text
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 26,
           }
@@ -585,7 +585,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     <View
       accessibilityRole="button"
       accessibilityState={
-        Object {
+        {
           "busy": undefined,
           "checked": undefined,
           "disabled": false,
@@ -594,7 +594,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
         }
       }
       accessibilityValue={
-        Object {
+        {
           "max": undefined,
           "min": undefined,
           "now": undefined,
@@ -614,8 +614,8 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
+        [
+          {
             "backgroundColor": undefined,
             "borderColor": "#727477",
             "borderRadius": 8,
@@ -623,7 +623,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
             "height": 76,
             "paddingHorizontal": 18,
           },
-          Object {
+          {
             "backgroundColor": "transparent",
             "borderColor": "#808080",
             "borderRadius": 15,
@@ -641,12 +641,12 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "flex": 1,
               "justifyContent": "center",
             },
-            Object {
+            {
               "flexDirection": "row",
             },
           ]
@@ -654,7 +654,7 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
       >
         <View
           style={
-            Object {
+            {
               "alignSelf": "center",
             }
           }
@@ -663,17 +663,17 @@ exports[`Setting Test Cases renders SettingScreen correctly and matches snapshot
             ellipsizeMode="tail"
             numberOfLines={1}
             style={
-              Array [
-                Object {
+              [
+                {
                   "color": "#727477",
                   "fontFamily": "Amazon Ember",
                   "fontSize": 22,
                   "fontWeight": "700",
                 },
-                Object {
+                {
                   "margin": 0,
                 },
-                Object {
+                {
                   "color": "#FFFFFF",
                   "fontSize": 22,
                 },

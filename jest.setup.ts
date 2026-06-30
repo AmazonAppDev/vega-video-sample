@@ -1,5 +1,19 @@
 // jest.setup.js or setupTests.js
+
+import { configure } from '@testing-library/react-native';
 import { HWEvent } from '@amazon-devices/react-native-kepler';
+
+// Configure RNTL for RN 0.83 + Kepler runtime compatibility
+(configure as any)({
+  hostComponentNames: {
+    text: 'Text',
+    textInput: 'TextInput',
+    switch: 'Switch',
+    scrollView: 'ScrollView',
+    modal: 'Modal',
+  },
+});
+
 class MockContentRatingBuilder {
   ratingsSystem() {
     return this;
@@ -239,18 +253,24 @@ jest.mock('react-native', () => {
   RN.Animated.timing = jest.fn().mockReturnValue({
     start: jest.fn(),
   });
-  RN.Dimensions.get = jest.fn().mockReturnValue({ height: 800 });
-  RN.PixelRatio.roundToNearestPixel = jest.fn().mockImplementation((uxUnit) => {
-    return uxUnit;
-  });
+  RN.Dimensions = {
+    get: jest.fn().mockReturnValue({ width: 1920, height: 1080, scale: 1, fontScale: 1 }),
+    set: jest.fn(),
+    addEventListener: jest.fn(() => ({ remove: jest.fn() })),
+    removeEventListener: jest.fn(),
+  };
+  RN.PixelRatio = {
+    get: jest.fn().mockReturnValue(1),
+    getFontScale: jest.fn().mockReturnValue(1),
+    getPixelSizeForLayoutSize: jest.fn((size: number) => size),
+    roundToNearestPixel: jest.fn((uxUnit: number) => uxUnit),
+  };
 
   return RN;
 });
 jest.mock('./src/utils/pixelUtils', () => {
-  const RN = jest.requireMock('react-native');
-
   return {
-    scaleUxToDp: RN.PixelRatio.roundToNearestPixel,
+    scaleUxToDp: jest.fn((uxUnit: number) => uxUnit),
   };
 });
 jest.mock('@amazon-devices/react-navigation__stack', () => ({

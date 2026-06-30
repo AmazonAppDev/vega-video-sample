@@ -262,16 +262,19 @@ const PlayerScreen = ({
     [navigateBack],
   );
 
+  const backHandlerSubscription = useRef<{ remove: () => void } | null>(null);
+
   const setupEventListeners = useCallback(() => {
     if (Platform.isTV) {
-      BackHandler.addEventListener('hardwareBackPress', navigateBack);
+      backHandlerSubscription.current = BackHandler.addEventListener('hardwareBackPress', navigateBack);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Platform.isTV]);
 
   const removeEventListeners = useCallback(() => {
     if (Platform.isTV) {
-      BackHandler.removeEventListener('hardwareBackPress', navigateBack);
+      backHandlerSubscription.current?.remove();
+      backHandlerSubscription.current = null;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Platform.isTV]);

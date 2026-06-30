@@ -18,7 +18,7 @@ interface FocusableElementProps extends TouchableOpacityProps {
   onFocusOverrideStyle: StyleProp<ViewStyle>;
   onPress?: () => void;
   hasTVPreferredFocus?: boolean;
-  focusableElementRef?: Ref<TouchableOpacity>;
+  focusableElementRef?: Ref<React.ComponentRef<typeof TouchableOpacity>>;
   style: StyleProp<ViewStyle>;
 }
 

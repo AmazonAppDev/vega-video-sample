@@ -61,8 +61,8 @@ export const throttleSeek = (func: () => void, delay: number) => {
 
 const PlaybackControls = ({ videoRef }: PlaybackControlsProps) => {
   const playPauseRef = useRef<any>(null);
-  const skipBackwardRef = useRef<TouchableOpacity>(null);
-  const skipForwardRef = useRef<TouchableOpacity>(null);
+  const skipBackwardRef = useRef<React.ComponentRef<typeof TouchableOpacity>>(null);
+  const skipForwardRef = useRef<React.ComponentRef<typeof TouchableOpacity>>(null);
 
   const onBlurPlayPause = () => {
     playPauseRef?.current?.blur();

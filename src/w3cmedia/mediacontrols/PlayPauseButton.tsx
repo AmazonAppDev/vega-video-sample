@@ -18,7 +18,7 @@ export interface PlayPauseButtonProps {
 const PlayPauseButton = React.forwardRef(
   (
     { videoRef, onBlur, hasTVPreferredFocus, size }: PlayPauseButtonProps,
-    ref: React.ForwardedRef<TouchableOpacity>,
+    ref: React.ForwardedRef<React.ComponentRef<typeof TouchableOpacity>>,
   ) => {
     const initalPlayingState =
       !videoRef.current?.paused && !videoRef.current?.ended;

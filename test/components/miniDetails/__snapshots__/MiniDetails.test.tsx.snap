@@ -3,8 +3,8 @@
 exports[`Testing MiniDetails component renders correctly and matches snapshot 1`] = `
 <MiniDetails
   selectedTitle={
-    Object {
-      "categories": Array [],
+    {
+      "categories": [],
       "channelID": "",
       "description": "Sample Description",
       "format": "",

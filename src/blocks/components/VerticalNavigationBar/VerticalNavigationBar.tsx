@@ -41,7 +41,7 @@ const VerticalNavigationBarComponent = ({
   const [items, setItems] = useState([] as NavBarItemAction[]);
   const [firstPreferenceItemIndex, setFirstPreferenceItemIndex] = useState(0);
   const [destinationItem, setDestinationItem] =
-    React.useState<TouchableHighlight | null>(null);
+    React.useState<React.ComponentRef<typeof TouchableHighlight> | null>(null);
   const textOpacityAnimatedValue = useRef(new Animated.Value(0)).current;
   const translateAnimatedValue = useRef(new Animated.Value(0)).current;
   const isNavbarFocused = useIsFocused();
@@ -157,7 +157,7 @@ const VerticalNavigationBarComponent = ({
         {items.map((item, index) => {
           return (
             <AnimatedNavigationBarItem
-              ref={item.text === activeNavBarItem ? setDestinationItem : null}
+              ref={item.text === activeNavBarItem ? setDestinationItem as any : null}
               item={item}
               key={item.text}
               isSelected={item.text === activeNavBarItem}

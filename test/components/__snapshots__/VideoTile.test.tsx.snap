@@ -6,7 +6,7 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
   onBlur={[Function]}
   onFocus={[Function]}
   style={
-    Object {
+    {
       "alignItems": "center",
       "flex": 1,
       "justifyContent": "center",
@@ -16,7 +16,7 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
 >
   <View
     accessibilityState={
-      Object {
+      {
         "busy": undefined,
         "checked": undefined,
         "disabled": undefined,
@@ -25,7 +25,7 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
       }
     }
     accessibilityValue={
-      Object {
+      {
         "max": undefined,
         "min": undefined,
         "now": undefined,
@@ -45,8 +45,8 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "#202225",
           "borderColor": "transparent",
           "borderRadius": 16,
@@ -55,7 +55,7 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
           "margin": undefined,
           "overflow": "hidden",
           "shadowColor": "#000000",
-          "shadowOffset": Object {
+          "shadowOffset": {
             "height": 1,
             "width": 0,
           },
@@ -63,7 +63,7 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
           "shadowRadius": 2,
           "width": 214,
         },
-        Object {
+        {
           "alignItems": "flex-start",
           "flexDirection": "column",
           "overflow": "hidden",
@@ -76,7 +76,7 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
   >
     <View
       style={
-        Object {
+        {
           "aspectRatio": 1,
           "height": undefined,
           "width": 204,
@@ -85,16 +85,16 @@ exports[`VideoTile tests should match the snapshot on first render 1`] = `
     >
       <Image
         source={
-          Object {
+          {
             "uri": "https://example.com/thumbnail.jpg",
           }
         }
         style={
-          Array [
-            Object {
+          [
+            {
               "borderRadius": 0,
             },
-            Object {
+            {
               "height": "100%",
               "resizeMode": "cover",
               "width": "100%",

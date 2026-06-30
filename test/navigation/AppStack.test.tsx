@@ -58,24 +58,19 @@ describe('AppStack', () => {
 
     expect(createStack.Navigator).toHaveBeenCalled();
     expect(createStack.Screen).toHaveBeenCalledWith(
-      expect.objectContaining({ name: Screens.APP_DRAWER }),
-      expect.any(Object),
+      expect.objectContaining({ name: Screens.APP_DRAWER }), undefined,
     );
     expect(createStack.Screen).toHaveBeenCalledWith(
-      expect.objectContaining({ name: Screens.DETAILS_SCREEN }),
-      expect.any(Object),
+      expect.objectContaining({ name: Screens.DETAILS_SCREEN }), undefined,
     );
     expect(createStack.Screen).toHaveBeenCalledWith(
-      expect.objectContaining({ name: Screens.PLAYER_SCREEN }),
-      expect.any(Object),
+      expect.objectContaining({ name: Screens.PLAYER_SCREEN }), undefined,
     );
     expect(createStack.Screen).toHaveBeenCalledWith(
-      expect.objectContaining({ name: Screens.SEARCH_RESULTS_SCREEN }),
-      expect.any(Object),
+      expect.objectContaining({ name: Screens.SEARCH_RESULTS_SCREEN }), undefined,
     );
     expect(createStack.Screen).toHaveBeenCalledWith(
-      expect.objectContaining({ name: Screens.FEEDBACK_SCREEN }),
-      expect.any(Object),
+      expect.objectContaining({ name: Screens.FEEDBACK_SCREEN }), undefined,
     );
   });
 

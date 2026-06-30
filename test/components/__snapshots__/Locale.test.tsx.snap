@@ -6,7 +6,7 @@ exports[`LocaleComponent calls onSelect with the correct option when the button 
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "row",
         "marginVertical": 25,
@@ -16,7 +16,7 @@ exports[`LocaleComponent calls onSelect with the correct option when the button 
     <Text
       accessibilityRole="text"
       style={
-        Object {
+        {
           "color": "#FFFFFF",
           "fontFamily": "Amazon Ember",
           "fontSize": 32,
@@ -34,18 +34,18 @@ exports[`LocaleComponent calls onSelect with the correct option when the button 
       defaultValue="US"
       onSelect={[Function]}
       options={
-        Array [
-          Object {
+        [
+          {
             "code": "en",
             "label": "US",
             "value": "en-US",
           },
-          Object {
+          {
             "code": "fr",
             "label": "FR",
             "value": "fr-FR",
           },
-          Object {
+          {
             "code": "es",
             "label": "ES",
             "value": "es-ES",
@@ -63,7 +63,7 @@ exports[`LocaleComponent renders correctly with styles 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "row",
         "marginVertical": 25,
@@ -73,7 +73,7 @@ exports[`LocaleComponent renders correctly with styles 1`] = `
     <Text
       accessibilityRole="text"
       style={
-        Object {
+        {
           "color": "#FFFFFF",
           "fontFamily": "Amazon Ember",
           "fontSize": 32,
@@ -91,18 +91,18 @@ exports[`LocaleComponent renders correctly with styles 1`] = `
       defaultValue="US"
       onSelect={[Function]}
       options={
-        Array [
-          Object {
+        [
+          {
             "code": "en",
             "label": "US",
             "value": "en-US",
           },
-          Object {
+          {
             "code": "fr",
             "label": "FR",
             "value": "fr-FR",
           },
-          Object {
+          {
             "code": "es",
             "label": "ES",
             "value": "es-ES",
@@ -117,13 +117,13 @@ exports[`LocaleComponent renders correctly with styles 1`] = `
 exports[`LocaleComponent renders correctly without styles 1`] = `
 <RadioPicker
   defaultValue={
-    Object {
+    {
       "code": "A",
       "label": "Option 1",
       "value": "1",
     }
   }
   onSelect={[MockFunction]}
-  options={Array []}
+  options={[]}
 />
 `;

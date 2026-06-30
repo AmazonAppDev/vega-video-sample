@@ -192,12 +192,12 @@ jest.mock('@amazon-devices/react-native-safe-area-context', () => {
 
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native');
-  RN.Dimensions.get = jest.fn().mockImplementation(() => {
-    return {
-      width: 375,
-      height: 667,
-    };
-  });
+  RN.Dimensions = {
+    ...RN.Dimensions,
+    get: jest.fn().mockReturnValue({ width: 375, height: 667, scale: 1, fontScale: 1 }),
+    set: jest.fn(),
+    addEventListener: jest.fn(() => ({ remove: jest.fn() })),
+  };
   return RN;
 });
 

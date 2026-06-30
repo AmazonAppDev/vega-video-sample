@@ -1,12 +1,10 @@
-Vega Video Sample App
-=======================
+# Vega Video Sample App
 
 The Vega Video Sample App is a comprehensive sample implementation showcasing how to build a production-ready streaming video app for Amazon Vega OS Fire TV Stick using the Vega Developer Tools. The Vega Video Sample App is a learning resource and a foundation for you to create your own Vega OS Fire TV Stick video streaming experiences.
 
 ![App Preview](./docs/images/home-screen.png)
 
-Introduction
-------------
+## Introduction
 
 Built with React Native and TypeScript, the Vega Video Sample App demonstrates enterprise-grade video streaming capabilities including adaptive streaming protocols (HLS/DASH), DRM content protection, live TV integration, and seamless Vega OS Fire TV Stick platform integrations. Whether you're building a new streaming service or migrating an existing video platform to Vega OS Fire TV Stick, the Vega Video Sample App provides tested patterns and best practices for creating engaging and TV-optimized user experiences.
 
@@ -20,25 +18,20 @@ Built with React Native and TypeScript, the Vega Video Sample App demonstrates e
 - **Platform integrations** including Content Launcher, Linear TV, and Content Personalization.
 - **Custom media controls** with accessibility features and subtitle management.
 
-
-
-Build and run the app
---------------------
+## Build and run the app
 
 ### Prerequisites
 
 Before you launch the sample app, make sure that you have:
 
-* [Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
-* [Git v1.9 or later](https://git-scm.com/install/)
-* [Python v3.x](https://www.python.org/downloads/)
-* [Java Runtime Environment v21 or later](https://learn.microsoft.com/en-us/java/openjdk/download)
-* [NodeJS v18-v20](https://nodejs.org/en/download/)
-* A local web server, such as Apache. A local web server is required because browsers place restrictions on applications from file:/// URLs.
+- [Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
+- [Git v1.9 or later](https://git-scm.com/install/)
+- [Python v3.x](https://www.python.org/downloads/)
+- [Java Runtime Environment v21 or later](https://learn.microsoft.com/en-us/java/openjdk/download)
+- [NodeJS v18-v20](https://nodejs.org/en/download/)
+- A local web server, such as Apache. A local web server is required because browsers place restrictions on applications from file:/// URLs.
 
 **Note**: The Shaka Player integration runs automatically during `npm install` and requires these dependencies. If you encounter build errors related to Java or Python, install the missing prerequisites and run `npm install` again. For any other prerequisite Shaka issue please visit: https://shaka-project.github.io/shaka-player/docs/api/tutorial-welcome.html.
-
-
 
 ### Step 1: Build the app
 
@@ -46,26 +39,26 @@ After you download the source code from GitHub, you can build the Vega Video Sam
 
 You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/setup-extension.html) with Visual Studio Code to build the app.
 
-1. At the command prompt, navigate to the Vega Video Sample App source code directory. 
+1. At the command prompt, navigate to the Vega Video Sample App source code directory.
 
-2. To install the app dependencies, run the following command. The installation can take several minutes to complete. 
-
+2. To install the app dependencies, run the following command. The installation can take several minutes to complete.
 
    ```
    npm install
    ```
 
-3. To build the app to generate .vpkg files, run the following command. 
+3. To build the app to generate .vpkg files, run the following command.
+
    ```
    npm run build:app
    ```
 
 4. At the command prompt, in the **build** folder, verify that the build generated the VPKG files for your device's architecture.
 
-   * **armv7-release/keplervideoapp_armv7.vpkg**&mdash;generated on x86_64 and Mac-M series devices to run on the Vega OS Fire TV Stick.
-   * **x86_64-release/keplervideoapp_x86_64.vpkg**&mdash;generated on x86_64 device to run on the VVD.
-   * **aarch64-release/keplervideoapp_aarch64.vpkg**&mdash;generated on Mac M-series device to run on the VVD.
-   
+   - **armv7-release/keplervideoapp_armv7.vpkg**&mdash;generated on x86_64 and Mac-M series devices to run on the Vega OS Fire TV Stick.
+   - **x86_64-release/keplervideoapp_x86_64.vpkg**&mdash;generated on x86_64 device to run on the VVD.
+   - **aarch64-release/keplervideoapp_aarch64.vpkg**&mdash;generated on Mac M-series device to run on the VVD.
+
 ### Step 2: Run the app
 
 #### Vega Virtual Device
@@ -78,17 +71,16 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
 
 2. To install and launch the app on the Vega Virtual Device, run the following command, depending on your device architecture.
 
-   - On Mac M-series-based devices. 
-      
-      ```
-      vega run-app build/aarch64-release/keplervideoapp_aarch64.vpkg
-      ```
+   - On Mac M-series-based devices.
+
+     ```
+     vega run-app build/aarch64-release/keplervideoapp_aarch64.vpkg
+     ```
 
    - On x86_64-based devices.
-      
      ```
      vega run-app build/x86_64-release/keplervideoapp_x86_64.vpkg
-     ```  
+     ```
 
 #### Vega OS Fire TV Stick
 
@@ -100,22 +92,20 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
    vega run-app build/armv7-release/keplervideoapp_armv7.vpkg
    ```
 
-
-Advanced features
------------------
+## Advanced features
 
 ### Upload custom search data for your app
 
 You can upload a sample JSON file to a specified location and search the data from the uploaded file. If you upload the file, the search only uses the data from the file. If you do not upload the file, the search uses the existing data from the Home screen video tiles.
 
-1. Create a JSON file with search data based on the following structure. 
+1. Create a JSON file with search data based on the following structure.
 
    File name: **KVATestData.json**
 
    Path: **/home/app_user/packages/com.amazondeveloper.keplervideoapp/data**
 
-   **JSON structure**   
-     
+   **JSON structure**
+
    ```json
    [
      {
@@ -141,9 +131,8 @@ You can upload a sample JSON file to a specified location and search the data fr
    ]
    ```
 
-   
-   **Example search JSON file**   
-    
+   **Example search JSON file**
+
    ```json
    [
      {
@@ -166,19 +155,18 @@ You can upload a sample JSON file to a specified location and search the data fr
            "secure": false,
            "uhd": true,
            "rentAmount": "135"
-         },
+         }
        ]
      }
    ]
    ```
 
-2. Push the JSON search file to the device using the following command.  
+2. Push the JSON search file to the device using the following command.
 
    ```
    vega exec vda push KVATestData.json /home/app_user/packages/com.amazondeveloper.keplervideoapp/data
    ```
 
- 
 ### Splash screen
 
 For comprehensive implementation guidance, please refer to the detailed [Splash Screen Manager](https://developer.amazon.com/docs/react-native-vega/0.72/splashscreenmanager.html) document. This document covers API usage, lifecycle management, asset optimization, and platform-specific considerations for creating engaging splash screen experiences on Vega OS Fire TV Stick.
@@ -199,8 +187,7 @@ assets/raw/SplashScreenImages.zip
 
 The `SplashScreenImages.zip` contains images from the `SplashScreenImages` folder. Individual assets are available in `assets/raw/SplashScreenImages/` for reference. Only the ZIP file is required for implementation.
 
-App integrations
-----------------
+## App integrations
 
 ### W3C Media APIs
 
@@ -256,11 +243,9 @@ To implement Content launcher, see the [Content Launcher Overview](https://devel
 
 To learn more, see [Get Started with Vega Content Personalization](https://developer.amazon.com/docs/vega/latest/get-started-with-vega-content-personalization.html).
 
-
 ### Linear TV
 
 To learn more, see [Get Started with Linear TV](https://developer.amazon.com/docs/vega/latest/get-started-with-linear-tv.html).
-
 
 ### Focus management
 
@@ -295,12 +280,11 @@ Example:
 - **Accessibility**: Ensures screen readers and other assistive technologies have a clear starting point.
 - **Platform consistency**: Follows Vega OS Fire TV Stick platform guidelines for focus behavior.
 
-
 #### FocusableElement component pattern
 
 The Video Sample App uses a custom `FocusableElement` component that wraps `TouchableOpacity` to provide consistent focus behavior.
 
-Example: 
+Example:
 
 ```javascript
 const FocusableElement = ({
@@ -437,7 +421,7 @@ Example:
 
 ```javascript
 // ErrorView.tsx - Consistent error display across the app
-const ErrorView = ({navigateBack}) => {
+const ErrorView = ({ navigateBack }) => {
   return (
     <View style={styles.mainContainer}>
       <Header navigateBack={navigateBack} />
@@ -458,10 +442,7 @@ const ErrorView = ({navigateBack}) => {
 - **Visual consistency**: Uses the design system of the app for error states.
 - **Graceful degradation**: Allows the app to continue functioning even when specific features fail.
 
-
-
-Integrate third-party libraries into the app
------------------------------------
+## Integrate third-party libraries into the app
 
 This section provides the minimum integration steps necessary to integrate the third-party libraries with the sample app.
 
@@ -469,20 +450,18 @@ This section provides the minimum integration steps necessary to integrate the t
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency.   
+1. In your **package.json** file, add the following package dependency.
 
    ```json
    "dependencies": {
       ...
       "@amazon-devices/react-native-svg": "~2.0.0"
    }
-   ``` 
-  
-    
+   ```
+
 2. To reinstall the dependencies, run the `npm install` command.
 
-    **Note**:This app uses the React component generated from the [SVGR](https://react-svgr.com/playground/) tool with some minor modification with respect to the imports. For details, see the `HomeSVG.tsx` file.
-
+   **Note**:This app uses the React component generated from the [SVGR](https://react-svgr.com/playground/) tool with some minor modification with respect to the imports. For details, see the `HomeSVG.tsx` file.
 
 3. Import the corresponding SVG component.
 
@@ -490,10 +469,7 @@ This section provides the minimum integration steps necessary to integrate the t
    import HomeSvg from '../../assets/svgr/HomeSVG';
    ```
 
-    
-
-4. In the render block of your app, add the imported component.   
-    
+4. In the render block of your app, add the imported component.
    ```
    <HomeSvg
         width={40}
@@ -501,19 +477,16 @@ This section provides the minimum integration steps necessary to integrate the t
         stroke={'#F1F1F1'}
         fill={'#F1F1F1'}
       />
-   ``` 
-
-   
+   ```
 
 For more details about this Vega-supported library, see [react-native-svg](https://developer.amazon.com/docs/vega-api/latest/react-native-svg.html).
-
 
 ### react-native-vector-icons
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency. 
-    
+1. In your **package.json** file, add the following package dependency.
+
    ```json
    "dependencies": {
       ...
@@ -529,30 +502,28 @@ For more details about this Vega-supported library, see [react-native-svg](https
 
    ```
    import MaterialIcons from '@amazon-devices/react-native-vector-icons/MaterialIcons';
-   ```   
+   ```
 
 5. In the render block of your app, add the `MaterialIcons` component.
 
    ```typescript
-   <MaterialIcons name={'play'} size={50} color={#ffffff} />;
+   <MaterialIcons name={'play'} size={50} color={#ffffff} />
    ```
-       
 
 For more details about this Vega-supported library, see [react-native-vector-icons](https://developer.amazon.com/docs/vega-api/latest/react-native-vector-icons.html) in the Vega documentation.
-
 
 ### lottie-react-native
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following dependency. 
+1. In your **package.json** file, add the following dependency.
 
    ```json
    "dependencies": {
       ...
       "@amazon-devices/lottie-react-native": "~2.0.0"
    }
-   ```      
+   ```
 
 2. To reinstall the dependencies, run the `npm install` command.
 
@@ -560,10 +531,10 @@ For more details about this Vega-supported library, see [react-native-vector-ico
 
 4. In `<app_package_root>/assets/image/`, add your Lottie animation.
 
-    **Note**: On Vega, you can alternatively place Lottie animations (not its image assets) in `<app_package_root>/assets/raw/`. Other than a small difference in path, this behavior is similar to the behavior on Android.
+   **Note**: On Vega, you can alternatively place Lottie animations (not its image assets) in `<app_package_root>/assets/raw/`. Other than a small difference in path, this behavior is similar to the behavior on Android.
 
 5. To import the corresponding `LottieView` component, run the following command.
-    
+
    ```
    import LottieView from "@amazon-devices/lottie-react-native";
    ```
@@ -571,22 +542,19 @@ For more details about this Vega-supported library, see [react-native-vector-ico
 6. In the render block of your app, add the `LottieView` component.
 
    ```typescript
-   <LottieView source={require("../path/to/animation.json")} autoPlay loop />
+   <LottieView source={require('../path/to/animation.json')} autoPlay loop />
    ```
-    
 
 For more details about this Vega-supported library, see [lottie-react-native](https://developer.amazon.com/docs/vega-api/latest/lottie-react-native.html).
 
-
 ### react-native-navigation
 
- **WARNING**: Due to a recent dependency update in React Navigation, you must add `"@amazon-devices/react-native-screens": "~2.0.0"` as a dependency for any package that uses React Navigation. If you don’t add the dependency, the app crashes.
-
+**WARNING**: Due to a recent dependency update in React Navigation, you must add `"@amazon-devices/react-native-screens": "~2.0.0"` as a dependency for any package that uses React Navigation. If you don’t add the dependency, the app crashes.
 
 **To integrate this library**
 
 1. In your **package.json** file, add the subset of VegaUIReact-Navigation dependencies that your app needs.
-    
+
    ```json
    "dependencies": {
       ...
@@ -600,12 +568,11 @@ For more details about this Vega-supported library, see [lottie-react-native](ht
    }
    ```
 
-
    **Note**: The Vega platform does not support the subpackage `react-navigation/native-stack`.
 
-   The Vega platform does have a fork of React Native Reanimated, React Native Safe Area Context, and React Native Screens, but they are not officially supported. The @amazon-devices/keplerscript-react-native-reanimated, @amazon-devices/keplerscript-react-native-safe-area-context, and @amazon-devices/react-native-screens packages rectify build issues found when supporting @amazon-devices/keplerscript-react-navigation-* packages.
+   The Vega platform does have a fork of React Native Reanimated, React Native Safe Area Context, and React Native Screens, but they are not officially supported. The @amazon-devices/keplerscript-react-native-reanimated, @amazon-devices/keplerscript-react-native-safe-area-context, and @amazon-devices/react-native-screens packages rectify build issues found when supporting @amazon-devices/keplerscript-react-navigation-\* packages.
 
-2. In your project's **package.json** file, install the required peer dependencies. 
+2. In your project's **package.json** file, install the required peer dependencies.
 
    ```json
    "devDependencies": {
@@ -613,18 +580,18 @@ For more details about this Vega-supported library, see [lottie-react-native](ht
       "react-native-gesture-handler": "~2.13.0",
    }
    ```
-   
+
 3. Within the `NavigationContainer` component, wrap your returned app code. Typically, you do this wrapping in your entry file, such as **index.js** or **App.js**.
 
-   1. Import the following libraries.      
+   1. Import the following libraries.
 
       ```typescript
       import 'react-native-gesture-handler';
       import * as React from 'react';
       import { NavigationContainer } from '@amazon-devices/react-navigation__native';
       ```
-       
-   2. In the render block, add the `NavigationContainer` component.    
+
+   2. In the render block, add the `NavigationContainer` component.
 
       ```typescript
       export default App = () => {
@@ -635,7 +602,7 @@ For more details about this Vega-supported library, see [lottie-react-native](ht
         );
       };
       ```
-   
+
 For more details about this Vega-supported library, see [react-native-navigation](https://developer.amazon.com/docs/react-native-vega/0.72/keplerscript_nav.html).
 
 ### react-linear-gradient
@@ -643,21 +610,19 @@ For more details about this Vega-supported library, see [react-native-navigation
 **To integrate this library**
 
 1. In your **package.json** file, add the following package dependency.
-    
    ```json
    "dependencies": {
       ...
       "@amazon-devices/react-linear-gradient": "~2.0.0"
    }
    ```
-   
 2. To reinstall the dependencies, run the `npm install` command.
 
 3. Import the corresponding `LinearGradient` component.
-    
+
    ```typescript
    import LinearGradient from '@amazon-devices/react-linear-gradient';
-   ```   
+   ```
 
 4. In the render block of your app, add the imported component.
 
@@ -666,9 +631,8 @@ For more details about this Vega-supported library, see [react-native-navigation
      colors={['#4c669f', '#3b5998', '#192f6a']}
      style={styles.linearGradient}>
      <Text style={styles.buttonText}>Here Is My Text</Text>
-   </LinearGradient>;
+   </LinearGradient>
    ```
-     
 
 For more details about this Vega-supported library, see [react-linear-gradient](https://developer.amazon.com/docs/vega-api/latest/react-linear-gradient.html).
 
@@ -676,70 +640,67 @@ For more details about this Vega-supported library, see [react-linear-gradient](
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency. 
-    
+1. In your **package.json** file, add the following package dependency.
    ```json
    "dependencies": {
       ...
       "@amazon-devices/keplerscript-netmgr-lib": "~2.0.2",
    }
    ```
-   
 2. In your React Native for Vega app's **manifest.toml**, add `com.amazon.network.service` to `wants.service`.
-    
    ```text
    [[wants.service]]
    id = "com.amazon.network.service"
    ```
-   
-3. In your React Native for Vega app's **manifest.toml**, add API permission to `needs.privilege`. 
-   
+3. In your React Native for Vega app's **manifest.toml**, add API permission to `needs.privilege`.
+
    ```text
    [needs]
    [[needs.privilege]]
    id="com.amazon.network.privilege.net-info"
    ```
-   
+
 4. To reinstall the dependencies, run the `npm install` command.
 
 5. Import the corresponding `NetInfo` component.
-    
+
    ```typescript
-   import {NetInfoStateType, fetch} from "@amazon-devices/keplerscript-netmgr-lib";
+   import {
+     NetInfoStateType,
+     fetch,
+   } from '@amazon-devices/keplerscript-netmgr-lib';
    ```
 
 6. To get the network status, use the fetch method.
 
    ```typescript
-   fetch().then(state => {
-       console.log("is connected? " + state.isConnected);
-       if (state.type === NetInfoStateType.wifi) {
-         console.log("ssid is " + state.details.ssid);
-       }
+   fetch().then((state) => {
+     console.log('is connected? ' + state.isConnected);
+     if (state.type === NetInfoStateType.wifi) {
+       console.log('ssid is ' + state.details.ssid);
+     }
    });
    ```
 
 For more details about this Vega-supported library, see [react-native-netinfo](https://developer.amazon.com/docs/vega-api/latest/react-native-net-info.html).
 
-
-
 ### react-native-device-info
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency. 
+1. In your **package.json** file, add the following package dependency.
 
    ```json
    "dependencies": {
       ...
       "@amazon-devices/react-native-device-info": "~2.0.0"
    }
-   ```   
+   ```
 
 2. To reinstall the dependencies, run the `npm install` command.
 
 3. Usage.
-    
+
    ```typescript
    import DeviceInfo from '@amazon-devices/react-native-device-info';
 
@@ -747,19 +708,20 @@ For more details about this Vega-supported library, see [react-native-netinfo](h
 
    import { getBaseOs } from '@amazon-devices/react-native-device-info';
    ```
-     
 
 #### API
+
 Most of the functions return a Promise, but also have a corresponding function with Sync on the end that operates synchronously. For example, you might prefer to call `getBaseOsSync()` when your app initializes the operating system (OS) to avoid async calls during the first parts of the app startup.
 
 **Note**: Values used in examples don't represent the actual output.
 
 #### getBaseOs()
+
 The base OS build that the device is based on.
 
 The following example shows how to call `getBaseOsSync()` to return the base OS build.
-    
- ```typescript
+
+```typescript
 DeviceInfo.getBaseOs().then((baseOs) => {
   // "Vega"
 });
@@ -773,8 +735,8 @@ The Redux Toolkit (RTK) is a library to help you code Redux apps. The `@reduxjs/
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependencies. 
-    
+1. In your **package.json** file, add the following package dependencies.
+
    ```json
    "dependencies": {
       ...
@@ -794,9 +756,9 @@ The Redux Toolkit (RTK) is a library to help you code Redux apps. The `@reduxjs/
       import type { PayloadAction } from '@reduxjs/toolkit';
       import type { RootState } from '../../app/store';
       ```
-    
+
    2. Usage.
-    
+
       ```typescript
       // Define a type for the slice state.
       interface CounterState {
@@ -826,30 +788,31 @@ The Redux Toolkit (RTK) is a library to help you code Redux apps. The `@reduxjs/
         },
       });
 
-      export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+      export const { increment, decrement, incrementByAmount } =
+        counterSlice.actions;
 
       // Other code such as selectors can use the imported `RootState` type.
       export const selectCount = (state: RootState) => state.counter.value;
 
       export default counterSlice.reducer;
-      ```   
- 
+      ```
+
 4. In the **app/store.ts** file, define root state and dispatch types.
 
    1. Import `configureStore`.
-    
+
       ```typescript
-      import {configureStore} from '@reduxjs/toolkit';
+      import { configureStore } from '@reduxjs/toolkit';
       import counterReducer from './features/counter/counterSlice';
       ```
-       
-   2. Usage.  
-    
+
+   2. Usage.
+
       ```typescript
       export const store = configureStore({
-           reducer: {
-                counter: counterReducer,
-           },
+        reducer: {
+          counter: counterReducer,
+        },
       });
 
       // Infer the `RootState` and `AppDispatch` types from the store itself.
@@ -864,7 +827,7 @@ For more details about this library, see the [Redux Toolkit overview](https://re
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency. 
+1. In your **package.json** file, add the following package dependency.
 
    ```json
    "dependencies": {
@@ -876,24 +839,23 @@ For more details about this library, see the [Redux Toolkit overview](https://re
 2. To reinstall the dependencies, run the `npm install` command.
 
 3. Import the corresponding `isEqual` method.
-    
+
    ```typescript
-   import {isEqual} from 'lodash';
-   ``` 
+   import { isEqual } from 'lodash';
+   ```
 
 4. The `isEqual` function performs a deep comparison between two values to determine if they are equivalent.
 
    ```typescript
    Example;
 
-   const obj1 = {a: 1, b: {c: 2}};
-   const obj2 = {a: 1, b: {c: 2}};
+   const obj1 = { a: 1, b: { c: 2 } };
+   const obj2 = { a: 1, b: { c: 2 } };
 
    // Comparing two objects.
    console.log(isEqual(obj1, obj2));
    // Output: true (obj1 and obj2 are deeply equal).
    ```
-     
 
 For more details about this Vega-supported library, see [lodash](https://lodash.com/docs/4.17.15).
 
@@ -901,8 +863,8 @@ For more details about this Vega-supported library, see [lodash](https://lodash.
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency. 
-    
+1. In your **package.json** file, add the following package dependency.
+
    ```json
    "dependencies": {
       ...
@@ -915,48 +877,49 @@ For more details about this Vega-supported library, see [lodash](https://lodash.
 3. Within the translations folder, define the key-value pairs list with the necessary localized strings in JSON files according to their language.
 
 4. Import the corresponding `getCountry`and `getLocales` methods, and necessary localized string JSON files.
-    
+
    ```typescript
-   import {getCountry, getLocales} from '@amazon-devices/react-native-localize';
+   import {
+     getCountry,
+     getLocales,
+   } from '@amazon-devices/react-native-localize';
    import en from '../translations/en.json';
    // Other string JSON files
    ```
- 
+
 5. Usage.
 
    ```typescript
    const translations: any = {
-        en,
+     en,
    };
 
    export const appLocales = ['en-US'];
 
    export const getCurrentCountry = () => {
-        return getCountry();
+     return getCountry();
    };
 
    export const getAppLocales = () => {
-        const filteredLocales = getLocales().filter((locale) => {
-             return appLocales.includes(locale.languageTag);
-        });
-        return filteredLocales;
+     const filteredLocales = getLocales().filter((locale) => {
+       return appLocales.includes(locale.languageTag);
+     });
+     return filteredLocales;
    };
 
    export const translate = (key: string) => {
-        const currentLocale = getAppLocales()[0].languageCode;
-        return translations[currentLocale][key] || key;
+     const currentLocale = getAppLocales()[0].languageCode;
+     return translations[currentLocale][key] || key;
    };
    ```
 
 For more details about this Vega-supported library, see [react-native-localize](https://developer.amazon.com/docs/vega-api/latest/react-native-localize.html).
 
-
-
 ### react-native-async-storage
 
 **To integrate this library**
 
-1. In your **package.json** file, add the following package dependency.     
+1. In your **package.json** file, add the following package dependency.
 
    ```json
    "dependencies": {
@@ -973,34 +936,33 @@ For more details about this Vega-supported library, see [react-native-localize](
 2. To reinstall the dependencies, run the `npm install` command.
 
 3. Import `AsyncStorage` from the `@react-native-async-storage/async-storage` package.
-   
+
    ```
    import AsyncStorage from '@react-native-async-storage/async-storage';
    ```
 
 4. Usage.
-    
+
    ```typescript
    const storeData = async (value) => {
-       try {
-         const jsonValue = JSON.stringify(value);
-         await AsyncStorage.setItem('my-key', jsonValue);
-       } catch (e) {
-         // saving error
-       }
-     };
+     try {
+       const jsonValue = JSON.stringify(value);
+       await AsyncStorage.setItem('my-key', jsonValue);
+     } catch (e) {
+       // saving error
+     }
+   };
 
-     const getData = async () => {
-       try {
-         const jsonValue = await AsyncStorage.getItem('my-key');
-         return jsonValue != null ? JSON.parse(jsonValue) : null;
-       } catch (e) {
-         // error reading value
-       }
-     };
+   const getData = async () => {
+     try {
+       const jsonValue = await AsyncStorage.getItem('my-key');
+       return jsonValue != null ? JSON.parse(jsonValue) : null;
+     } catch (e) {
+       // error reading value
+     }
+   };
    ```
-   
-   
+
 For more details about this Vega-supported library, see [react-native-async-storage](https://developer.amazon.com/docs/vega-api/latest/react-native-async-storage.html).
 
 ### Formik
@@ -1008,7 +970,7 @@ For more details about this Vega-supported library, see [react-native-async-stor
 **To integrate this library**
 
 1. In your **package.json** file, add the following package dependency.
-    
+
    ```json
    "dependencies": {
       ...
@@ -1016,11 +978,11 @@ For more details about this Vega-supported library, see [react-native-async-stor
       "yup": "^1.4.0",
    }
    ```
-  
+
 2. To reinstall the dependencies, run the `npm install` command.
 
 3. Import `Formik` and `yup`.
-    
+
    ```
    import { Formik } from 'formik';
    import * as Yup from 'yup';
@@ -1029,63 +991,69 @@ For more details about this Vega-supported library, see [react-native-async-stor
 4. Usage.
 
    ```typescript
-    const Form = () => {
-    const FeedbackSchema = Yup.object().shape({
-      name: Yup.string()
-        .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Required'),
-      email: Yup.string()
-        .email('Invalid email')
-        .required('Required'),
-      feedback: Yup.string()
-        .min(5, 'Too Short!')
-        .max(500, 'Too Long!')
-        .required('Required'),
-    });
+   const Form = () => {
+     const FeedbackSchema = Yup.object().shape({
+       name: Yup.string()
+         .min(2, 'Too Short!')
+         .max(50, 'Too Long!')
+         .required('Required'),
+       email: Yup.string().email('Invalid email').required('Required'),
+       feedback: Yup.string()
+         .min(5, 'Too Short!')
+         .max(500, 'Too Long!')
+         .required('Required'),
+     });
 
-    return (
-      <Formik
-        initialValues={{ name: '', email: '', feedback: '' }}
-        validationSchema={FeedbackSchema}
-        onSubmit={(values) => {
-          // handle form submission
-          console.log(values);
-        }}
-      >
-        {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
-          <View>
-            <TextInput
-              placeholder="Name"
-              onChangeText={handleChange('name')}
-              onBlur={handleBlur('name')}
-              value={values.name}
-            />
-            {touched.name && errors.name && <Text>{errors.name}</Text>}
+     return (
+       <Formik
+         initialValues={{ name: '', email: '', feedback: '' }}
+         validationSchema={FeedbackSchema}
+         onSubmit={(values) => {
+           // handle form submission
+           console.log(values);
+         }}>
+         {({
+           handleChange,
+           handleBlur,
+           handleSubmit,
+           values,
+           errors,
+           touched,
+         }) => (
+           <View>
+             <TextInput
+               placeholder="Name"
+               onChangeText={handleChange('name')}
+               onBlur={handleBlur('name')}
+               value={values.name}
+             />
+             {touched.name && errors.name && <Text>{errors.name}</Text>}
 
-            <TextInput
-              placeholder="Email"
-              onChangeText={handleChange('email')}
-              onBlur={handleBlur('email')}
-              value={values.email}
-              keyboardType="email-address"
-            />
-            {touched.email && errors.email && <Text>{errors.email}</Text>}
+             <TextInput
+               placeholder="Email"
+               onChangeText={handleChange('email')}
+               onBlur={handleBlur('email')}
+               value={values.email}
+               keyboardType="email-address"
+             />
+             {touched.email && errors.email && <Text>{errors.email}</Text>}
 
-            <TextInput
-              placeholder="Feedback"
-              onChangeText={handleChange('feedback')}
-              onBlur={handleBlur('feedback')}
-              value={values.feedback}
-              multiline
-            />
-            {touched.feedback && errors.feedback && <Text>{errors.feedback}</Text>}
+             <TextInput
+               placeholder="Feedback"
+               onChangeText={handleChange('feedback')}
+               onBlur={handleBlur('feedback')}
+               value={values.feedback}
+               multiline
+             />
+             {touched.feedback && errors.feedback && (
+               <Text>{errors.feedback}</Text>
+             )}
 
-            <Button onPress={handleSubmit} title="Submit" />
-          </View>
-        )}
-      </Formik>
-    );
+             <Button onPress={handleSubmit} title="Submit" />
+           </View>
+         )}
+       </Formik>
+     );
    };
 
    export default Form;
@@ -1093,9 +1061,7 @@ For more details about this Vega-supported library, see [react-native-async-stor
 
 For more details about Formik, see [https://formik.org/](https://formik.org/).
 
-
-Known Issues
-------------
+## Known Issues
 
 The following sections list known issues with the Vega Video Sample App.
 
@@ -1122,7 +1088,6 @@ For example, let’s say that you turn off captions by selecting the Off option,
 
 In this scenario, when you switch to a new caption after you close the Caption menu, Amazon recommends that you first set the caption to the Off option. Then, switch to the option you want.
 
-
 **Player control buttons have inconsistent behavior**
 
 Buttons such as the Fast Forward, Rewind, Play, and Pause button might behave differently depending on the currently playing file type. As a result, you might notice out-of-sync behavior when you interact with these buttons. For example, when you press the Fast Forward or Rewind buttons, the video might continue to play but the UI button still shows the Paused button.
@@ -1148,73 +1113,68 @@ The recommended workaround is to click the back button on the remote control or 
 
 The In-App Purchasing APIs can be unstable. The following list shows common issues you might encounter:
 
-* **Unresponsive IAP APIs**&mdash;For example, when you press the Purchase Subscription button on the Details screen, nothing happens.
-* **Unresponsive IAP UI**&mdash;When you navigate to the IAP UI, you might be unable to interact with the UI to continue the IAP transaction. The unresponsiveness might resolve itself after some time. Restart the app if the issue persists.
-* **General intermittent error responses from the IAP client**&mdash;When you initiate an IAP transaction and navigate to the IAP UI, issues can occur that involve the communication between the Vega Video Sample App and the IAP Tester App that result in error messages.
-
+- **Unresponsive IAP APIs**&mdash;For example, when you press the Purchase Subscription button on the Details screen, nothing happens.
+- **Unresponsive IAP UI**&mdash;When you navigate to the IAP UI, you might be unable to interact with the UI to continue the IAP transaction. The unresponsiveness might resolve itself after some time. Restart the app if the issue persists.
+- **General intermittent error responses from the IAP client**&mdash;When you initiate an IAP transaction and navigate to the IAP UI, issues can occur that involve the communication between the Vega Video Sample App and the IAP Tester App that result in error messages.
 
 When you encounter any disruptive issues with IAP, Amazon recommends that you restart the Vega Video Sample App and the IAP Tester App. In some cases, you might also need to restart the Vega Virtual Device or Vega OS Fire TV Stick and repeat the IAP setup.
 
-
-Release notes
--------------
-
+## Release notes
 
 ---
+
 ### v0.22
-
-
 
 #### Video Asset Infrastructure Migration
 
-* **Infrastructure Migration** - Migrated video assets from external demo URLs to unified CloudFront (`d1v0fxmwkpxbrg.cloudfront.net`) for consistent video infrastructure and reduced dependency on external hosted content.
+- **Infrastructure Migration** - Migrated video assets from external demo URLs to unified CloudFront (`d1v0fxmwkpxbrg.cloudfront.net`) for consistent video infrastructure and reduced dependency on external hosted content.
 
-* **Format Standardization** - Standardized video source formats across the application:
+- **Format Standardization** - Standardized video source formats across the application:
+
   - HLS Streams: Consistent `.m3u8` master playlist format with proper HLS labeling.
   - DASH Streams: Unified `.mpd` manifest format with DASH type identification.
   - MP4 Videos: Direct `.mp4` file access for progressive download content.
 
-* **Thumbnail Support** - Added trickplay URLs to all video sources.
+- **Thumbnail Support** - Added trickplay URLs to all video sources.
+
   - Integrated trickplay thumbnail support for video scrubbing and preview functionality.
 
-* **Subtitles Support** - Added subtitle SRT files.
+- **Subtitles Support** - Added subtitle SRT files.
   - Added subtitle support for DASH and HLS videos including English subtitle tracks with SRT file integration.
 
 #### Shaka Player Integration Updates
 
-* **Automated Shaka Player Integration** - Updated Shaka Player setup and build process:
+- **Automated Shaka Player Integration** - Updated Shaka Player setup and build process:
   - Shaka Player integration now occurs during post-install process, downloading source from Shaka GitHub repository to reduce source code base size.
   - Shaka patches for Vega are applied automatically after the download process.
 
 #### Navigation and User Experience
 
-* **React Navigation Optimization** - Resolved serialization warnings and improved navigation performance
+- **React Navigation Optimization** - Resolved serialization warnings and improved navigation performance
   - Removed function parameters from navigation routes to fix React Navigation serialization warnings
   - Replaced the sendDataOnBack callback pattern with React Navigation's built-in useFocusEffect hook to handle focus restoration when returning to previous screens
 
-
 #### TV Focus Management Improvements
 
-* **Updated TV Focus System** - Migrated from deprecated `focus()` to TV-optimized `requestTVFocus()` API across all interactive components.
+- **Updated TV Focus System** - Migrated from deprecated `focus()` to TV-optimized `requestTVFocus()` API across all interactive components.
   - Updated VideoTile, SearchInput, and media control components for better TV navigation.
   - Added proper null checks and fallback handling for focus operations.
   - Improved focus restoration when navigating back from video player and detail screens.
 
 #### Account Login
 
-* **Improved Account Login Integration** - Fixed Account Login integration that was pulling non-headless entities into headless runtime
+- **Improved Account Login Integration** - Fixed Account Login integration that was pulling non-headless entities into headless runtime
   - Resolved runtime conflicts between headless and UI components
 
 ---
 
 ### v0.21
 
-* Initial release.
+- Initial release.
 
 ---
 
-Credits and attribution
------------------------
+## Credits and attribution
 
 ### Third-Party Libraries
 
@@ -1224,7 +1184,6 @@ For information about available third-party libraries that can be integrated wit
 
 Sample images in this project are sourced from [Pexels](https://www.pexels.com/license/) under their free license.
 
-License
--------
+## License
 
 See [LICENSE](LICENSE) file.

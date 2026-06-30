@@ -3,7 +3,7 @@
 exports[`Connection Component Test Cases renders correctly with styles 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "margin": 20,
       "marginRight": 60,
@@ -16,7 +16,7 @@ exports[`Connection Component Test Cases renders correctly with styles 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "alignContent": "center",
         "flexDirection": "row",
       }
@@ -24,7 +24,7 @@ exports[`Connection Component Test Cases renders correctly with styles 1`] = `
   >
     <View
       accessibilityState={
-        Object {
+        {
           "busy": undefined,
           "checked": undefined,
           "disabled": undefined,
@@ -33,7 +33,7 @@ exports[`Connection Component Test Cases renders correctly with styles 1`] = `
         }
       }
       accessibilityValue={
-        Object {
+        {
           "max": undefined,
           "min": undefined,
           "now": undefined,
@@ -51,7 +51,7 @@ exports[`Connection Component Test Cases renders correctly with styles 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Object {
+        {
           "alignItems": "center",
           "height": 50,
           "justifyContent": "center",

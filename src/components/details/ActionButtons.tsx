@@ -12,12 +12,14 @@ interface ActionButtonsProps {
   buttonConfig: ButtonConfig[];
   playMovieButtonRef: React.RefObject<any>;
   onBlurPlayMovie: () => void;
+  onPlayMovieFocus?: () => void;
 }
 
 export const ActionButtons: React.FC<ActionButtonsProps> = ({
   buttonConfig,
   playMovieButtonRef,
   onBlurPlayMovie,
+  onPlayMovieFocus,
 }) => (
   <View style={styles.movieButtonsContainer}>
     {buttonConfig.map((btn) => (
@@ -34,6 +36,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
         style={styles.buttonStyle}
         testID={btn.testID}
         ref={btn.label === 'Play Movie' ? playMovieButtonRef : null}
+        onFocus={btn.label === 'Play Movie' ? onPlayMovieFocus : undefined}
         onBlur={onBlurPlayMovie}
       />
     ))}

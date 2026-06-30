@@ -3,7 +3,7 @@
 exports[`CaptionMenuItem tests component renders correctly 1`] = `
 <View
   accessibilityState={
-    Object {
+    {
       "busy": undefined,
       "checked": undefined,
       "disabled": undefined,
@@ -12,7 +12,7 @@ exports[`CaptionMenuItem tests component renders correctly 1`] = `
     }
   }
   accessibilityValue={
-    Object {
+    {
       "max": undefined,
       "min": undefined,
       "now": undefined,
@@ -30,14 +30,14 @@ exports[`CaptionMenuItem tests component renders correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
+    {
       "opacity": 1,
     }
   }
 >
   <Text
     style={
-      Object {
+      {
         "color": "#FFFFFF",
         "fontSize": 30,
         "fontWeight": "500",
@@ -55,7 +55,7 @@ exports[`CaptionMenuItem tests component renders correctly 1`] = `
 exports[`CaptionMenuItem tests component renders correctly with select 1`] = `
 <View
   accessibilityState={
-    Object {
+    {
       "busy": undefined,
       "checked": undefined,
       "disabled": undefined,
@@ -64,7 +64,7 @@ exports[`CaptionMenuItem tests component renders correctly with select 1`] = `
     }
   }
   accessibilityValue={
-    Object {
+    {
       "max": undefined,
       "min": undefined,
       "now": undefined,
@@ -82,7 +82,7 @@ exports[`CaptionMenuItem tests component renders correctly with select 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
+    {
       "backgroundColor": "#80808066",
       "opacity": 1,
     }
@@ -90,7 +90,7 @@ exports[`CaptionMenuItem tests component renders correctly with select 1`] = `
 >
   <Text
     style={
-      Object {
+      {
         "color": "#FFFFFF",
         "fontSize": 30,
         "fontWeight": "500",

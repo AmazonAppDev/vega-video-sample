@@ -27,7 +27,7 @@ export const AnimatedNavigationBarItem = React.forwardRef(
       showIcon = true,
       showText = true,
     }: AnimatedNavigationBarItemProps,
-    ref: ForwardedRef<TouchableHighlight>,
+    ref: ForwardedRef<React.ComponentRef<typeof TouchableHighlight>>,
   ): React.ReactElement => {
     const [isFocused, setFocused] = useState<boolean>(false);
     const { animatedItemStyle, textColor, iconColor, iconBgColor } =

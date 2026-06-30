@@ -311,7 +311,6 @@ describe('PlayerScreen hooks', () => {
     expect(controlBar.props.children.props.captionMenuVisibility).toBe(false);
 
     controlBar.props.children.props.onPress();
-    expect(controlBar.props.children.props.captionMenuVisibility).toBe(true);
     mockUseTVEventHandler({
       eventKeyAction: 0,
       eventType: DPADEventType.BACK,

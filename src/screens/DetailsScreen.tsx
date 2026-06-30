@@ -37,6 +37,10 @@ const DetailsScreen = ({
     format,
     rating,
     rentalInfo,
+    headerGuideRef,
+    onBackIconFocus,
+    onBackIconBlur,
+    onPlayMovieFocus,
   } = useDetailScreenLogic(navigation, route);
 
   const videoID = route.params.data.id;
@@ -55,12 +59,16 @@ const DetailsScreen = ({
           videoID={videoID}
           onBackPress={navigateBack}
           titleData={route.params.data}
+          headerGuideRef={headerGuideRef}
+          onBackIconFocus={onBackIconFocus}
+          onBackIconBlur={onBackIconBlur}
         />
         <View style={styles.content}>
           <ActionButtons
             buttonConfig={buttonConfig}
             playMovieButtonRef={playMovieButtonRef}
             onBlurPlayMovie={onBlurPlayMovie}
+            onPlayMovieFocus={onPlayMovieFocus}
           />
           <RentalInfo {...rentalInfo} />
           <VideoFileType selectedFileType={format} />

@@ -72,6 +72,7 @@ const FeedBackScreen = ({
                   onBlur={handleBlur('name')}
                   value={values.name}
                   placeholder="Name"
+                  placeholderTextColor={COLORS.LIGHT_GRAY}
                   testID="form-name"
                 />
                 {errors.name && touched.name ? (
@@ -85,6 +86,7 @@ const FeedBackScreen = ({
                   onBlur={handleBlur('email')}
                   value={values.email}
                   placeholder="Email"
+                  placeholderTextColor={COLORS.LIGHT_GRAY}
                   keyboardType="email-address"
                   testID="form-email"
                 />
@@ -99,6 +101,7 @@ const FeedBackScreen = ({
                   onBlur={handleBlur('feedback')}
                   value={values.feedback}
                   placeholder="Feedback"
+                  placeholderTextColor={COLORS.LIGHT_GRAY}
                   multiline
                   testID="form-feedback"
                 />

@@ -3,14 +3,13 @@
 
 import React, { useCallback } from 'react';
 
-import { Carousel } from '@amazon-devices/kepler-ui-components';
+import { Carousel, CarouselRenderInfo } from '@amazon-devices/vega-carousel';
 import { Text } from 'react-native';
 import { MediaItem } from '../../types';
 import { MediaItemShovelerProps } from '../MediaItemShoveler';
 import { useMediaItemShovelerStyle } from '../MediaItemShoveler/useMediaItemShovelerStyle';
 import { MediaItemTile } from '../MediaItemTile';
 
-const SHOVELER_DEFAULT_HEIGHT = 470;
 const TILE_MARGIN_TOP_FEATURE = 190;
 const TILE_MARGIN_TOP = 80;
 
@@ -20,25 +19,40 @@ export const MediaItemShoveler = ({
   showPlaylistName,
   playlistName,
   mediaItemStyleConfig,
-  shovelerHeight = SHOVELER_DEFAULT_HEIGHT,
   onItemFocused,
   onItemSelected,
 }: MediaItemShovelerProps) => {
-  const { mediaTileWidth, listItemWidth, style } = useMediaItemShovelerStyle(
+  const { listItemWidth, style } = useMediaItemShovelerStyle(
     featured,
     mediaItemStyleConfig?.mediaItemTileImageAspectRatio,
   );
-  const viewInfos = [
-    {
-      view: MediaItemTile,
-      dimension: {
-        width: mediaTileWidth,
-        height: shovelerHeight,
-      },
+
+  const getItem = useCallback(
+    (index: number) => {
+      if (index >= 0 && index < items.length) {
+        return items[index];
+      }
+      return undefined;
     },
-  ];
-  const getViewForIndex = useCallback(() => MediaItemTile, []);
-  const renderItem = useCallback(({ item }: { item: MediaItem }) => {
+    [items],
+  );
+
+  const getItemCount = useCallback(() => {
+    return items.length;
+  }, [items]);
+
+  const getItemKey = useCallback(
+    (info: CarouselRenderInfo<MediaItem>) => {
+      return `${playlistName}-${info.index}`;
+    },
+    [playlistName],
+  );
+
+  const notifyDataError = useCallback(() => {
+    return false;
+  }, []);
+
+  const renderItem = useCallback(({ item }: CarouselRenderInfo<MediaItem>) => {
     return (
       <MediaItemTile
         listItemWidth={listItemWidth}
@@ -64,16 +78,17 @@ export const MediaItemShoveler = ({
         <Text style={style.playlistName}>{playlistName}</Text>
       )}
       <Carousel
-        data={items}
+        dataAdapter={{
+          getItem,
+          getItemCount,
+          getItemKey,
+          notifyDataError,
+        }}
         renderItem={renderItem}
-        itemDimensions={viewInfos}
-        getItemForIndex={getViewForIndex}
         testID={'playlist_native_shoveler'}
-        keyProvider={(item, index: number) => `${playlistName}-${index}`}
-        itemPadding={0}
-        itemSelectionExpansion={{
-          widthScale: 1.1,
-          heightScale: 1.1,
+        itemStyle={{
+          itemPadding: 0,
+          selectedItemScaleFactor: 1.1,
         }}
       />
     </>
