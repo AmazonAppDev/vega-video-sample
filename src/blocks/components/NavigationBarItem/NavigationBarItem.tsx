@@ -18,9 +18,9 @@ export const NavigationBarItem = React.forwardRef(
       onFocus,
       onPress,
       showIcon,
-      showText,
+      showText = true,
     }: NavigationBarItemProps,
-    ref: ForwardedRef<TouchableHighlight>,
+    ref: ForwardedRef<React.ComponentRef<typeof TouchableHighlight>>,
   ): React.ReactElement => {
     const [isFocused, setFocused] = useState<boolean>(false);
     const { itemColor, itemBgColor } = getItemColor(isFocused, isSelected);
@@ -60,7 +60,3 @@ export const NavigationBarItem = React.forwardRef(
     );
   },
 );
-
-NavigationBarItem.defaultProps = {
-  showText: true,
-};

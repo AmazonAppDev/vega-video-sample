@@ -5,11 +5,16 @@ import {
   CustomerListType,
 } from '@amazon-devices/kepler-content-personalization';
 import { useTheme } from '@amazon-devices/kepler-ui-components';
+import {
+  HWEvent,
+  useTVEventHandler,
+} from '@amazon-devices/react-native-kepler';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Platform, Systrace } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ButtonConfig, Screens } from '../../components/navigation/types';
+import { DPADEventType, EVENT_KEY_DOWN } from '../../constants';
 import {
   isContentPersonalizationEnabled,
   isInAppPurchaseEnabled,
@@ -75,6 +80,36 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
   const focusableElementRef = useRef<any>(null);
   const playMovieButtonRef = useRef<any>(null);
 
+  const headerGuideRef = useRef<any>(null);
+  const backFocusedRef = useRef(false);
+  const playMovieFocusedRef = useRef(false);
+
+  useTVEventHandler((evt: HWEvent) => {
+    if (evt.eventKeyAction !== EVENT_KEY_DOWN) {
+      return;
+    }
+    if (evt.eventType === DPADEventType.DOWN && backFocusedRef.current) {
+      playMovieButtonRef.current?.requestTVFocus?.();
+    } else if (
+      evt.eventType === DPADEventType.UP &&
+      playMovieFocusedRef.current
+    ) {
+      headerGuideRef.current?.requestTVFocus?.();
+    }
+  });
+
+  const onBackIconFocus = useCallback(() => {
+    backFocusedRef.current = true;
+  }, []);
+
+  const onBackIconBlur = useCallback(() => {
+    backFocusedRef.current = false;
+  }, []);
+
+  const onPlayMovieFocus = useCallback(() => {
+    playMovieFocusedRef.current = true;
+  }, []);
+
   const rating = route.params.data.rating ?? '';
   const rentAmount = `${translate('currency', countryCode?.code)}${
     route.params.data.rentAmount
@@ -105,7 +140,7 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
   }, []);
 
   const navigateBack = useCallback(() => {
-    navigation.navigate(Screens.HOME_SCREEN);
+    navigation.goBack();
     return true;
   }, [navigation]);
 
@@ -378,6 +413,7 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
   }, [videoID, watchList, purchasedList, rentList]);
 
   const onBlurPlayMovie = () => {
+    playMovieFocusedRef.current = false;
     if (playMovieButtonRef?.current?.blur) {
       playMovieButtonRef.current.blur();
     }
@@ -393,6 +429,10 @@ export const useDetailScreenLogic = (navigation: any, route: any) => {
     onBlurPlayMovie,
     format,
     rating,
+    headerGuideRef,
+    onBackIconFocus,
+    onBackIconBlur,
+    onPlayMovieFocus,
     rentalInfo: {
       showAddRental,
       rentalTimestamp,

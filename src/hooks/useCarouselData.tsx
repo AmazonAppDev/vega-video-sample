@@ -68,7 +68,7 @@ export const useCarouselData = ({
   const isMounted = useRef(false);
 
   // Ref to store timeout ID for cleanup
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
 
   useEffect(() => {
     // Mark component as mounted

@@ -5,6 +5,7 @@ import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import { Header, Typography } from '@amazon-devices/kepler-ui-components';
+import { TVFocusGuideView } from '@amazon-devices/react-native-kepler';
 
 import { COLORS } from '../../styles/Colors';
 import { TitleData } from '../../types/TitleData';
@@ -20,6 +21,9 @@ interface DetailHeaderProps {
   videoID: string;
   onBackPress: () => void;
   titleData: TitleData;
+  headerGuideRef?: React.RefObject<any>;
+  onBackIconFocus?: () => void;
+  onBackIconBlur?: () => void;
 }
 
 export const DetailHeader: React.FC<DetailHeaderProps> = ({
@@ -29,9 +33,15 @@ export const DetailHeader: React.FC<DetailHeaderProps> = ({
   videoID,
   onBackPress,
   titleData,
+  headerGuideRef,
+  onBackIconFocus,
+  onBackIconBlur,
 }) => (
   <>
-    <View style={styles.headerStyle}>
+    <TVFocusGuideView
+      ref={headerGuideRef}
+      style={styles.headerStyle}
+      trapFocusUp>
       <Header
         iconSize={44}
         title={title}
@@ -41,9 +51,11 @@ export const DetailHeader: React.FC<DetailHeaderProps> = ({
         headerColor={COLORS.WHITE}
         backIconFocusedStyle={styles.headerBackIconStyle}
         onBackPress={onBackPress}
+        onBackIconFocus={onBackIconFocus}
+        onBackIconBlur={onBackIconBlur}
         testID="detail-header"
       />
-    </View>
+    </TVFocusGuideView>
     <View style={styles.content}>
       <View style={styles.landscape} accessibilityElementsHidden={true}>
         <Rating rating={parseFloat(rating)} id={videoID} />

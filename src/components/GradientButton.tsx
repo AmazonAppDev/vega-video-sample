@@ -67,7 +67,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
           onPress={onPress}
           onFocus={onFocus}
           onBlur={onBlur}
-          labelStyle={[styles.label, labelStyle] as TextStyle}
+          labelStyle={StyleSheet.flatten([styles.label, labelStyle])}
         />
       </LinearGradient>
     </View>
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     borderWidth: 4,
     borderColor: 'transparent',
+    overflow: 'hidden',
   },
   button: {
     backgroundColor: 'transparent',

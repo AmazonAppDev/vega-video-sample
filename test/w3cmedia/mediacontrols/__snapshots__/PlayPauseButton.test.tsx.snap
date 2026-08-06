@@ -3,7 +3,7 @@
 exports[`PlayPauseButton tests component renders correctly 1`] = `
 <View
   accessibilityState={
-    Object {
+    {
       "busy": undefined,
       "checked": undefined,
       "disabled": undefined,
@@ -12,7 +12,7 @@ exports[`PlayPauseButton tests component renders correctly 1`] = `
     }
   }
   accessibilityValue={
-    Object {
+    {
       "max": undefined,
       "min": undefined,
       "now": undefined,
@@ -30,7 +30,7 @@ exports[`PlayPauseButton tests component renders correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
+    {
       "alignItems": "center",
       "flexDirection": "row",
       "opacity": 1,
@@ -46,7 +46,7 @@ exports[`PlayPauseButton tests component renders correctly 1`] = `
 exports[`PlayPauseButton tests component renders correctly with \`paused\` and \`ended\` negative 1`] = `
 <View
   accessibilityState={
-    Object {
+    {
       "busy": undefined,
       "checked": undefined,
       "disabled": undefined,
@@ -55,7 +55,7 @@ exports[`PlayPauseButton tests component renders correctly with \`paused\` and \
     }
   }
   accessibilityValue={
-    Object {
+    {
       "max": undefined,
       "min": undefined,
       "now": undefined,
@@ -73,7 +73,7 @@ exports[`PlayPauseButton tests component renders correctly with \`paused\` and \
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
+    {
       "alignItems": "center",
       "flexDirection": "row",
       "opacity": 1,

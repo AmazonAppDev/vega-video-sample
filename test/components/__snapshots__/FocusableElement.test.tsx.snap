@@ -3,7 +3,7 @@
 exports[`FocusableElement renders correctly renders correctly with styles 1`] = `
 <View
   accessibilityState={
-    Object {
+    {
       "busy": undefined,
       "checked": undefined,
       "disabled": undefined,
@@ -12,7 +12,7 @@ exports[`FocusableElement renders correctly renders correctly with styles 1`] = 
     }
   }
   accessibilityValue={
-    Object {
+    {
       "max": undefined,
       "min": undefined,
       "now": undefined,
@@ -30,7 +30,7 @@ exports[`FocusableElement renders correctly renders correctly with styles 1`] = 
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
+    {
       "borderColor": "#FFFF00",
       "opacity": 1,
     }
@@ -41,7 +41,7 @@ exports[`FocusableElement renders correctly renders correctly with styles 1`] = 
 exports[`FocusableElement renders correctly renders correctly without styles 1`] = `
 <View
   accessibilityState={
-    Object {
+    {
       "busy": undefined,
       "checked": undefined,
       "disabled": undefined,
@@ -50,7 +50,7 @@ exports[`FocusableElement renders correctly renders correctly without styles 1`]
     }
   }
   accessibilityValue={
-    Object {
+    {
       "max": undefined,
       "min": undefined,
       "now": undefined,
@@ -68,7 +68,7 @@ exports[`FocusableElement renders correctly renders correctly without styles 1`]
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
+    {
       "opacity": 1,
     }
   }

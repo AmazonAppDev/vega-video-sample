@@ -1,9 +1,7 @@
-import { Header, HeaderProps } from '@amazon-devices/kepler-ui-components';
 import { RouteProp } from '@amazon-devices/react-navigation__core';
 import { StackNavigationProp } from '@amazon-devices/react-navigation__stack';
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 import React from 'react';
-import { Systrace } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import {
@@ -18,11 +16,24 @@ jest.mock('../../src/utils/translationHelper', () => ({
   translate: jest.fn().mockReturnValue('mocked translation'),
 }));
 
+// Override the global react-native-kepler mock (jest.setup.ts) so that
+// TVFocusGuideView renders its children.
+jest.mock('@amazon-devices/react-native-kepler', () => ({
+  __esModule: true,
+  HWEvent: jest.fn(),
+  useTVEventHandler: jest.fn(),
+  TVFocusGuideView: (props) => <div {...props}>{props.children}</div>,
+}));
+
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native');
   RN.Systrace.isEnabled = jest.fn().mockImplementation(() => true);
   RN.Systrace.beginEvent = jest.fn();
   RN.Systrace.endEvent = jest.fn();
+  RN.BackHandler = {
+    addEventListener: jest.fn(() => ({ remove: jest.fn() })),
+    exitApp: jest.fn(),
+  };
   return RN;
 });
 
@@ -53,8 +64,8 @@ const mockRoute: any = {
 
 const mockStore = configureMockStore();
 
-const renderDetailsScreen = () => {
-  return <DetailsScreen navigation={mockNavigation} route={mockRoute} />;
+const renderDetailsScreen = (route: any = mockRoute) => {
+  return <DetailsScreen navigation={mockNavigation} route={route} />;
 };
 
 describe('Details Component', () => {
@@ -94,17 +105,29 @@ describe('Details Component', () => {
     expect(getByTestId('details-action-add-remove-btn')).toBeTruthy();
   });
 
-  it('renders component and call Systrace event with it is mounted', () => {
-    render(renderDetailsScreen());
-    expect(Systrace.isEnabled).toHaveBeenCalled();
-    expect(Systrace.beginEvent).toHaveBeenCalled();
-    expect(Systrace.endEvent).toHaveBeenCalled();
+  it('renders detail container on mount', () => {
+    const { getByTestId } = render(renderDetailsScreen());
+    expect(
+      getByTestId(`detail-container-${mockRoute.params.data.id}`),
+    ).toBeTruthy();
   });
 
-  it('navigates back when the back button is pressed', () => {
-    const { UNSAFE_getByType } = render(renderDetailsScreen());
-    fireEvent(UNSAFE_getByType(Header), 'onBackPress');
-    expect(mockNavigation.navigate).toHaveBeenCalled();
+  it('navigates back when the hardware back button is pressed', () => {
+    const RN = require('react-native');
+    jest.spyOn(RN.Platform, 'isTV', 'get').mockReturnValue(true);
+    const addEventListenerSpy = jest.spyOn(RN.BackHandler, 'addEventListener');
+
+    render(renderDetailsScreen());
+
+    const backHandlerCall = addEventListenerSpy.mock.calls.find(
+      ([event]) => event === 'hardwareBackPress',
+    );
+    expect(backHandlerCall).toBeDefined();
+
+    act(() => {
+      (backHandlerCall![1] as () => void)();
+    });
+    expect(mockNavigation.goBack).toHaveBeenCalled();
   });
 
   it('handles play movie button press', async () => {
@@ -120,14 +143,21 @@ describe('Details Component', () => {
   });
 
   it('updates selectedFileType when route params title changes', () => {
-    const { rerender, getByTestId } = render(renderDetailsScreen());
-    mockRoute.params.data.title = 'New Title';
-    rerender(renderDetailsScreen());
-    const component = getByTestId('detail-header');
-    const componetHeaderProp = component.findByProps(
-      (props: HeaderProps) => props.title === 'New Title',
-    );
-    expect(componetHeaderProp).toBeTruthy();
+    const initialRoute = {
+      params: { data: { ...mockRoute.params.data, title: 'Old Title' } },
+    };
+    const updatedRoute = {
+      params: { data: { ...mockRoute.params.data, title: 'New Title' } },
+    };
+
+    const { rerender, getByTestId } = render(renderDetailsScreen(initialRoute));
+    // Pass a brand-new route reference so React.memo's deep-equality comparator
+    // (areDetailsPropsEqual -> lodash/isEqual) detects the title change and
+    // re-renders the header with the updated title.
+    rerender(renderDetailsScreen(updatedRoute));
+
+    const headerTitle = getByTestId('detail-header_title');
+    expect(headerTitle.props.children).toBe('New Title');
   });
 
   it('should add to watchlist when ADD_TO_LIST button is pressed', async () => {

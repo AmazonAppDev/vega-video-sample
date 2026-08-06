@@ -21,7 +21,7 @@ const HorizontalNavigationBarComponent = ({
 }: InternalNavBarBarProps) => {
   const styles = horizontalNavigationBarStyles(navBarBackgroundColor);
   const [destinationItem, setDestinationItem] =
-    useState<TouchableHighlight | null>(null);
+    useState<React.ComponentRef<typeof TouchableHighlight> | null>(null);
   const [items, setItems] = useState<NavBarItemAction[]>([]);
   const isNavbarFocused = useIsFocused();
 

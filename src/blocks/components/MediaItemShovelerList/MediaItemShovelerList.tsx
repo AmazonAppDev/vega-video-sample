@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import { Carousel } from '@amazon-devices/kepler-ui-components';
+import { Carousel, CarouselRenderInfo } from '@amazon-devices/vega-carousel';
 import React, { useCallback } from 'react';
 import { MediaItem, MediaPlaylist } from '../../types';
 
@@ -13,7 +13,6 @@ import { MediaItemShovelerListProps } from '../MediaItemShovelerList/MediaItemSh
 import { BaseMediaItemTileProps } from '../MediaItemTile';
 import { createItemShovelerListStyle } from './MediaItemShovelerListStyle';
 
-const SHOVELER_WIDTH = 489 * 4; // 489 is the width of a single image
 const FEATURED_SHOVELER_HEIGHT = 530;
 const REGULAR_SHOVELER_HEIGHT = 410;
 
@@ -118,8 +117,33 @@ export const MediaItemShovelerList = ({
     });
   }, [playlists, featuredCategory]);
 
+  const getItem = useCallback(
+    (index: number) => {
+      if (index >= 0 && index < getPlaylistsWithFeaturedFirst.length) {
+        return getPlaylistsWithFeaturedFirst[index];
+      }
+      return undefined;
+    },
+    [getPlaylistsWithFeaturedFirst],
+  );
+
+  const getItemCount = useCallback(() => {
+    return getPlaylistsWithFeaturedFirst.length;
+  }, [getPlaylistsWithFeaturedFirst]);
+
+  const getItemKey = useCallback(
+    (info: CarouselRenderInfo<MediaPlaylist>) => {
+      return `${info.index}`;
+    },
+    [],
+  );
+
+  const notifyDataError = useCallback(() => {
+    return false;
+  }, []);
+
   const renderShoveler = useCallback(
-    ({ item, index }: { item: any; index: number }) => {
+    ({ item, index }: CarouselRenderInfo<MediaPlaylist>) => {
       const playlist = item as MediaPlaylist;
       return (
         <WrapperShoveler
@@ -148,38 +172,21 @@ export const MediaItemShovelerList = ({
     [],
   );
 
-  const viewInfos = [
-    {
-      view: FeaturedShoveler,
-      dimension: {
-        width: SHOVELER_WIDTH,
-        height: FEATURED_SHOVELER_HEIGHT,
-      },
-    },
-    {
-      view: RegularShoveler,
-      dimension: {
-        width: SHOVELER_WIDTH,
-        height: REGULAR_SHOVELER_HEIGHT,
-      },
-    },
-  ];
-
-  const getViewForIndex = useCallback((index: number) => {
-    return index === 0 ? FeaturedShoveler : RegularShoveler;
-  }, []);
-
   return (
     <View style={[style.shovelerWrapper, shovelerWrapperStyle]}>
       <Carousel
-        data={getPlaylistsWithFeaturedFirst}
+        dataAdapter={{
+          getItem,
+          getItemCount,
+          getItemKey,
+          notifyDataError,
+        }}
         orientation={'vertical'}
-        focusIndicatorType={'fixed'}
-        itemDimensions={viewInfos}
-        itemPadding={0}
+        selectionStrategy={'anchored'}
+        itemStyle={{
+          itemPadding: 0,
+        }}
         renderItem={renderShoveler}
-        getItemForIndex={getViewForIndex}
-        keyProvider={(item, index) => `${index}`}
       />
     </View>
   );

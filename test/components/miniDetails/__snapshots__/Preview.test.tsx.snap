@@ -3,7 +3,7 @@
 exports[`Preview renders correctly renders correctly with a posterUrl 1`] = `
 <View
   style={
-    Object {
+    {
       "left": 682,
       "position": "absolute",
     }
@@ -12,12 +12,12 @@ exports[`Preview renders correctly renders correctly with a posterUrl 1`] = `
   <Image
     resizeMode="contain"
     source={
-      Object {
+      {
         "uri": "http://example.com/poster.jpg",
       }
     }
     style={
-      Object {
+      {
         "height": 696,
         "position": "absolute",
         "width": 1236,
@@ -29,12 +29,12 @@ exports[`Preview renders correctly renders correctly with a posterUrl 1`] = `
     <Image
       resizeMode="contain"
       source={
-        Object {
+        {
           "testUri": "../../../src/assets/mini_details_left_gradient.png",
         }
       }
       style={
-        Object {
+        {
           "height": 696,
           "position": "absolute",
           "width": 1236,
@@ -45,12 +45,12 @@ exports[`Preview renders correctly renders correctly with a posterUrl 1`] = `
     <Image
       resizeMode="contain"
       source={
-        Object {
+        {
           "testUri": "../../../src/assets/mini_details_bottom_gradient.png",
         }
       }
       style={
-        Object {
+        {
           "height": 696,
           "position": "absolute",
           "width": 1236,

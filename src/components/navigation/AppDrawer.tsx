@@ -39,8 +39,8 @@ const AppDrawer = () => {
             drawerIcon: (props) => (
               <HomeSvg
                 testID="homesvg"
-                width={40}
-                height={40}
+                width={scaleUxToDp(40)}
+                height={scaleUxToDp(40)}
                 stroke={COLORS.SMOKE_WHITE}
                 fill={props.color}
               />
@@ -54,8 +54,8 @@ const AppDrawer = () => {
             drawerIcon: () => (
               <SearchSvg
                 testID="searchsvg"
-                width={40}
-                height={40}
+                width={scaleUxToDp(40)}
+                height={scaleUxToDp(40)}
                 stroke={COLORS.SMOKE_WHITE}
                 fill={COLORS.SMOKE_WHITE}
               />
@@ -69,8 +69,8 @@ const AppDrawer = () => {
             drawerIcon: (props) => (
               <SettingSvg
                 testID="settingsvg"
-                width={40}
-                height={40}
+                width={scaleUxToDp(40)}
+                height={scaleUxToDp(40)}
                 stroke={COLORS.SMOKE_WHITE}
                 fill={props.color}
               />

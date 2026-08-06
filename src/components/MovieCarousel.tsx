@@ -33,12 +33,8 @@
  * ```
  */
 
-import {
-  Carousel,
-  CarouselRenderInfo,
-  ItemInfo,
-  Typography,
-} from '@amazon-devices/kepler-ui-components';
+import { Typography } from '@amazon-devices/kepler-ui-components';
+import { Carousel, CarouselRenderInfo } from '@amazon-devices/vega-carousel';
 import isEqual from 'lodash/isEqual';
 import React, { memo, RefObject, useCallback, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -93,7 +89,7 @@ interface MovieCarouselProps {
 const cardVerticalMargin = scaleUxToDp(2); // Small vertical margin around each tile
 
 const SPACING = {
-  itemPadding: scaleUxToDp(12), // Space between each movie tile
+  itemPadding: scaleUxToDp(25), // Space between each movie tile
   firstItemOffset: scaleUxToDp(50), // Left margin to align with other UI elements
 };
 
@@ -140,7 +136,7 @@ const MovieCarousel = ({
   // Renders each individual movie tile in the carousel
   // Memoized for performance - only re-renders when dependencies change
   const ItemView = useCallback(
-    ({ item, index }: CarouselRenderInfo<TitleData>): JSX.Element => {
+    ({ item, index }: CarouselRenderInfo<TitleData>): React.JSX.Element => {
       return (
         <VideoTile
           row={row}
@@ -159,21 +155,27 @@ const MovieCarousel = ({
 
   // Configuration for the carousel's item dimensions
   // Includes padding so tiles don't touch each other
-  const viewInfos: ItemInfo[] = useMemo(
-    () => [
-      {
-        view: ItemView,
-        dimension: {
-          width: cardDimensions.width + SPACING.itemPadding * 2, // Add padding to width
-          height: cardDimensions.height,
-        },
-      },
-    ],
-    [ItemView, cardDimensions],
+  const getItem = useCallback(
+    (index: number) => {
+      if (index >= 0 && index < visibleData.length) {
+        return visibleData[index];
+      }
+      return undefined;
+    },
+    [visibleData],
   );
 
-  // Required by the Carousel component - returns the item renderer
-  const getItemForIndex = useCallback(() => ItemView, [ItemView]);
+  const getItemCount = useCallback(() => {
+    return visibleData.length;
+  }, [visibleData]);
+
+  const getItemKey = useCallback((info: CarouselRenderInfo<TitleData>) => {
+    return `${info.item.title}-${info.index}`;
+  }, []);
+
+  const notifyDataError = useCallback(() => {
+    return false;
+  }, []);
 
   // Dynamic styles based on props - computed once and memoized for performance
 
@@ -210,20 +212,22 @@ const MovieCarousel = ({
           <Carousel
             testID={`carousel-${testID}-${heading}`}
             containerStyle={computedStyle.listView}
-            data={visibleData}
-            orientation="horizontal"
-            itemDimensions={viewInfos}
-            itemPadding={SPACING.itemPadding}
-            renderItem={ItemView}
-            getItemForIndex={getItemForIndex}
-            keyProvider={(item, index) => `${item.title}-${index}`} // Unique key for each tile
-            focusIndicatorType="fixed" // Shows focus outline for TV navigation
-            firstItemOffset={SPACING.firstItemOffset} // Aligns with heading
-            itemSelectionExpansion={{
-              widthScale: 1.1, // Grows 10% when focused
-              heightScale: 1.1, // Creates nice hover/focus effect
+            dataAdapter={{
+              getItem,
+              getItemCount,
+              getItemKey,
+              notifyDataError,
             }}
-            itemScrollDelay={0.3} // Smooth scrolling animation duration
+            orientation="horizontal"
+            renderItem={ItemView}
+            selectionStrategy="anchored"
+            itemStyle={{
+              itemPadding: SPACING.itemPadding,
+              selectedItemScaleFactor: 1.1,
+            }}
+            animationDuration={{
+              itemScrollDuration: 0.3,
+            }}
           />
         )}
       </View>
@@ -237,6 +241,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 0,
     padding: 0,
+    paddingLeft: scaleUxToDp(50),
     paddingBottom: scaleUxToDp(35), // Space between carousel rows
   },
   heading: {

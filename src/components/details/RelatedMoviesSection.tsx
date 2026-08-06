@@ -7,6 +7,7 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
+  View,
 } from 'react-native';
 import { COLORS } from '../../styles/Colors';
 import { TitleData } from '../../types/TitleData';
@@ -40,7 +41,7 @@ export const RelatedMoviesSection: React.FC<RelatedMoviesSectionProps> = ({
         testID={'movie_carousel_related_movies'}
         data={relatedData}
       />
-    ) : null}
+    ) : <View />}
   </ScrollView>
 );
 

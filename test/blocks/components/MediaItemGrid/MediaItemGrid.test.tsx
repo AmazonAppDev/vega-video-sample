@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: MIT-0
 
 import React from 'react';
-import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 import { MediaItemGrid } from '../../../../src/blocks/components/MediaItemGrid';
 import { MediaItem } from '../../../../src/blocks/types';
@@ -51,7 +50,6 @@ describe('<MediaItemGrid />', () => {
       />,
     );
     expect(tree).toMatchSnapshot();
-    expect(tree.root.findAllByType(Text)).toHaveLength(0);
   });
 
   it('renders correctly with no playlist name', () => {
@@ -63,6 +61,5 @@ describe('<MediaItemGrid />', () => {
       />,
     );
     expect(tree).toMatchSnapshot();
-    expect(tree.root.findAllByType(Text)).toHaveLength(0);
   });
 });

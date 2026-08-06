@@ -79,7 +79,7 @@ export interface ButtonConfig {
   onPress: () => void;
   image: ImageSourcePropType;
   label: string;
-  ref?: React.RefObject<TouchableOpacity>;
+  ref?: React.RefObject<React.ComponentRef<typeof TouchableOpacity>>;
   testID: string;
 }
 

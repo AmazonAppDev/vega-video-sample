@@ -32,12 +32,12 @@ export const PlayerButton = React.forwardRef(
       testID,
       hasTVPreferredFocus,
     }: PlayerButtonProps,
-    ref: React.ForwardedRef<TouchableOpacity>,
+    ref: React.ForwardedRef<React.ComponentRef<typeof TouchableOpacity>>,
   ) => {
     return (
       <FocusableElement
         onBlur={onBlur}
-        focusableElementRef={ref as RefObject<TouchableOpacity> | null}
+        focusableElementRef={ref as RefObject<React.ComponentRef<typeof TouchableOpacity>> | null}
         style={[styles.buttonContainer, overrideStyle]}
         onFocusOverrideStyle={[styles.buttonFocus, { borderRadius: size }]}
         onPress={onPress}

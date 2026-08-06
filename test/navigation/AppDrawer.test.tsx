@@ -45,22 +45,19 @@ describe('AppDrawer', () => {
         name: Screens.HOME_SCREEN,
         component: HomeScreen,
         options: { drawerIcon: expect.any(Function) },
-      }),
-      {},
+      }), undefined,
     );
     expect(createDrawer.Screen).toHaveBeenCalledWith(
       expect.objectContaining({
         name: Screens.SEARCH_SCREEN,
         options: { drawerIcon: expect.any(Function) },
-      }),
-      {},
+      }), undefined,
     );
     expect(createDrawer.Screen).toHaveBeenCalledWith(
       expect.objectContaining({
         name: Screens.SETTINGS_SCREEN,
         options: { drawerIcon: expect.any(Function) },
-      }),
-      {},
+      }), undefined,
     );
   });
 

@@ -3,12 +3,7 @@
 
 import { TVFocusGuideView } from '@amazon-devices/react-native-kepler';
 import React from 'react';
-import {
-  Image,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { L2_GRADIENT_COLORS } from '../constants';
 import { COLORS } from '../styles/Colors';
 import { TitleData } from '../types/TitleData';
@@ -80,19 +75,16 @@ const L2AndContentDetail = ({ tile }: ContentPreviewProps) => {
   );
 };
 
-const ContentPreview = ({ tile, onFocus }: ContentPreviewProps) => {
+const ContentPreview = ({ tile }: ContentPreviewProps) => {
   return (
-    <TouchableWithoutFeedback style={styles.container} onFocus={onFocus}>
-      <TVFocusGuideView
-        style={styles.tvFocusContainer}
-        autoFocus
-        trapFocusRight
-        trapFocusUp>
-        <Image source={{ uri: tile?.posterUrl }} style={styles.poster} />
-        <Scrim />
-        <L2AndContentDetail tile={tile} />
-      </TVFocusGuideView>
-    </TouchableWithoutFeedback>
+    <TVFocusGuideView
+      style={[styles.container, styles.tvFocusContainer]}
+      trapFocusRight
+      trapFocusUp>
+      <Image source={{ uri: tile?.posterUrl }} style={styles.poster} />
+      <Scrim />
+      <L2AndContentDetail tile={tile} />
+    </TVFocusGuideView>
   );
 };
 

@@ -3,7 +3,7 @@
 exports[`RadioButton renders correctly renders correctly without styles 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "flexDirection": "row",
       "paddingHorizontal": 15,
@@ -13,7 +13,7 @@ exports[`RadioButton renders correctly renders correctly without styles 1`] = `
 >
   <View
     accessibilityState={
-      Object {
+      {
         "busy": undefined,
         "checked": undefined,
         "disabled": undefined,
@@ -22,7 +22,7 @@ exports[`RadioButton renders correctly renders correctly without styles 1`] = `
       }
     }
     accessibilityValue={
-      Object {
+      {
         "max": undefined,
         "min": undefined,
         "now": undefined,
@@ -40,7 +40,7 @@ exports[`RadioButton renders correctly renders correctly without styles 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "#D3D3D3",
         "borderColor": "#D3D3D3",
         "borderRadius": 15,
@@ -54,7 +54,7 @@ exports[`RadioButton renders correctly renders correctly without styles 1`] = `
   />
   <Text
     style={
-      Object {
+      {
         "color": "#FFFFFF",
         "fontSize": 27,
         "marginLeft": 10,

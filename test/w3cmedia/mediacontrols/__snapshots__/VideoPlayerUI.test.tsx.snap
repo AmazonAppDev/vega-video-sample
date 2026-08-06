@@ -3,7 +3,7 @@
 exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
 <View
   style={
-    Object {
+    {
       "height": "100%",
       "position": "absolute",
       "width": "100%",
@@ -14,14 +14,14 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
 >
   <LinearGradient
     colors={
-      Array [
+      [
         "rgba(0, 0, 0, 0.4)",
         "transparent",
         "rgba(0, 0, 0, 0.4)",
       ]
     }
     style={
-      Object {
+      {
         "height": "100%",
         "justifyContent": "space-between",
         "width": "100%",
@@ -30,7 +30,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
   >
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -44,7 +44,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
     >
       <View
         accessibilityState={
-          Object {
+          {
             "busy": undefined,
             "checked": undefined,
             "disabled": undefined,
@@ -53,7 +53,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
           }
         }
         accessibilityValue={
-          Object {
+          {
             "max": undefined,
             "min": undefined,
             "now": undefined,
@@ -72,7 +72,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Object {
+          {
             "alignItems": "center",
             "flexDirection": "row",
             "opacity": 1,
@@ -88,7 +88,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
       <Text
         numberOfLines={1}
         style={
-          Object {
+          {
             "color": "#FFFFFF",
             "fontSize": 70,
             "fontWeight": "500",
@@ -103,7 +103,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "flexDirection": "row",
           "justifyContent": "center",
         }
@@ -111,7 +111,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
     >
       <View
         accessibilityState={
-          Object {
+          {
             "busy": undefined,
             "checked": undefined,
             "disabled": undefined,
@@ -120,7 +120,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
           }
         }
         accessibilityValue={
-          Object {
+          {
             "max": undefined,
             "min": undefined,
             "now": undefined,
@@ -138,7 +138,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Object {
+          {
             "alignItems": "center",
             "flexDirection": "row",
             "opacity": 1,
@@ -151,7 +151,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
       </View>
       <View
         accessibilityState={
-          Object {
+          {
             "busy": undefined,
             "checked": undefined,
             "disabled": undefined,
@@ -160,7 +160,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
           }
         }
         accessibilityValue={
-          Object {
+          {
             "max": undefined,
             "min": undefined,
             "now": undefined,
@@ -179,7 +179,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Object {
+          {
             "alignItems": "center",
             "flexDirection": "row",
             "opacity": 1,
@@ -192,7 +192,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
       </View>
       <View
         accessibilityState={
-          Object {
+          {
             "busy": undefined,
             "checked": undefined,
             "disabled": undefined,
@@ -201,7 +201,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
           }
         }
         accessibilityValue={
-          Object {
+          {
             "max": undefined,
             "min": undefined,
             "now": undefined,
@@ -219,7 +219,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Object {
+          {
             "alignItems": "center",
             "flexDirection": "row",
             "opacity": 1,
@@ -233,7 +233,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "flex-end",
@@ -243,7 +243,7 @@ exports[`VideoPlayerUI Test Cases renders correctly 1`] = `
     />
     <View
       style={
-        Object {
+        {
           "bottom": 90,
           "position": "absolute",
           "right": 0,

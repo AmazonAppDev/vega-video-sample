@@ -10,16 +10,21 @@ id = "com.amazondeveloper.keplervideoapp"   # [required] Package identifier, use
                                             #            must reuse their existing application id to ensure existing
                                             #            Amazon integrations, viz. IAP, continue to work. 
 title = "Vega Video Sample App"           # [required] string name for the app, used to display on FireTV launcher and Appstore.
-version = "2.23.0"                          # [required] Version string of the app, recommended to use semver, but any other string may be used. 
+version = "3.24.0"                          # [required] Version string of the app, recommended to use semver, but any other string may be used. 
 icon = "@image/VideoApp.png"        # [required] Image file to be used as the icon for the app. 
 
 ## ------------------------------------------------------------------------------
 ## The [components] section declares the application components in the package, including interactive, service, and task components. 
 ## ------------------------------------------------------------------------------
+
+[os.version]
+min = "1.2"
+target = "1.2"
+
 [components]
 [[components.interactive]]
 id = "com.amazondeveloper.keplervideoapp.main"  # [required] Unique component identifier
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 categories = [
     "com.amazon.category.main",                 # [required] Category declaration to annotate 
                                                 #            this component as the main launchable component for the app.
@@ -34,7 +39,6 @@ categories = [
 launch-type = "singleton"                       # [optional] Declares that only one running instance of this app component is created,
                                                 #            new invocations always reference the existing instance. 
 
-
 # ------------------------------------------------------------------------------
 # LiveTV EPG Sync Source 
 # -------------------------------------------------------------------------------
@@ -42,7 +46,7 @@ launch-type = "singleton"                       # [optional] Declares that only 
 id = "com.amazondeveloper.keplervideoapp.sync_source"                                   # [required] Id of the component
 launch-type = "singleton"                                                               # [optional] Declares that only one running instance of this app component is created,
                                                                                         #            new invocations always reference the existing instance. 
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0" 
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0" 
 
 # ------------------------------------------------------------------------------
 # Account Login
@@ -51,7 +55,7 @@ runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript
 id = "com.amazondeveloper.keplervideoapp.interface.provider"                            # [required] Id of the service component
 launch-type = "singleton"                                                               # [required] Declares that only one running instance of this app component is created,
                                                                                         #            services have to be singleton. 
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 
 # ------------------------------------------------------------------------------
@@ -59,7 +63,7 @@ runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0
 # -------------------------------------------------------------------------------
 [[components.service]]
 id = "com.amazondeveloper.keplervideoapp.content.dataRefresh.provider"                  # [required] Id of the service component
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 launch-type = "singleton"                                                               # [optional] Declares that only one running instance of this app component is created,
                                                                                         #            new invocations always reference the existing instance. 
@@ -69,7 +73,7 @@ launch-type = "singleton"                                                       
 # -------------------------------------------------------------------------------
 [[components.task]]
 id = "com.amazondeveloper.keplervideoapp.onInstallOrUpdateTask"                         # [required] Id of the task component
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 
 # ------------------------------------------------------------------------------
@@ -77,13 +81,12 @@ runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0
 # -------------------------------------------------------------------------------
 [[components.task]]
 id = "com.amazondeveloper.keplervideoapp.epgSyncTask"                                   # [required] Id of the task component
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"       # [required] Runtime module definition for the component.
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"  # [required] Runtime module definition for the component.
                                                                                         #            In this case the component uses the headless runtime for React Native for Vega.
 
 ## ------------------------------------------------------------------------------
 ## End of [components] section
 ## ------------------------------------------------------------------------------
-
 
 ## ------------------------------------------------------------------------------
 ## The [processes] section describes which components in the package should run within a shared process when launched. This section is optional.
@@ -117,7 +120,6 @@ component-ids = ["com.amazondeveloper.keplervideoapp.onInstallOrUpdateTask"]    
 [[processes.group]]                                                                     # [required] Run the required service within a different process. 
 component-ids = ["com.amazondeveloper.keplervideoapp.epgSyncTask"]                      # [required] Declares the app components that run within this process together. 
 ## End of [processes] section.
-
 
 ## ------------------------------------------------------------------------------
 ## The [wants] section declares the capabilities that are optional for the application to function on a Vega device. Handle graceful fallbacks in your application code if a feature in this list is unavailable on a device. 
@@ -243,7 +245,6 @@ id = "/com.amazonappstore.iap.tester@IIAPTesterUI"
 ## End of [wants] section.
 ## ------------------------------------------------------------------------------
 
-
 ## ------------------------------------------------------------------------------
 ## The [needs] section declares the system capabilities that the application requires to function on a Vega device. This information helps Vega package manager and Amazon Appstore to ensure the application is installed on the supported devices. Carefully declare the application's needs for your desired device targeting. You can choose a combination of needs and wants to maximize your device reach, while providing enhanced features on applicable devices.
 ## ------------------------------------------------------------------------------
@@ -294,6 +295,10 @@ id = "/com.amazon.kepler.media.@IAccountLogin1"
 ## ------------------------------------------------------------------------------
 ## The [tasks] section declares a small routine that can run at specific events during the lifecycle of the application package. At this time the Vega OS supports the install event for running such tasks. This task can be used to set up other tasks before the application’s first launch. The task section is optional.
 ## ------------------------------------------------------------------------------
+
+[[needs.module]]
+id = "/com.amazon.vega.os@IVega_1_2"
+
 [tasks]
 [[tasks.work]]
 component-id = "com.amazondeveloper.keplervideoapp.onInstallOrUpdateTask"
@@ -301,7 +306,6 @@ mode = "install"
 ## ------------------------------------------------------------------------------
 ## End of [tasks] section
 ## ------------------------------------------------------------------------------
-
 
 ## ------------------------------------------------------------------------------
 ## The [offers] section declares the capabilities that an application package offers to other application packages installed on a Vega OS. Offers is an optional section.
@@ -333,7 +337,6 @@ includes-messages = [
 ## ------------------------------------------------------------------------------
 ## End of [offers] section
 ## ------------------------------------------------------------------------------
-
 
 ## ------------------------------------------------------------------------------
 ## The [[message]] section defines the URIs that the application package introduces to the rest of the system.
@@ -404,4 +407,3 @@ features = ["AdvancedSeek", "VariableSpeed", "AudioTracks", "TextTracks"]
 ## ------------------------------------------------------------------------------
 ## End of [[extras]] section
 ## ------------------------------------------------------------------------------
-

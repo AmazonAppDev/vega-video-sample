@@ -20,7 +20,7 @@ describe('Rating Component', () => {
         ratingNumber: 4.5,
         ratingText: '(200)',
       }),
-      {},
+      undefined,
     );
   });
 

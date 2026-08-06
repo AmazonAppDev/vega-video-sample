@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { IComponentInstance } from '@amazon-devices/react-native-kepler';
 import { VideoPlayer } from '@amazon-devices/react-native-w3cmedia';
 import React, { useCallback } from 'react';

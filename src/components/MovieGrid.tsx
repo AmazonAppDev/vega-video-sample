@@ -4,7 +4,7 @@
 import { useReportFullyDrawn } from '@amazon-devices/kepler-performance-api';
 import { useTheme } from '@amazon-devices/kepler-ui-components';
 import { useHideSplashScreenCallback } from '@amazon-devices/react-native-kepler';
-import { FlashList } from '@amazon-devices/shopify__flash-list';
+import { FlashList } from '@shopify/flash-list';
 import React, { memo, RefObject, useCallback, useMemo, useRef } from 'react';
 import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import MovieCarousel from '../components/MovieCarousel';
@@ -230,7 +230,6 @@ const MovieGrid = React.forwardRef<View, MovieGridProps>(
           data={data}
           renderItem={({ item, index }) => renderCarousel(item, index)}
           keyExtractor={(item) => item.testID}
-          estimatedItemSize={cardDimensionsInner.height}
         />
       </View>
     );

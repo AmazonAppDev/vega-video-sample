@@ -6,10 +6,7 @@ import {
   TVFocusGuideView,
   useTVEventHandler,
 } from '@amazon-devices/react-native-kepler';
-import {
-  DrawerDescriptorMap,
-  DrawerNavigationHelpers,
-} from '@amazon-devices/react-navigation__drawer/lib/typescript/src/types';
+import { DrawerContentComponentProps } from '@amazon-devices/react-navigation__drawer';
 import {
   DrawerNavigationState,
   ParamListBase,
@@ -37,8 +34,8 @@ type NavigationRoute<
 
 export interface DrawerItemListProps {
   state: DrawerNavigationState<ParamListBase>;
-  navigation: DrawerNavigationHelpers;
-  descriptors: DrawerDescriptorMap;
+  navigation: DrawerContentComponentProps['navigation'];
+  descriptors: DrawerContentComponentProps['descriptors'];
   isDrawerInFocus: boolean;
   onDrawerListFocus: () => void;
   onDrawerListBlur: () => void;
@@ -75,9 +72,6 @@ const DrawerItemList = ({
       return;
     }
 
-    if (evt?.eventType === DPADEventType.SELECT) {
-      onDrawerListBlur();
-    }
     if (evt.eventType === DPADEventType.UP && focusedItem > 0) {
       setFocusedItem(focusedItem - 1);
     } else if (
@@ -85,9 +79,6 @@ const DrawerItemList = ({
       focusedItem < state.routes.length - 1
     ) {
       setFocusedItem(focusedItem + 1);
-    } else if (evt.eventType === DPADEventType.SELECT) {
-      const { name } = state.routes[focusedItem];
-      onItemPress(name);
     }
   });
 
@@ -109,6 +100,8 @@ const DrawerItemList = ({
     setFocusedItem(index);
     setSelectedItem(index);
     navigation.navigate(routeName);
+    // Collapse the drawer after selecting, regardless of touch or D-pad.
+    onDrawerListBlur();
   };
 
   const onFocus = () => {
@@ -132,6 +125,11 @@ const DrawerItemList = ({
         style={styles.listContainer}
         nextFocusDown={rootNodeHandle}
         nextFocusUp={rootNodeHandle}
+        onPress={() => {
+          if (focusedItem >= 0 && focusedItem < state.routes.length) {
+            onItemPress(state.routes[focusedItem].name);
+          }
+        }}
         onFocus={onFocus}
         onBlur={onBlur}
         testID={testID}>

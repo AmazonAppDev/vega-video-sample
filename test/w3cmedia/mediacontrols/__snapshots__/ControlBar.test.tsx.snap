@@ -3,7 +3,7 @@
 exports[`ControlBarte sts component renders correctly 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "flexDirection": "row",
       "justifyContent": "flex-end",
