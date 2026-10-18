@@ -415,7 +415,7 @@ export class ShakaPlayer implements PlayerInterface {
         signal_secure = '150';
       }
 
-      if (content.secure === 'true') {
+      if (content.secure === true || content.secure === 'true') {
         if (content.drm_scheme === 'com.microsoft.playready') {
           signal_secure = '3000';
         } else {
