@@ -92,6 +92,19 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
    vega run-app build/armv7-release/keplervideoapp_armv7.vpkg
    ```
 
+## Continuous integration (optional)
+
+[`.github/workflows/vega-vvd-smoke.yml`](.github/workflows/vega-vvd-smoke.yml) runs a smoke test of this app on the Vega Virtual Device on a free GitHub-hosted `ubuntu-24.04` runner (KVM; no Docker, no GPU, no device). On every push to `main`, pull request, or manual run it:
+
+1. installs the Vega SDK and boots the VVD headlessly, using the MIT-licensed action [OlsOls4/vega-vvd-ci](https://github.com/OlsOls4/vega-vvd-ci) pinned to `v1.0.0`;
+2. runs `npm install` (including the Shaka Player postinstall) and `npm run build:release`;
+3. installs and launches `keplervideoapp_x86_64.vpkg` on the VVD;
+4. presses D-pad keys (down, right, select, select, back) to open a title's details page and start playback;
+5. checks that the app is running and that the home and details screens are not blank;
+6. uploads the step screenshots, a screen recording (`demo.mp4`), the vpkg and logs as the `vega-video-sample-vvd` artifact.
+
+A run takes about 10 minutes with the SDK cache warm. The workflow only reads the repository, needs no secrets, and can be deleted without affecting the app.
+
 ## Advanced features
 
 ### Upload custom search data for your app
