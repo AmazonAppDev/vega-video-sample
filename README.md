@@ -36,6 +36,8 @@ Before you launch the sample app, make sure that you have:
 * [NodeJS v18-v20](https://nodejs.org/en/download/)
 * A local web server, such as Apache. A local web server is required because browsers place restrictions on applications from file:/// URLs.
 
+**Note**: This sample uses TypeScript 4, which cannot parse the declarations in `@types/node` 26.x (for example `ffi.d.ts`), so `npm run build`, `npm run compile` and any CI step that runs `tsc` fail on a fresh install. This sample pins `@types/node` to 25.5.0 in `package.json` to avoid that. `npm run build:release` does not run `tsc` and is not affected. For new apps, use TypeScript 5 or later.
+
 **Note**: The Shaka Player integration runs automatically during `npm install` and requires these dependencies. If you encounter build errors related to Java or Python, install the missing prerequisites and run `npm install` again. For any other prerequisite Shaka issue please visit: https://shaka-project.github.io/shaka-player/docs/api/tutorial-welcome.html.
 
 
