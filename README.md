@@ -20,13 +20,15 @@ Built with React Native and TypeScript, the Vega Video Sample App demonstrates e
 
 ## Branches
 
-> [!NOTE]
-> The `main` branch targets Vega OS 2.0 (Vega SDK 2.0). To build for Vega OS 1.2, use the `release-rn-72-24` branch.
+> **Note:** `main` targets **Vega OS 2.0** (Vega SDK 2.0). Use `main` for new development on the latest Vega platform. See the [Vega 2.0 docs](https://developer.amazon.com/docs/vega/2.0/vega-get-started).
 
-| Branch | React Native version | Vega OS version | When to use it |
-| --- | --- | --- | --- |
-| `main` | 0.83.0 | 2.0 | Use for new development on Vega OS 2.0 with Vega SDK 2.0. |
-| `release-rn-72-24` | 0.72.0 | 1.2 | Use to build or maintain an app for Vega OS 1.2 on React Native 0.72. |
+Each release branch pins a React Native version and Vega OS target. Pick the branch that matches the platform you are shipping to.
+
+| Branch | React Native | Vega OS | When to use it |
+|--------|--------------|---------|----------------|
+| [`main`](https://github.com/AmazonAppDev/vega-video-sample/tree/main) | 0.83 | [2.0 (Vega SDK 2.0)](https://developer.amazon.com/docs/vega/2.0/vega-get-started) | Latest Vega OS 2.0 development. Start here for new work. |
+| [`release-rn-83`](https://github.com/AmazonAppDev/vega-video-sample/tree/release-rn-83) | 0.83 | 1.2 | Vega OS 1.2 devices on React Native 0.83. |
+| [`release-rn-72-24`](https://github.com/AmazonAppDev/vega-video-sample/tree/release-rn-72-24) | 0.72 | 1.2 | Older React Native 0.72 projects, or devices still on Vega OS 1.2 that cannot move to RN 0.83 yet. |
 
 ## Build and run the app
 
