@@ -18,8 +18,8 @@ icon = "@image/VideoApp.png"        # [required] Image file to be used as the ic
 ## ------------------------------------------------------------------------------
 
 [os.version]
-min = "1.2"
-target = "1.2"
+min = "2.0"
+target = "2.0"
 
 [components]
 [[components.interactive]]
@@ -295,9 +295,6 @@ id = "/com.amazon.kepler.media.@IAccountLogin1"
 ## ------------------------------------------------------------------------------
 ## The [tasks] section declares a small routine that can run at specific events during the lifecycle of the application package. At this time the Vega OS supports the install event for running such tasks. This task can be used to set up other tasks before the application’s first launch. The task section is optional.
 ## ------------------------------------------------------------------------------
-
-[[needs.module]]
-id = "/com.amazon.vega.os@IVega_1_2"
 
 [tasks]
 [[tasks.work]]

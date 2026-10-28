@@ -18,6 +18,16 @@ Built with React Native and TypeScript, the Vega Video Sample App demonstrates e
 - **Platform integrations** including Content Launcher, Linear TV, and Content Personalization.
 - **Custom media controls** with accessibility features and subtitle management.
 
+## Branches
+
+> [!NOTE]
+> The `main` branch targets Vega OS 2.0 (Vega SDK 2.0). To build for Vega OS 1.2, use the `release-rn-72-24` branch.
+
+| Branch | React Native version | Vega OS version | When to use it |
+| --- | --- | --- | --- |
+| `main` | 0.83.0 | 2.0 | Use for new development on Vega OS 2.0 with Vega SDK 2.0. |
+| `release-rn-72-24` | 0.72.0 | 1.2 | Use to build or maintain an app for Vega OS 1.2 on React Native 0.72. |
+
 ## Build and run the app
 
 ### Prerequisites
