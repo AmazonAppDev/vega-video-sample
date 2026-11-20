@@ -2,13 +2,12 @@
 // SPDX-License-Identifier: MIT-0
 
 import React, { useRef, useState } from 'react';
-import {
-  NativeSyntheticEvent,
-  TextInputSubmitEditingEventData,
-  View,
-} from 'react-native';
+import { NativeSyntheticEvent, View } from 'react-native';
 
-import { TextInput } from '@amazon-devices/react-native-kepler';
+import {
+  TextInput,
+  TextInputSubmitEditingEventData,
+} from '@amazon-devices/react-native-kepler';
 import SearchSvg from '../../../assets/svgr/SearchSVG';
 import { COLORS } from '../../styles/Colors';
 import { SearchInputProps } from './SearchInputProps';
@@ -53,6 +52,9 @@ export const SearchInput = ({
           event: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
         ) => {
           textInputRef.current?.blur();
+          if (event.nativeEvent.submitAction === 'previous') {
+            return;
+          }
           onSubmit(event.nativeEvent.text.trim());
         }}
         ref={textInputRef}
